@@ -178,18 +178,18 @@
 	</div>
 	<!-- ./ container -->
 
-	<!-- Javascripts    -->
-    <script src="{{asset('bootstrap/js/jquery.min.js,bootstrap.min.js,wysihtml5-0.3.0.js,bootstrap-wysihtml5.js,jquery.dataTables.min.js,datatables-bootstrap.js,datatables.fnReloadAjax.js,jquery.colorbox.js,prettify.js,custom.js')}}"></script>
-    <script type="text/javascript" src="{{asset('htmlapp/libs/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js')}}"></script>
-   <!--  <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('assets/js/wysihtml5/wysihtml5-0.3.0.js')}}"></script>
-    <script src="{{asset('assets/js/wysihtml5/bootstrap-wysihtml5.js')}}"></script>
-    <script src="{{asset('bootstrap/js/jquery.dataTables.min.js')}}"></script>    
-    <script src="{{asset('assets/js/datatables-bootstrap.js')}}"></script>
-    <script src="{{asset('assets/js/datatables.fnReloadAjax.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.colorbox.js')}}"></script>
-    <script src="{{asset('assets/js/prettify.js')}}"></script> 
-    <script src="{{asset('assets/js/custom.js')}}"></script> -->
+    <!-- Javascripts    -->
+    <script src="{{asset('preparebuild/assets/libs/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{asset('preparebuild/assets/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('/preparebuild/assets/libs/wysihtml5/dist/wysihtml5-0.3.0.min.js')}}"></script>
+    <script src="{{asset('/preparebuild/assets/libs/bootstrap-wysihtml5/dist/bootstrap-wysihtml5-0.0.2.min.js')}}"></script>
+    <script src="{{asset('preparebuild/assets/libs/datatables/media/js/jquery.dataTables.min.js')}}"></script>    
+    <script src="{{asset('preparebuild/assets/js/datatables-bootstrap.js')}}"></script>
+    <script src="{{asset('preparebuild/assets//js/datatables.fnReloadAjax.js')}}"></script>
+    <script src="{{asset('preparebuild/assets/libs/jquery-color/jquery.color.js')}}"></script>
+    <script src="{{asset('preparebuild/assets/libs/code-prettify/js-modules/prettify.js')}}"></script> 
+    <script src="{{asset('preparebuild/assets/js/custom.js')}}"></script>
+    <script type="text/javascript" src="{{asset('preparebuild/assets/libs/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js')}}"></script>
     <script type="text/javascript">
     	$('.wysihtml5').wysihtml5();
         $(prettyPrint);
