@@ -145,7 +145,8 @@ return [
         Kidsit\Providers\RouteServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavascriptServiceProvider::class,
         Zizaco\Confide\ServiceProvider::class,
-        Zizaco\Entrust\EntrustServiceProvider::class
+        Zizaco\Entrust\EntrustServiceProvider::class,
+        Bllim\Datatables\DatatablesServiceProvider::class,
 
     ],
 
@@ -195,7 +196,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
         'Confide'   => Zizaco\Confide\Facade::class,
-        'Entrust'   => Zizaco\Entrust\EntrustFacade::class
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'Datatables'      => Bllim\Datatables\Facade\Datatables::class
 
 
     ],
