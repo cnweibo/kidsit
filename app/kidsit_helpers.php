@@ -12,3 +12,11 @@ function testforbladecall()
 {
     return "调用成功！";
 }
+function print_available_classes()
+{
+	$avaialbeClasses = get_declared_classes();
+	foreach ($avaialbeClasses as $key => $value) {
+		print_r($key.' '.$value);
+		print_r(' ....  extends: '. '<strong>' .get_parent_class($value).'</strong></br>');
+	}
+}
