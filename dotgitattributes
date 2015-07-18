@@ -1,0 +1,22 @@
+* text=auto
+*.css linguist-vendored
+*.less linguist-vendored
+*.png filter=fat -crlf
+*.jpg filter=fat -crlf
+*.gif filter=fat -crlf
+*.mp3 filter=fat -crlf
+*.eot filter=fat -crlf
+*.svg filter=fat -crlf
+*.ttf filter=fat -crlf
+*.woff filter=fat -crlf
+*.woff2 filter=fat -crlf
+*.pdf filter=fat -crlf
+*.doc filter=fat -crlf
+*.docx filter=fat -crlf
+*.xls filter=fat -crlf
+*.xlsx filter=fat -crlf
+*.ppt filter=fat -crlf
+*.pptx filter=fat -crlf
+*.zip filter=fat -crlf
+*.rar filter=fat -crlf
+

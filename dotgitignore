@@ -1,0 +1,13 @@
+/node_modules
+.env
+vendor
+.idea
+public/trace
+/gulp-patterns-master
+kidsitL5.*
+resources/assets/bower_components/
+vendor/composer/ClassLoader.php
+vendor/composer/autoload_classmap.php
+vendor/composer/autoload_files.php
+vendor/composer/autoload_psr4.php
+kidsitL4.*

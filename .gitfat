@@ -1,0 +1,3 @@
+[rsync]
+remote = 112.124.37.169:/home/gitfat/gitfatlibs
+sshuser = root
