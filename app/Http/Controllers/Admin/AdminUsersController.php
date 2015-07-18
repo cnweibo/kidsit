@@ -12,6 +12,7 @@ use Kidsit\Permission;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\View;
 
+use Datatables;
 class AdminUsersController extends Controller
 {
     /**

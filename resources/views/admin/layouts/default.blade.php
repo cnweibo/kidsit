@@ -187,6 +187,8 @@
     <script src="{{asset('preparebuild/assets/js/datatables-bootstrap.js')}}"></script>
     <script src="{{asset('preparebuild/assets//js/datatables.fnReloadAjax.js')}}"></script>
     <script src="{{asset('preparebuild/assets/libs/jquery-color/jquery.color.js')}}"></script>
+    <script src="{{asset('preparebuild/assets/libs/jquery-colorbox/jquery.colorbox.js')}}"></script>
+
     <script src="{{asset('preparebuild/assets/libs/code-prettify/js-modules/prettify.js')}}"></script> 
     <script src="{{asset('preparebuild/assets/js/custom.js')}}"></script>
     <script type="text/javascript" src="{{asset('preparebuild/assets/libs/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js')}}"></script>
