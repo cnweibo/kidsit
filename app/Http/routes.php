@@ -62,11 +62,11 @@ Route::group(array('prefix' => 'admin'), function()
 {
 
     # User Management
-    // Route::get('users/{user}/show', 'Admiin\AdminUsersController@getShow');
-    // Route::get('users/{user}/edit', 'Admin\AdminUsersController@getEdit');
-    // Route::post('users/{user}/edit', 'Admin\AdminUsersController@postEdit');
-    // Route::get('users/{user}/delete', 'Admin\AdminUsersController@getDelete');
-    // Route::post('users/{user}/delete', 'Admin\AdminUsersController@postDelete');
+    Route::get('users/{user}/show', 'Admiin\AdminUsersController@getShow');
+    Route::get('users/{user}/edit', 'Admin\AdminUsersController@getEdit');
+    Route::post('users/{user}/edit', 'Admin\AdminUsersController@postEdit');
+    Route::get('users/{user}/delete', 'Admin\AdminUsersController@getDelete');
+    Route::post('users/{user}/delete', 'Admin\AdminUsersController@postDelete');
     Route::controller('users', 'Admin\AdminUsersController');
 
 });

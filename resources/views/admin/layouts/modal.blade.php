@@ -44,13 +44,21 @@
 	<link rel="apple-touch-icon-precomposed" href="{{{ asset('assets/ico/apple-touch-icon-57-precomposed.png') }}}">
 
 	<!-- CSS -->
-    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap-theme.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/wysihtml5/prettify.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/wysihtml5/bootstrap-wysihtml5.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/datatables-bootstrap.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/colorbox.css')}}">
-    <link rel="stylesheet" href="{{asset('bootstrap/css/custom.css')}}">
+
+
+
+
+
+
+	<!-- CSS   ,prettify.css,bootstrap-wysihtml5.css,datatables-bootstrap.css,colorbox.css,custom.css-->
+    <link rel="stylesheet" href="{{asset('preparebuild/assets/libs/bootstrap/dist/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('preparebuild/assets/libs/bootstrap/dist/css/bootstrap-theme.min.css')}}">
+    <link rel="stylesheet" href="{{asset('preparebuild/assets/libs/code-prettify/src/prettify.css')}}">
+    <link rel="stylesheet" href="{{asset('preparebuild/assets/libs/bootstrap-wysihtml5/dist/bootstrap-wysihtml5-0.0.2.css')}}">
+    <link rel="stylesheet" href="{{asset('preparebuild/assets/css/datatables-bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('preparebuild/assets/libs/jquery-colorbox/example2/colorbox.css')}}">
+    <link rel="stylesheet" href="{{asset('build/fonts/shockiconedu/stylesheet.css')}}">
+    <link rel="stylesheet" href="{{asset('preparebuild/assets/css/custom.css')}}">
 
 	<style>
 	.tab-pane {
@@ -99,15 +107,23 @@
 	<!-- ./ container -->
 
 	<!-- Javascripts -->
-    <script src="{{asset('bootstrap/js/jquery.min.js')}}"></script>
-    <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('assets/js/wysihtml5/wysihtml5-0.3.0.js')}}"></script>
-    <script src="{{asset('assets/js/wysihtml5/bootstrap-wysihtml5.js')}}"></script>
-    <script src="{{asset('bootstrap/js/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('assets/js/datatables-bootstrap.js')}}"></script>
-    <script src="{{asset('assets/js/datatables.fnReloadAjax.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.colorbox.js')}}"></script>
-    <script src="{{asset('assets/js/prettify.js')}}"></script>
+
+
+
+
+
+    <script src="{{asset('preparebuild/assets/libs/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{asset('preparebuild/assets/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('/preparebuild/assets/libs/wysihtml5/dist/wysihtml5-0.3.0.min.js')}}"></script>
+    <script src="{{asset('/preparebuild/assets/libs/bootstrap-wysihtml5/dist/bootstrap-wysihtml5-0.0.2.min.js')}}"></script>
+    <script src="{{asset('preparebuild/assets/libs/datatables/media/js/jquery.dataTables.min.js')}}"></script>    
+    <script src="{{asset('preparebuild/assets/js/datatables-bootstrap.js')}}"></script>
+    <script src="{{asset('preparebuild/assets//js/datatables.fnReloadAjax.js')}}"></script>
+    <script src="{{asset('preparebuild/assets/libs/jquery-color/jquery.color.js')}}"></script>
+    <script src="{{asset('preparebuild/assets/libs/jquery-colorbox/jquery.colorbox.js')}}"></script>
+    <script src="{{asset('preparebuild/assets/libs/code-prettify/loader/prettify.js')}}"></script> 
+    <script src="{{asset('preparebuild/assets/js/custom.js')}}"></script>
+    <script type="text/javascript" src="{{asset('preparebuild/assets/libs/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js')}}"></script>
 
  <script type="text/javascript">
 $(document).ready(function(){
