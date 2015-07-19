@@ -5,6 +5,7 @@ var less = require('gulp-less');
 var expect = require('gulp-expect-file');
 var printfileinfo = require('gulp-print');
 var inject = require('gulp-inject');
+var argv = require('yargs').argv;
 // lazy load gulp plugins
 var $ = require('gulp-load-plugins')({lazy: true});
 /**
@@ -34,6 +35,46 @@ gulp.task('layoutcss', function() {
         .pipe(printfileinfo())
         .pipe($.concat('bladelayout.min.css'))
         .pipe(gulp.dest('./public/build/css/'));
+});
+
+
+gulp.task('prebuildlib',function(){
+
+    log('Publish bower components main files(js,css,image) to public/preparebuild for further build...');
+    var prebuildedfiles = [
+            //bower installed lib css files
+            'resources/assets/bower_components/**/*.css',
+     
+            'resources/assets/bower_components/**/*.js',
+            // images
+            'resources/assets/bower_components/**/*.gif',
+            'resources/assets/bower_components/**/*.png',
+            'resources/assets/bower_components/**/*.jpg'
+    ];
+    return gulp
+        .src(prebuildedfiles,{base: 'resources/assets/bower_components'})
+        .pipe(expect(prebuildedfiles))
+        .pipe(printfileinfo())
+        .on('error',console.log)
+        .pipe(gulp.dest('public/preparebuild/assets/libs'));
+});
+gulp.task('prebuildown',function(){
+
+    log('Publish own components main files(js,css,image) to public/preparebuild for further build...');
+    var prebuildedownfiles = [
+            //bower installed lib css files
+            'resources/assets/css/**/*.css',
+            'resources/assets/js/**/*.js',
+            'resources/assets/images/**/*.gif',
+            'resources/assets/images/**/*.png',
+            'resources/assets/images/**/*.jpg'
+    ];
+    return gulp
+        .src(prebuildedownfiles,{base: 'resources/assets'})
+        .pipe(expect(prebuildedownfiles))
+        .pipe(printfileinfo())
+        .on('error',console.log)
+        .pipe(gulp.dest('public/preparebuild/assets'));
 });
 gulp.task('prebuildcss',function(){
 
