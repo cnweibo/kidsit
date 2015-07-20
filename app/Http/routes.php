@@ -50,6 +50,7 @@ Route::group(array('prefix' => 'user', 'middleware' => 'auth'), function (){
     Route::controller('/', 'UserController');
 });
 
+Route::get('auth/login', 'UserController@getLogin');
 
 // Home page
 Route::get('/', array('uses' => 'IndexController@getIndex'));
