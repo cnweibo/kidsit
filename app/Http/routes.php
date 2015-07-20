@@ -38,15 +38,17 @@ Route::resource('guestaddedword', 'GuestaddedwordsController');
 
 
 // user account routes:
-Route::get('user/reset/{token}', 'UserController@getReset');
-Route::post('user/reset/{token}', 'UserController@postReset');
-Route::post('user/{user}/edit', 'UserController@postEdit');
-Route::post('user/login', 'UserController@postLogin');
-Route::post('user/loginx', 'UserController@postLoginX');
-# User RESTful Routes (Login, Logout, Register, etc)
-Route::post('user/logoutx','UserController@postLogoutX');
-Route::get('user/loginstatusx','UserController@getLoginStatusX');
-Route::controller('user', 'UserController');
+Route::group(array('prefix' => 'user', 'middleware' => 'auth'), function (){
+    Route::get('/reset/{token}', 'UserController@getReset');
+    Route::post('/reset/{token}', 'UserController@postReset');
+    Route::post('/{user}/edit', 'UserController@postEdit');
+    Route::post('/login', 'UserController@postLogin');
+    Route::post('/loginx', 'UserController@postLoginX');
+    # User RESTful Routes (Login, Logout, Register, etc)
+    Route::post('/logoutx','UserController@postLogoutX');
+    Route::get('/loginstatusx','UserController@getLoginStatusX');
+    Route::controller('/', 'UserController');
+});
 
 
 // Home page
