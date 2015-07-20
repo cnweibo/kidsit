@@ -49,8 +49,9 @@ Route::group(array('prefix' => 'user', 'middleware' => 'auth'), function (){
     Route::get('/loginstatusx','UserController@getLoginStatusX');
     Route::controller('/', 'UserController');
 });
-
+// for user auth login
 Route::get('auth/login', 'UserController@getLogin');
+Route::post('auth/login', 'UserController@postLogin');
 
 // Home page
 Route::get('/', array('uses' => 'IndexController@getIndex'));

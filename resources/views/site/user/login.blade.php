@@ -11,7 +11,7 @@
 <div class="page-header">
 	<h1>登录进入系统</h1>
 </div>
-<form class="form-horizontal" method="POST" action="{{ URL::to('user/login') }}" accept-charset="UTF-8">
+<form class="form-horizontal" method="POST" action="{{ URL::to('auth/login') }}" accept-charset="UTF-8">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <fieldset>
         <div class="form-group">
