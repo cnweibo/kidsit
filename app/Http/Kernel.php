@@ -29,5 +29,6 @@ class Kernel extends HttpKernel
         'auth' => \Kidsit\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \Kidsit\Http\Middleware\RedirectIfAuthenticated::class,
+        'isAdmin' => \Kidsit\Http\Middleware\RoleMiddleware::class,
     ];
 }

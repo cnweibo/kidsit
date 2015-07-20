@@ -58,7 +58,7 @@ Route::get('/', array('uses' => 'IndexController@getIndex'));
  *  ------------------------------------------
  */
 
-Route::group(array('prefix' => 'admin'), function()
+Route::group(array('prefix' => 'admin' , 'middleware' => 'isAdmin'), function()
 {
 
     # User Management
