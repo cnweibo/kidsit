@@ -68,7 +68,8 @@ Route::group(array('prefix' => 'admin'), function()
     Route::get('users/{user}/delete', 'Admin\AdminUsersController@getDelete');
     Route::post('users/{user}/delete', 'Admin\AdminUsersController@postDelete');
     Route::controller('users', 'Admin\AdminUsersController');
-
+    // admin dashboard
+    Route::controller('/', 'Admin\AdminDashboardController');
 });
 
 /** ------------------------------------------
