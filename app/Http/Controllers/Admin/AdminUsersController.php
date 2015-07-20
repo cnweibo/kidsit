@@ -11,7 +11,9 @@ use Kidsit\Role;
 use Kidsit\Permission;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\View;
-
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
 use Datatables;
 class AdminUsersController extends Controller
 {
@@ -180,7 +182,12 @@ class AdminUsersController extends Controller
     public function postEdit($user)
     {
         // Validate the inputs
-        $validator = Validator::make(Input::all(), $user->getUpdateRules());
+        $validator = Validator::make(Input::all(), array(
+            'username' => 'required|alpha_dash',
+            'email' => 'required|email',
+            'password' => 'min:4|confirmed',
+            'password_confirmation' => 'min:4',
+        ));
 
 
         if ($validator->passes())
@@ -213,10 +220,10 @@ class AdminUsersController extends Controller
                 $user->confirmed = $oldUser->confirmed;
             }
 
-            $user->prepareRules($oldUser, $user);
+//            $user->prepareRules($oldUser, $user);
 
             // Save if valid. Password field will be hashed before save
-            $user->amend();
+            $user->save();
 
             // Save roles. Handles updating.
             $user->saveRoles(Input::get( 'roles' ));
