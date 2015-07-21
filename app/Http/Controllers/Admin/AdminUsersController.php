@@ -185,8 +185,8 @@ class AdminUsersController extends Controller
         $validator = Validator::make(Input::all(), array(
             'username' => 'required|alpha_dash',
             'email' => 'required|email',
-            'password' => 'min:4|confirmed',
-            'password_confirmation' => 'min:4',
+            'password' => 'required|min:4|confirmed',
+            'password_confirmation' => 'required|min:4',
         ));
 
 
