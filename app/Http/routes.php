@@ -61,19 +61,29 @@ Route::get('/', array('uses' => 'IndexController@getIndex'));
  *  Admin Routes
  *  ------------------------------------------
  */
-
 Route::group(array('prefix' => 'admin' , 'middleware' => 'isAdmin'), function()
 {
 
     # User Management
-    Route::get('users/{user}/show', 'Admiin\AdminUsersController@getShow');
+    Route::get('users/{user}/show', 'Admin\AdminUsersController@getShow');
     Route::get('users/{user}/edit', 'Admin\AdminUsersController@getEdit');
     Route::post('users/{user}/edit', 'Admin\AdminUsersController@postEdit');
     Route::get('users/{user}/delete', 'Admin\AdminUsersController@getDelete');
     Route::post('users/{user}/delete', 'Admin\AdminUsersController@postDelete');
     Route::controller('users', 'Admin\AdminUsersController');
-    // admin dashboard
+
+    // roles routes
+    # User Role Management
+    Route::get('roles/{role}/show', 'Admin\AdminRolesController@getShow');
+    Route::get('roles/{role}/edit', 'Admin\AdminRolesController@getEdit');
+    Route::post('roles/{role}/edit', 'Admin\AdminRolesController@postEdit');
+    Route::get('roles/{role}/delete', 'Admin\AdminRolesController@getDelete');
+    Route::post('roles/{role}/delete', 'Admin\AdminRolesController@postDelete');
+    Route::controller('roles', 'Admin\AdminRolesController');
+
+    // admin dashboard  Note:This must be the last route!!!
     Route::controller('/', 'Admin\AdminDashboardController');
+
 });
 
 /** ------------------------------------------
