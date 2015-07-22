@@ -15,9 +15,9 @@ class RoleMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (! $request->user()->hasRole('admin')) {
-            return redirect('/');
+        if ($request->user() && $request->user()->hasRole('admin')) {
+            return $next($request);
         }
-        return $next($request);
+            return redirect('/');
     }
 }
