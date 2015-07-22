@@ -42,17 +42,11 @@ class AdminPermissionsController extends Controller
      */
     public function getCreate()
     {
-        // Get all the available permissions
-        $permissions = $this->permission->all();
-
-        // Selected permissions
-        $selectedPermissions = Input::old('permissions', array());
-
         // Title
-        $title = Lang::get('admin/permissions/title.create_a_new_role');
+        $title = Lang::get('admin/permissions/title.create_a_new_permission');
 
         // Show the page
-        return View::make('admin/permissions/create', compact('permissions', 'selectedPermissions', 'title'));
+        return View::make('admin/permissions/create', compact( 'title'));
     }
 
     /**
@@ -76,17 +70,15 @@ class AdminPermissionsController extends Controller
         // Get the inputs, with some exceptions
             $inputs = Input::except('csrf_token');
 
-            $this->role->name = $inputs['name'];
-            $this->role->save();
-
-            // Save permissions
-            $this->role->perms()->sync($this->permission->preparePermissionsForSave($inputs['permissions']));
-
+            $newPermission = new Permission();
+            $newPermission->name = $inputs['name'];
+            $newPermission->description = $inputs['description'];
+            $newPermission->save();
             // Was the role created?
-            if ($this->role->id)
+            if ($newPermission->id)
             {
                 // Redirect to the new role page
-                return Redirect::to('admin/permissions/' . $this->role->id . '/edit')->with('success', Lang::get('admin/permissions/messages.create.success'));
+                return Redirect::to('admin/permissions/' . $newPermission->id . '/edit')->with('success', Lang::get('admin/permissions/messages.create.success'));
             }
 
             // Redirect to the new role page
@@ -183,7 +175,7 @@ class AdminPermissionsController extends Controller
     public function getDelete($permission)
     {
         // Title
-        $title = Lang::get('admin/permissions/title.role_delete');
+        $title = Lang::get('admin/permissions/title.permission_delete');
 
         // Show the page
         return View::make('admin/permissions/delete', compact('permission', 'title'));
