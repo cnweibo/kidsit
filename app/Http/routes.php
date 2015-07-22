@@ -82,11 +82,11 @@ Route::group(array('prefix' => 'admin' , 'middleware' => 'isAdmin'), function()
     Route::controller('roles', 'Admin\AdminRolesController');
 
     // permissions management
-    Route::get('permissions{permission}/show', 'Admin\AdminPermissionsController@getShow');
-    Route::get('permissions{permission}/edit', 'Admin\AdminPermissionsController@getEdit');
-    Route::post('permissions{permission}/edit', 'Admin\AdminPermissionsController@postEdit');
-    Route::get('permissions{permission}/delete', 'Admin\AdminPermissionsController@getDelete');
-    Route::post('permissions{permission}/delete', 'Admin\AdminPermissionsController@postDelete');
+    Route::get('permissions/{permission}/show', 'Admin\AdminPermissionsController@getShow');
+    Route::get('permissions/{permission}/edit', 'Admin\AdminPermissionsController@getEdit');
+    Route::post('permissions/{permission}/edit', 'Admin\AdminPermissionsController@postEdit');
+    Route::get('permissions/{permission}/delete', 'Admin\AdminPermissionsController@getDelete');
+    Route::post('permissions/{permission}/delete', 'Admin\AdminPermissionsController@postDelete');
     Route::controller('permissions', 'Admin\AdminPermissionsController');
 
 
@@ -102,7 +102,7 @@ Route::group(array('prefix' => 'admin' , 'middleware' => 'isAdmin'), function()
  */
 Route::model('user', 'Kidsit\User');
 Route::model('role', 'Kidsit\Role');
-
+Route::model('permission','Kidsit\Permission');
 
 // Miscellaneous
 Route::group(array('prefix'=>'helper'), function(){

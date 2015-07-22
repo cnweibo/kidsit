@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\View;
 use Kidsit\Permission;
 use Bllim\Datatables\Facade\Datatables;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
 class AdminPermissionsController extends Controller
 {
     /**
@@ -46,10 +49,10 @@ class AdminPermissionsController extends Controller
         $selectedPermissions = Input::old('permissions', array());
 
         // Title
-        $title = Lang::get('admin/roles/title.create_a_new_role');
+        $title = Lang::get('admin/permissions/title.create_a_new_role');
 
         // Show the page
-        return View::make('admin/roles/create', compact('permissions', 'selectedPermissions', 'title'));
+        return View::make('admin/permissions/create', compact('permissions', 'selectedPermissions', 'title'));
     }
 
     /**
@@ -83,18 +86,18 @@ class AdminPermissionsController extends Controller
             if ($this->role->id)
             {
                 // Redirect to the new role page
-                return Redirect::to('admin/roles/' . $this->role->id . '/edit')->with('success', Lang::get('admin/roles/messages.create.success'));
+                return Redirect::to('admin/permissions/' . $this->role->id . '/edit')->with('success', Lang::get('admin/permissions/messages.create.success'));
             }
 
             // Redirect to the new role page
-            return Redirect::to('admin/roles/create')->with('error', Lang::get('admin/roles/messages.create.error'));
+            return Redirect::to('admin/permissions/create')->with('error', Lang::get('admin/permissions/messages.create.error'));
 
             // Redirect to the role create page
-            return Redirect::to('admin/roles/create')->withInput()->with('error', Lang::get('admin/roles/messages.' . $error));
+            return Redirect::to('admin/permissions/create')->withInput()->with('error', Lang::get('admin/permissions/messages.' . $error));
         }
 
         // Form validation failed
-        return Redirect::to('admin/roles/create')->withInput()->withErrors($validator);
+        return Redirect::to('admin/permissions/create')->withInput()->withErrors($validator);
     }
 
     /**
@@ -114,32 +117,30 @@ class AdminPermissionsController extends Controller
      * @param $role
      * @return Response
      */
-    public function getEdit($role)
+    public function getEdit($permission)
     {
-        if(! empty($role))
+        if(! empty($permission))
         {
-            $permissions = $this->permission->preparePermissionsForDisplay($role->perms()->get());
+            // Title
+            $title = Lang::get('admin/permissions/title.permission_update');
+
+            // Show the page
+            return View::make('admin/permissions/edit', compact('permission', 'permissions', 'title'));
         }
         else
         {
-            // Redirect to the roles management page
-            return Redirect::to('admin/roles')->with('error', Lang::get('admin/roles/messages.does_not_exist'));
+            // Redirect to the permissions management page
+            return Redirect::to('admin/permissions')->with('error', Lang::get('admin/permissions/messages.does_not_exist'));
         }
-
-        // Title
-        $title = Lang::get('admin/roles/title.role_update');
-
-        // Show the page
-        return View::make('admin/roles/edit', compact('role', 'permissions', 'title'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param $role
+     * @param $permission
      * @return Response
      */
-    public function postEdit($role)
+    public function postEdit($permission)
     {
         // Declare the rules for the form validation
         $rules = array(
@@ -152,64 +153,63 @@ class AdminPermissionsController extends Controller
         // Check if the form validates with success
         if ($validator->passes())
         {
-            // Update the role data
-            $role->name        = Input::get('name');
-            $role->perms()->sync($this->permission->preparePermissionsForSave(Input::get('permissions')));
+            // Update the permission data
+            $permission->name        = Input::get('name');
 
-            // Was the role updated?
-            if ($role->save())
+            // Was the permission updated?
+            if ($permission->save())
             {
-                // Redirect to the role page
-                return Redirect::to('admin/roles/' . $role->id . '/edit')->with('success', Lang::get('admin/roles/messages.update.success'));
+                // Redirect to the permission page
+                return Redirect::to('admin/permissions/' . $permission->id . '/edit')->with('success', Lang::get('admin/permissions/messages.update.success'));
             }
             else
             {
-                // Redirect to the role page
-                return Redirect::to('admin/roles/' . $role->id . '/edit')->with('error', Lang::get('admin/roles/messages.update.error'));
+                // Redirect to the permission page
+                return Redirect::to('admin/permissions/' . $permission->id . '/edit')->with('error', Lang::get('admin/permissions/messages.update.error'));
             }
         }
 
         // Form validation failed
-        return Redirect::to('admin/roles/' . $role->id . '/edit')->withInput()->withErrors($validator);
+        return Redirect::to('admin/permissions/' . $permission->id . '/edit')->withInput()->withErrors($validator);
     }
 
 
     /**
      * Remove user page.
      *
-     * @param $role
+     * @param $permission
      * @return Response
      */
-    public function getDelete($role)
+    public function getDelete($permission)
     {
         // Title
-        $title = Lang::get('admin/roles/title.role_delete');
+        $title = Lang::get('admin/permissions/title.role_delete');
 
         // Show the page
-        return View::make('admin/roles/delete', compact('role', 'title'));
+        return View::make('admin/permissions/delete', compact('permission', 'title'));
     }
 
     /**
      * Remove the specified user from storage.
      *
-     * @param $role
+     * @param $permission
      * @internal param $id
      * @return Response
      */
-    public function postDelete($role)
+    public function postDelete($permission)
     {
-            // Was the role deleted?
-            if($role->delete()) {
-                // Redirect to the role management page
-                return Redirect::to('admin/roles')->with('success', Lang::get('admin/roles/messages.delete.success'));
+            // Was the permission deleted?
+            if($permission->delete()) {
+                // Redirect to the permission management page
+                return Redirect::to('admin/permissions')->with('success', Lang::get('admin/permissions/messages.delete.success'));
             }
 
-            // There was a problem deleting the role
-            return Redirect::to('admin/roles')->with('error', Lang::get('admin/roles/messages.delete.error'));
+            // There was a problem deleting the permission
+            return Redirect::to('admin/permissions')->with('error', Lang::get('admin/permissions/messages.delete.error'));
     }
 
     /**
-     * Show a list of all the roles formatted for Datatables.
+     * Show a list of all the permissions formatted for Datatables.
      *
      * @return Datatables JSON
      */
@@ -222,8 +222,8 @@ class AdminPermissionsController extends Controller
         ->edit_column('users', '{{{ DB::table(\'permission_role\')->where(\'permission_id\', \'=\', $id)->count()  }}}')
 
 
-        ->add_column('actions', '<a href="{{{ URL::to(\'admin/roles/\' . $id . \'/edit\' ) }}}" class="iframe btn btn-xs btn-default">{{{ Lang::get(\'button.edit\') }}}</a>
-                                <a href="{{{ URL::to(\'admin/roles/\' . $id . \'/delete\' ) }}}" class="iframe btn btn-xs btn-danger">{{{ Lang::get(\'button.delete\') }}}</a>
+        ->add_column('actions', '<a href="{{{ URL::to(\'admin/permissions/\' . $id . \'/edit\' ) }}}" class="iframe btn btn-xs btn-default">{{{ Lang::get(\'button.edit\') }}}</a>
+                                <a href="{{{ URL::to(\'admin/permissions/\' . $id . \'/delete\' ) }}}" class="iframe btn btn-xs btn-danger">{{{ Lang::get(\'button.delete\') }}}</a>
                     ')
 
         ->remove_column('id')
