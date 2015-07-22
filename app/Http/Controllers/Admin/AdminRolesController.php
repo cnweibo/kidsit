@@ -59,9 +59,6 @@ class AdminRolesController extends Controller
             // Title
             $title = Lang::get('admin/roles/title.role_management');
 
-            // Grab all the groups
-            $roles = $this->role;
-
             // Show the page
             return View::make('admin/roles/index', compact('roles', 'title'));
         }
