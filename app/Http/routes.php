@@ -81,6 +81,16 @@ Route::group(array('prefix' => 'admin' , 'middleware' => 'isAdmin'), function()
     Route::post('roles/{role}/delete', 'Admin\AdminRolesController@postDelete');
     Route::controller('roles', 'Admin\AdminRolesController');
 
+    // permissions management
+    Route::get('permissions{permission}/show', 'Admin\AdminPermissionsController@getShow');
+    Route::get('permissions{permission}/edit', 'Admin\AdminPermissionsController@getEdit');
+    Route::post('permissions{permission}/edit', 'Admin\AdminPermissionsController@postEdit');
+    Route::get('permissions{permission}/delete', 'Admin\AdminPermissionsController@getDelete');
+    Route::post('permissions{permission}/delete', 'Admin\AdminPermissionsController@postDelete');
+    Route::controller('permissions', 'Admin\AdminPermissionsController');
+
+
+
     // admin dashboard  Note:This must be the last route!!!
     Route::controller('/', 'Admin\AdminDashboardController');
 

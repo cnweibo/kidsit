@@ -138,11 +138,12 @@
                         </li>
                         <li class="dropdown{{ (Request::is('admin/users*|admin/roles*') ? ' active' : '') }}">
     						<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="{{{ URL::to('admin/users') }}}">
-    							<i class="glyphicon glyphicon-user"></i> Users <span class="caret"></span>
+    							<i class="glyphicon glyphicon-user"></i> 用户 <span class="caret"></span>
     						</a>
     						<ul class="dropdown-menu">
-    							<li{{ (Request::is('admin/users*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/users') }}}"><span class="glyphicon glyphicon-user"></span> Users</a></li>
-    							<li{{ (Request::is('admin/roles*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/roles') }}}"><span class="glyphicon glyphicon-user"></span> Roles</a></li>
+    							<li{{ (Request::is('admin/users*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/users') }}}"><span class="glyphicon glyphicon-user"></span> 用户</a></li>
+    							<li{{ (Request::is('admin/roles*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/roles') }}}"><span class="glyphicon glyphicon-user"></span> 角色</a></li>
+                                <li{{ (Request::is('admin/permissions*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/permissions') }}}"><span class="glyphicon glyphicon-user"></span> 权限</a></li>
     						</ul>
     					</li>
     				</ul>
