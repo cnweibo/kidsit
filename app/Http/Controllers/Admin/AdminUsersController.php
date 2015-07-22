@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Datatables;
+use Confide;
 class AdminUsersController extends Controller
 {
     /**
@@ -271,8 +272,13 @@ class AdminUsersController extends Controller
             // Redirect to the user management page
             return Redirect::to('admin/users')->with('error', Lang::get('admin/users/messages.delete.impossible'));
         }
+        // detachRole for the user
+        foreach ($user->roles()->get() as $role) {
+            $user->detachRole($role);
+        }
 
-        AssignedRoles::where('user_id', $user->id)->delete();
+//        $user->detachRole($user->roles()->get());
+//        AssignedRoles::where('user_id', $user->id)->delete();
 
         $id = $user->id;
         $user->delete();
