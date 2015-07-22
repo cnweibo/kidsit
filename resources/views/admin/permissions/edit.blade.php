@@ -5,7 +5,6 @@
 	<!-- Tabs -->
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#tab-general" data-toggle="tab">General</a></li>
-			<li><a href="#tab-permissions" data-toggle="tab">Permissions</a></li>
 		</ul>
 	<!-- ./ tabs -->
 
@@ -27,21 +26,17 @@
 						{{ $errors->first('name', '<span class="help-inline">:message</span>') }}
 					</div>
 				</div>
+				<div class="form-group {{{ $errors->has('description') ? 'error' : '' }}}">
+					<label class="col-md-2 control-label" for="description">权限细则</label>
+					<div class="col-md-10">
+						<input class="form-control" type="text" name="description" id="description" value="{{{ Input::old('description', $permission->description) }}}" />
+						{{ $errors->first('description', '<span class="help-inline">:message</span>') }}
+					</div>
+				</div>
 				<!-- ./ name -->
 			</div>
 			<!-- ./ general tab -->
 
-			<!-- Permissions tab -->
-			<div class="tab-pane" id="tab-permissions">
-				<div class="form-group">
-					<label>
-						<input type="hidden" id="permission[{{{ $permission['id'] }}}]" name="permission[{{{ $permission['id'] }}}]" value="0" />
-						<input type="checkbox" id="permission[{{{ $permission['id'] }}}]" name="permission[{{{ $permission['id'] }}}]" value="1"{{{ (isset($permission['checked']) && $permission['checked'] == true ? ' checked="checked"' : '')}}} />
-						{{{ $permission['display_name'] }}}
-					</label>
-				</div>
-			</div>
-			<!-- ./ permissions tab -->
 		</div>
 		<!-- ./ tabs content -->
 

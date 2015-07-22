@@ -155,7 +155,7 @@ class AdminPermissionsController extends Controller
         {
             // Update the permission data
             $permission->name        = Input::get('name');
-
+            $permission->description   = Input::get('description');
             // Was the permission updated?
             if ($permission->save())
             {
