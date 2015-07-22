@@ -125,7 +125,7 @@ class AdminPermissionsController extends Controller
             $title = Lang::get('admin/permissions/title.permission_update');
 
             // Show the page
-            return View::make('admin/permissions/edit', compact('permission', 'permissions', 'title'));
+            return View::make('admin/permissions/edit', compact('permission', 'title'));
         }
         else
         {
@@ -215,7 +215,7 @@ class AdminPermissionsController extends Controller
      */
     public function getData()
     {
-        $permissions = Permission::select(array('permissions.id',  'permissions.name', 'permissions.id as users', 'permissions.created_at'));
+        $permissions = Permission::select(array('permissions.id',  'permissions.name','permissions.description', 'permissions.id as users'));
 
         return Datatables::of($permissions)
         // ->edit_column('created_at','{{{ Carbon::now()->diffForHumans(Carbon::createFromFormat(\'Y-m-d H\', $test)) }}}')
