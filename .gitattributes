@@ -4,6 +4,7 @@
 *.png filter=fat -crlf
 *.jpg filter=fat -crlf
 *.gif filter=fat -crlf
+*.ico filter=fat -crlf
 *.mp3 filter=fat -crlf
 *.eot filter=fat -crlf
 *.svg filter=fat -crlf

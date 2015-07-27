@@ -49,7 +49,9 @@ gulp.task('prebuildlib',function(){
             // images
             'resources/assets/bower_components/**/*.gif',
             'resources/assets/bower_components/**/*.png',
-            'resources/assets/bower_components/**/*.jpg'
+            'resources/assets/bower_components/**/*.jpg',
+            'resources/assets/bower_components/**/*.ico',
+            'resources/assets/bower_components/**/*.svg'
     ];
     return gulp
         .src(prebuildedfiles,{base: 'resources/assets/bower_components'})
@@ -67,7 +69,10 @@ gulp.task('prebuildown',function(){
             'resources/assets/js/**/*.js',
             'resources/assets/images/**/*.gif',
             'resources/assets/images/**/*.png',
-            'resources/assets/images/**/*.jpg'
+            'resources/assets/images/**/*.jpg',
+            'resources/assets/images/**/*.ico',
+            'resources/assets/images/**/*.svg',
+
     ];
     return gulp
         .src(prebuildedownfiles,{base: 'resources/assets'})
@@ -115,6 +120,8 @@ gulp.task('prebuildimage',function(){
             'resources/assets/images/**/*.gif',
             'resources/assets/images/**/*.png',
             'resources/assets/images/**/*.jpg',
+            'resources/assets/images/**/*.ico',
+            'resources/assets/images/**/*.svg',
     ];
     return gulp
         .src(prebuildedimagefiles,{base: 'resources/assets/'})
