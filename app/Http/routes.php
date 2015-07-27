@@ -16,12 +16,20 @@ Route::get('/', function () {
     return view('welcome');
 //    xdebug_stop_trace();
 });
-
+// static pages:
 Route::get('contact-us', function()
 {
 
 //    dd(Lang::get());
     return View::make('site/contact-us');
+});
+
+
+// math execise online small app routes:
+Route::group(array('prefix' => 'math'), function(){
+    Route::get('sumpopulate2_12', 'Math\MathsumpopulateController@index2_12');
+    Route::get('sumpopulate2_21', 'Math\MathsumpopulateController@index2_21');
+    Route::get('sumpopulate2_22', 'Math\MathsumpopulateController@index2_22');
 });
 
 
