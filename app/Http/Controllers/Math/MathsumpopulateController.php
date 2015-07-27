@@ -8,6 +8,7 @@ use Kidsit\Http\Requests;
 use Kidsit\Http\Controllers\Controller;
 
 use Kidsit\models\math\Mathsum2;
+use Exception;
 class MathsumpopulateController extends Controller
 {
 
