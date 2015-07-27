@@ -27,9 +27,15 @@ Route::get('contact-us', function()
 
 // math execise online small app routes:
 Route::group(array('prefix' => 'math'), function(){
+    // pupulate the exercise db routes
     Route::get('sumpopulate2_12', 'Math\MathsumpopulateController@index2_12');
     Route::get('sumpopulate2_21', 'Math\MathsumpopulateController@index2_21');
     Route::get('sumpopulate2_22', 'Math\MathsumpopulateController@index2_22');
+    // exam create/list routes
+    Route::get('exams/create', 'Math\MathexamsController@create' );
+    Route::get('exams/submitanswer','Math\MathexamsController@submitAnswer');
+    Route::get('exams/{examid}', 'Math\MathexamsController@show' ); 
+    Route::get('exams', 'Math\MathexamsController@index' );    
 });
 
 
