@@ -109,8 +109,8 @@ Route::group(array('prefix' => 'admin' , 'middleware' => 'isAdmin'), function()
  *  ------------------------------------------
  */
 Route::model('user', 'Kidsit\User');
-Route::model('role', 'Kidsit\models\rbac\Role');
-Route::model('permission','Kidsit\models\rbac\Permission');
+Route::model('role', 'Kidsit\Models\Rbac\Role');
+Route::model('permission','Kidsit\Models\Rbac\Permission');
 
 // Miscellaneous
 Route::group(array('prefix'=>'helper'), function(){

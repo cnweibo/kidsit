@@ -1,6 +1,6 @@
 <?php
 
-namespace Kidsit\models\math;
+namespace Kidsit\Models\Math;
 
 use Illuminate\Database\Eloquent\Model;
 

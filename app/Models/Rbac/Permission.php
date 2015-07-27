@@ -1,6 +1,6 @@
 <?php
 
-namespace Kidsit\models\rbac;
+namespace Kidsit\Models\Rbac;
 
 // use Illuminate\Database\Eloquent\Model;
 use Zizaco\Entrust\EntrustPermission;
