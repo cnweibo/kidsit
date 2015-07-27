@@ -49,11 +49,11 @@
 		
 		<!-- Favicons
 		================================================== -->
-		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{{ asset('assets/ico/favicon.ico') }}}">
-		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{{ asset('assets/ico/favicon.ico') }}}">
-		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{{ asset('assets/ico/favicon.ico') }}}">
-		<link rel="apple-touch-icon-precomposed" href="{{{ asset('assets/ico/favicon.ico') }}}">
-		<link rel="shortcut icon" href="{{{ asset('assets/ico/favicon.ico') }}}">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{{ asset('preparebuild/assets/images/favicon.ico') }}}">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{{ asset('preparebuild/assets/images/favicon.ico') }}}">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{{ asset('preparebuild/assets/images/favicon.ico') }}}">
+		<link rel="apple-touch-icon-precomposed" href="{{{ asset('preparebuild/assets/images/favicon.ico') }}}">
+		<link rel="shortcut icon" href="{{{ asset('preparebuild/assets/images/favicon.ico') }}}">
 	</head>
 	@section('bodyhead')	
 	<body>
