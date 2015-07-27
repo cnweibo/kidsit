@@ -8,7 +8,7 @@ use Kidsit\Http\Requests;
 use Kidsit\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\View;
-use Kidsit\Permission;
+use Kidsit\models\rbac\Permission;
 use Bllim\Datatables\Facade\Datatables;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;

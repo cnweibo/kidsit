@@ -1,6 +1,6 @@
 <?php
 
-namespace Kidsit;
+namespace Kidsit\models\rbac;
 
 // use Illuminate\Database\Eloquent\Model;
 
