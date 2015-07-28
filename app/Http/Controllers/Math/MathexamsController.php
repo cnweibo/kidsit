@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use Kidsit\Http\Requests;
 use Kidsit\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
-
+use Kidsit\Models\Math\Mathexam;
+use Kidsit\models\math\Mathsum2;
+use Illuminate\Support\Facades\Input;
 class MathexamsController extends Controller
 {
 

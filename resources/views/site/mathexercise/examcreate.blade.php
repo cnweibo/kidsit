@@ -12,8 +12,8 @@
 @stop
 @section('css')
 	<link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/printmath.css') }}" media="print"/>
-	<link rel="stylesheet" href={{ asset('htmlapp/libs/angular-busy/dist/angular-busy.css')}}>
-	<link rel="stylesheet" href="{{asset('htmlapp/assets/custom.css')}}">
+	<link rel="stylesheet" href={{ asset('preparebuild/assets/libs/angular-busy/dist/angular-busy.css')}}>
+	<link rel="stylesheet" href={{asset('preparebuild/assets/css/custom.css')}}>
 @stop
 @section('bodyhead')
 <body style="position:relative" ng-app="kidsitApp" ng-controller="kidsitAppCtrl">
@@ -326,23 +326,25 @@
 
 @section('scripts')
 	
-	<script type="text/javascript" src="{{asset('htmlapp/libs/jquery/dist/jquery.min.js')}}"></script>
-	<script type="text/javascript" src="{{asset('htmlapp/libs/angular/angular.js')}}"></script>
-	<script type="text/javascript" src="{{asset('htmlapp/libs/angular-route/angular-route.js')}}"></script>
-	<script type="text/javascript" src="{{asset('htmlapp/libs/angular-timer.js')}}"></script>
-	<script type="text/javascript" src="{{asset('htmlapp/libs/angular-animate/angular-animate.js')}}"></script>
-	<script type="text/javascript" src="{{asset('htmlapp/libs/angular-toastr/dist/angular-toastr.js')}}"></script>	
+	<script type="text/javascript" src="{{asset('preparebuild/assets/libs/jquery/dist/jquery.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('preparebuild/assets/libs/angular/angular.js')}}"></script>
+	<script type="text/javascript" src="{{asset('preparebuild/assets/libs/angular-route/angular-route.js')}}"></script>
+	<script type="text/javascript" src="{{asset('preparebuild/assets/libs/humanize-duration/humanize-duration.js')}}"></script>
+	<script type="text/javascript" src="{{asset('preparebuild/assets/libs/momentjs/moment.js')}}"></script>
+	<script type="text/javascript" src="{{asset('preparebuild/assets/libs/angular-timer/dist/angular-timer.js')}}"></script>
+	<script type="text/javascript" src="{{asset('preparebuild/assets/libs/angular-animate/angular-animate.js')}}"></script>
+	<script type="text/javascript" src="{{asset('preparebuild/assets/libs/angular-toastr/dist/angular-toastr.js')}}"></script>	
 	<script type="text/javascript" src="{{asset('htmlapp/syscommon/kidsitanimatelib.js')}}"></script>
-	<script type="text/javascript" src="{{asset('htmlapp/libs/angular-bootstrap/ui-bootstrap-tpls.js')}}"></script>
-	<script type="text/javascript" src="{{asset('htmlapp/libs/TweenMax.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('preparebuild/assets/libs/angular-bootstrap/ui-bootstrap-tpls.js')}}"></script>
+	<script type="text/javascript" src="{{asset('preparebuild/assets/libs/greensock/src/minified/TweenMax.min.js')}}"></script>
 
-    <script type="text/javascript" src="{{ asset('htmlapp/libs/angular-busy/dist/angular-busy.js') }}"></script>
-	<script type="text/javascript" src="{{asset('htmlapp/libs/ng-pageslide/dist/angular-pageslide-directive.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('preparebuild/assets/libs/angular-busy/dist/angular-busy.js') }}"></script>
+	<script type="text/javascript" src="{{asset('preparebuild/assets/libs/ng-pageslide/dist/angular-pageslide-directive.js')}}"></script>
 	
 	<script type="text/javascript" src="{{asset('htmlapp/examApp/improvementCharts.ctrl.js')}}"></script>	
-	<script type="text/javascript" src="{{asset('htmlapp/libs/highcharts/index.js')}}"></script>
+	<script type="text/javascript" src="{{asset('preparebuild/assets/libs/highcharts/index.js')}}"></script>
 
-	<script type="text/javascript" src="{{asset('htmlapp/libs/highcharts-ng/dist/highcharts-ng.js')}}"></script>
+	<script type="text/javascript" src="{{asset('preparebuild/assets/libs/highcharts-ng/dist/highcharts-ng.js')}}"></script>
 
 
 
