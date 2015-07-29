@@ -19,7 +19,8 @@ var timerModule = angular.module('timer', [])
         autoStart: '&autoStart',
         language: '@?',
         fallback: '@?',
-        maxTimeUnit: '='
+        maxTimeUnit: '=',
+        exportedTimerVal: '='
       },
       controller: ['$scope', '$element', '$attrs', '$timeout', 'I18nService', '$interpolate', 'progressBarService', function ($scope, $element, $attrs, $timeout, I18nService, $interpolate, progressBarService) {
 
@@ -237,6 +238,11 @@ var timerModule = angular.module('timer', [])
           $scope.ddays = $scope.days < 10 ? '0' + $scope.days : $scope.days;
           $scope.mmonths = $scope.months < 10 ? '0' + $scope.months : $scope.months;
           $scope.yyears = $scope.years < 10 ? '0' + $scope.years : $scope.years;
+
+          // exported the time values outside the directive
+          $scope.exportedTimerVal.mminutes = $scope.mminutes;
+          $scope.exportedTimerVal.sseconds = $scope.sseconds;
+          $scope.exportedTimerVal.hhours = $scope.hhours;
 
         }
 
