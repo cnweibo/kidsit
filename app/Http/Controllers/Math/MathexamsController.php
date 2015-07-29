@@ -12,6 +12,7 @@ use Kidsit\models\math\Mathsum1;
 use Kidsit\models\math\Mathsum2;
 use Kidsit\models\math\Mathsum4;
 use Kidsit\models\math\Mathmultiply1;
+use Kidsit\models\math\Mathsummultiply;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Log;
 

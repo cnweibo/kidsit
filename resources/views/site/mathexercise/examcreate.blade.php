@@ -189,9 +189,9 @@
 			<div class="mathsidebar" ng-cloak>
 				<a href="javascript:window.print()" class="sidebarhref" tooltip-placement="left" tooltip="打印本试卷"><span class="glyphicon glyphicon-print fa-2x"></span></a>
 				<!-- toggleShowSetting($event); -->
-				<a href="#" data-ng-click="toggleShowSetting($event)" class="sidebarhref" tooltip-placement="left" tooltip="打开配置面板，配置当前试卷答题模式，或按需调阅新试卷"><span class="glyphicon glyphicon-cog fa-2x"></span></a>
+				<a href="#" data-ng-click="toggleShowSetting($event)" class="sidebarhref" tooltip-placement="left" tooltip="配置试卷"><span class="glyphicon glyphicon-cog fa-2x"></span></a>
 				<div toggle-answer-view-and-animcate trigger="mathexam.showAnswer" ></div>
-				<a href="#" data-ng-click="toggleshowReports($event)" class="sidebarhref" tooltip-placement="left" tooltip="学习成绩和进度报告" data-trigger="mouseenter"><span class="glyphicon glyphicon-stats fa-2x"></span></a>
+				<a href="#" data-ng-click="toggleshowReports($event)" class="sidebarhref" tooltip-placement="left" tooltip="进度报告" data-trigger="mouseenter"><span class="glyphicon glyphicon-stats fa-2x"></span></a>
 			</div>
 			<div pageslide ps-speed="0.5" ps-size="300px" ps-open="isOpened" ps-custom-right="41px" class="pageslidesidebar">
 			        <div ng-cloak ng-show="isOpened" class="text-left sidetoolbar">

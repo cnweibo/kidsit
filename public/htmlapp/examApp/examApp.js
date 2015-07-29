@@ -38,7 +38,7 @@ var kidsitAppCtrl = app.controller('kidsitAppCtrl', ['$scope', '$rootScope', '$h
 	$scope.mathexam = {
 		'mathQuantity' : 50,
 		'mathDifficulty': 1,
-		'mathDigitNumbers': 2,
+		'mathDigitNumbers': 1,
 		'mathCategory': 'plus',
 		'timetodo':10,
 		'showAnswer': false,
