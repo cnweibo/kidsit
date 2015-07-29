@@ -75,7 +75,6 @@
                     <ul class="nav navbar-nav"  id="top-nav-left">
 						<li {{set_active('/')}}><a href="{{{ URL::to('') }}}">首页</a></li>
 						<li {{set_active('bishun')}}><a href="{{{ URL::to('/bishun') }}}">笔顺学习</a></li>
-						<li {{set_active('pinyin')}}><a href="{{{ URL::to('/pinyin') }}}">拼音速学</a></li>
 						<li {{set_active('game')}}><a href="{{{ URL::to('/game') }}}">键盘练习</a></li>
 						<li {{set_active('yinbiao')}}><a href="{{{ URL::to('yinbiaocategory') }}}">英语音标</a></li>
 						<li {{set_active('exercise')}}><a href="{{{ URL::to('math/exams') }}}">中小学同步课堂</a></li>						
