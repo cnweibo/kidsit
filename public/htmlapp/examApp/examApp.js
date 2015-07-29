@@ -417,7 +417,6 @@ app.directive("checkResult",function(){
 		scope. hasSubmittedAnsweres = false;
 		scope.checkData = function(row,answer){
 			var result = null;
-			console.log(row);
 			if (row.operand3){
 				// summultiply
 				if (row.invisualcolumns == "1"){
