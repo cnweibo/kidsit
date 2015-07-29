@@ -31,6 +31,9 @@ Route::group(array('prefix' => 'math'), function(){
     Route::get('sumpopulate2_12', 'Math\MathsumpopulateController@index2_12');
     Route::get('sumpopulate2_21', 'Math\MathsumpopulateController@index2_21');
     Route::get('sumpopulate2_22', 'Math\MathsumpopulateController@index2_22');
+    
+    Route::get('mathmulti1_populate','Math\MathmultiplypopulateController@index1');
+    
     // exam create/list routes
     Route::get('exams/create', 'Math\MathexamsController@create' );
     Route::get('exams/submitanswer','Math\MathexamsController@submitAnswer');
