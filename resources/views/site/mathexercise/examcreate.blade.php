@@ -11,7 +11,7 @@
 	@parent 
 @stop
 @section('css')
-	<link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/printmath.css') }}" media="print"/>
+	<link rel="stylesheet" type="text/css" href="{{ asset('preparebuild/assets/css/printmath.css') }}" media="print"/>
 	<link rel="stylesheet" href={{ asset('preparebuild/assets/libs/angular-busy/dist/angular-busy.css')}}>
 	<link rel="stylesheet" href={{asset('preparebuild/assets/css/custom.css')}}>
 @stop

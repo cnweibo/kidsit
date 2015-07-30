@@ -258,8 +258,7 @@ article.mathexerciseitem{
   font-size: 0.8em
 }
 #examcontainer .answerTF{
-  display: inline-block;                                                                                                                                                                
-  width: 40px; 
+
 }
 #examcontainer .answerInput{
   width:40px;
