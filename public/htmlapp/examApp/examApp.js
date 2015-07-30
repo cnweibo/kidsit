@@ -1,22 +1,22 @@
 // examApp.js created by zhenghua@kidsit.cn on 08/08/2014 
 (function () {
+	var basetempurl = window.location.origin;
 var app = angular.module('kidsitApp', ['ui.bootstrap','kidsitAnimate','timer','toastr','ngRoute',
 										'cgBusy','pageslide-directive','improvementCharts']);
 app.config(['$interpolateProvider', '$routeProvider'  , function($interpolateProvider,$routeProvider) {
-	var basetempurl = "http://kidsit.cn:8000/htmlapp"
 	
 	$interpolateProvider.startSymbol('[[');
 	$interpolateProvider.endSymbol(']]');
 
         $routeProvider.when('/plus',
             {
-                templateUrl: basetempurl+'/assets/atpls/examplus.html'
+                templateUrl: basetempurl+'/htmlapp/assets/atpls/examplus.html'
             })
 			.when('/times',{
-				templateUrl: basetempurl+'/assets/atpls/examtimes.html'
+				templateUrl: basetempurl+'/htmlapp/assets/atpls/examtimes.html'
 			})
 			.when('/summmultiply',{
-				templateUrl: basetempurl+'/assets/atpls/examsummultiply.html'
+				templateUrl: basetempurl+'/htmlapp/assets/atpls/examsummultiply.html'
 			})
 			.otherwise({redirectTo: '/plus'});
 }]);
