@@ -14,7 +14,7 @@
 		vm.createGrade = function () {
 			var promise;
 			vm.newGrade._token = $window._token;
-			vm.currentPromise = promise = vhttp.store("http://kidsit.cn/admin/api/system/grade",vm.newGrade);
+			vm.currentPromise = promise = vhttp.store(basetempurl + "/admin/api/system/grade",vm.newGrade);
 			promise.then(
 				function (gradesdata) {
 					if (gradesdata.resp.code!==0){
