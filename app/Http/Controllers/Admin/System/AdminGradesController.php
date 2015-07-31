@@ -9,7 +9,7 @@ use Kidsit\Models\System\Grade;
 use Illuminate\Support\Facades\Response;
 use Kidsit\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
-
+use Illuminate\Support\Facades\Input;
 class AdminGradesController extends Controller
 {
     /**
