@@ -1,7 +1,8 @@
 // gradeApp.mod.js created by zhenghua@kidsit.cn on 17/01/2015 
+var basetempurl = window.location.origin;
 (function () {
     'use strict';
-    document.write("<base href='http://kidsit.cn/admin/system/grade' />");
+    document.write('<base href=' + basetempurl + '/admin/system/grade' +'/>');
     var assetbase = "http://kidsit.cn/htmlapp/system/grade/";
     var indexpagebase = "http://kidsit.cn/admin/system/grade#";
     angular.module('gradeApp',['ngRoute','khttp','cgBusy','xeditable','toastr','ui.utils','containerCtrl'])
@@ -33,8 +34,8 @@
             toastClass: 'toast'
           });
 
-        var basetempurl = window.location.origin;
-        
+
+        console.log(window.location);
 		$routeProvider.when('/create', {templateUrl: basetempurl+ '/htmlapp/system/grade/partials/create.html', controller: 'gradeCreateCtrl'});
 		$routeProvider.when('/grade-list', {templateUrl: basetempurl+ '/htmlapp/system/grade/partials/index.html'});
 		$routeProvider.when('/grade-detail/:id', {templateUrl: basetempurl+ '/htmlapp/system/grade/partials/show.html', controller: 'gradeDetailCtrl'});
