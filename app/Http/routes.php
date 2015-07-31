@@ -107,7 +107,17 @@ Route::group(array('prefix' => 'admin' , 'middleware' => 'isAdmin'), function()
     Route::post('permissions/{permission}/delete', 'Admin\AdminPermissionsController@postDelete');
     Route::controller('permissions', 'Admin\AdminPermissionsController');
 
-
+    // system grade management
+    // global grade information admin apis for data feeding
+    Route::group(array('prefix' => 'api'), function(){
+        Route::resource('system/grade', 'Admin\System\AdminGradesController');
+    });
+    // Following is the GET request for laravel rendered html page funcioning as angular template partials
+    Route::get('system/grade/', 'Admin\System\AdminGradesController@indexpage'); // index page
+    // Route::get('system/grade/create', 'Admin\System\AdminGradesController@create'); // create page
+    // Route::get('system/grade/{id}','Admin\System\AdminGradesController@show'); // show page
+    Route::get('system/grade/{id}/delete','Admin\System\AdminGradesController@getDelete'); //delete page
+    Route::get('system/grade/data', 'Admin\System\AdminGradesController@getData'); // ajax data feeding page
 
     // admin dashboard  Note:This must be the last route!!!
     Route::controller('/', 'Admin\AdminDashboardController');
