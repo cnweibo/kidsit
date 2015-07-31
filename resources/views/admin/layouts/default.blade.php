@@ -148,7 +148,7 @@
     					</li>
     				</ul>
     				<ul class="nav navbar-nav pull-right" id="top-nav-right">
-    					<li><a href="{{{ URL::to('/') }}}">View Homepage</a></li>
+    					<li><a href="{{{ URL::to('/') }}}">前台</a></li>
     					<li class="divider-vertical"></li>
     					<li class="dropdown">
     							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
