@@ -2,7 +2,9 @@
 
 namespace Kidsit\Providers;
 
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Log;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,6 +16,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        if (config('app.debug')){
+            Event::listen('illuminate.query', function ($query) {
+                Log::info("query db:" . $query);
+            });
+        }
     }
 
     /**
