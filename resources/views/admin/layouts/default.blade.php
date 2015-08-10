@@ -48,7 +48,7 @@
     <link rel="stylesheet" href="{{asset('preparebuild/assets/libs/bootstrap/dist/css/bootstrap-theme.min.css')}}">
     <link rel="stylesheet" href="{{asset('preparebuild/assets/libs/code-prettify/src/prettify.css')}}">
     <link rel="stylesheet" href="{{asset('preparebuild/assets/libs/bootstrap-wysihtml5/dist/bootstrap-wysihtml5-0.0.2.css')}}">
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="{{asset('preparebuild/assets/libs/datatables/media/css/jquery.dataTables.min.css')}}">
     <link rel="stylesheet" href="{{asset('preparebuild/assets/libs/jquery-colorbox/example2/colorbox.css')}}">
     <link rel="stylesheet" href="{{asset('build/fonts/shockiconedu/stylesheet.css')}}">
     <link rel="stylesheet" href="{{asset('preparebuild/assets/css/custom.css')}}">
