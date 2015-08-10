@@ -11,8 +11,8 @@
 			</h3>
 		</div>
 
-		<!-- Content -->
-		<form method="POST"  accept-charset="UTF-8" ui-keyup="{'enter':'vm.createGrade()'}">
+		<!-- Content ui-keyup="{'enter':'vm.createGrade()'}" -->
+		<form method="POST"  accept-charset="UTF-8" ng-submit="vm.createGrade()">
 			<div class="form-group">
 				<label for="skillgradetitle">年级</label>			
 				<input class="form-control" autofocus="autofocus" name="skillgradetitle" type="text" id="skillgradetitle" ng-model="vm.newGrade.skillgradetitle">			
@@ -21,7 +21,8 @@
 				<label for="skillgradedescription">详细描述</label>			
 				<input class="form-control" name="skillgradedescription" type="text" id="skillgradedescription" ng-model="vm.newGrade.skillgradedescription">		
 			</div>
-			<input class="btn btn-primary" type="button" value="提交" ng-click="vm.createGrade()">	
+			<input class="btn btn-primary" type="button" value="提交" ng-click="vm.createGrade()">
+			<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>	
 		</form>
 		<!-- ./ content -->
 
