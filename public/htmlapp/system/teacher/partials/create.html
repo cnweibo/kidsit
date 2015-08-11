@@ -12,7 +12,7 @@
 		</div>
 
 		<!-- Content -->
-		<form method="POST" action="http://kidsit.cn/admin/api/system/teacher" accept-charset="UTF-8" ui-keyup="{'enter':'vm.createTeacher()'}">
+		<form method="POST" accept-charset="UTF-8" ng-submit="vm.createTeacher()">
 			<div class="form-group">
 				<label for="name">姓名</label>			
 				<input class="form-control" autofocus="autofocus" name="name" type="text" id="name" ng-model="vm.newTeacher.name">			
@@ -42,6 +42,7 @@
 				<input class="form-control" name="password" type="text" id="password" ng-model="vm.newTeacher.password">		
 			</div>
 			<input class="btn btn-primary" type="button" value="提交" ng-click="vm.createTeacher()">	
+			<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>	
 		</form>
 		<!-- ./ content -->
 
