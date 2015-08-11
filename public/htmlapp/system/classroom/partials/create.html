@@ -12,7 +12,7 @@
 		</div>
 
 		<!-- Content -->
-		<form name="classroomCreateForm" method="POST" action="http://kidsit.cn/admin/api/system/classroom" accept-charset="UTF-8" ui-keyup="{'enter':'vm.createClassroom(classroomCreateForm)'}" novalidate>
+		<form name="classroomCreateForm" method="POST" accept-charset="UTF-8" ng-submit="vm.createClassroom(classroomCreateForm)" novalidate>
 			<div class="form-group" ng-class="{'has-error':classroomCreateForm.sysname.$invalid && (classroomCreateForm.sysname.$dirty || classroomCreateForm.sysname.$touched)}">
 				<label for="sysname">系统标示名称:</label>			
 				<input class="form-control" dbrans-validate-async="{canUse: canUseThisName}" autofocus="autofocus" name="sysname" type="text" id="sysname" ng-model="vm.newClassroom.sysname" ng-model-options="{ debounce: 1000 }" required ng-minlength="6" ng-maxlength="20">
