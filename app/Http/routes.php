@@ -128,6 +128,16 @@ Route::group(array('prefix' => 'admin' , 'middleware' => 'isAdmin'), function()
     Route::get('system/teacher/', 'Admin\System\AdminTeachersController@indexpage'); // index page
     Route::get('system/teacher/{id}/delete','Admin\System\AdminTeachersController@getDelete'); //delete page
     Route::get('system/teacher/data', 'Admin\System\AdminTeachersController@getData'); // ajax data feeding page
+    // global classroom information admin apis for data feeding
+    Route::group(array('prefix' => 'api'), function(){
+        Route::resource('system/classroom', 'Admin\System\AdminClassroomsController');
+    });
+    // Following is the GET request for laravel rendered html page funcioning as angular template partials
+    Route::get('system/classroom/', 'Admin\System\AdminClassroomsController@indexpage'); // index page
+    Route::get('system/classroom/{id}/delete','Admin\System\AdminClassroomsController@getDelete'); //delete page
+    Route::get('system/classroom/data', 'Admin\System\AdminClassroomsController@getData'); // ajax data feeding page
+
+
 
     // admin dashboard  Note:This must be the last route!!!
     Route::controller('/', 'Admin\AdminDashboardController');

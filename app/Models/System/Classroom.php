@@ -9,10 +9,10 @@ class Classroom extends Model
     protected $fillable = [];
     public function owner()
     {
-        return $this->belongsTo('Teacher','teacher_id')->select(array('id', 'name','sysloginname'));
+        return $this->belongsTo('Kidsit\Models\System\Teacher','teacher_id')->select(array('id', 'name','sysloginname'));
     }
     public function students()
     {
-        return $this->hasMany('Student')->select(array('id','name','classroom_id'));
+        return $this->hasMany('Kidsit\Models\System\Student')->select(array('id','name','classroom_id'));
     }
 }
