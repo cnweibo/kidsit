@@ -13,7 +13,7 @@
         vm.createTeacher = function () {
 			var promise;
 			vm.newTeacher._token = $window._token;
-			vm.currentPromise = promise = khttp.store("http://kidsit.cn/admin/api/system/teacher",vm.newTeacher);
+			vm.currentPromise = promise = khttp.store(basetempurl+"/admin/api/system/teacher",vm.newTeacher);
 			promise.then(
 				function (teachersdata) {
 					if (teachersdata.resp.code!==0){

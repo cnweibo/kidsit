@@ -2,7 +2,7 @@
 (function () {
     'use strict';
 	window.basetempurl = window.location.origin;
-    document.write('<base href=' + basetempurl + '/admin/system/grade' +'/>');
+    document.write('<base href=' + basetempurl + '/admin/system/teacher/>');
     // var assetbase = "http://kidsit.cn/htmlapp/system/teacher/";
     // var indexpagebase = "http://kidsit.cn/admin/system/teacher#";
 
