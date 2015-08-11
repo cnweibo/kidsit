@@ -19,7 +19,7 @@
 					// {id: 4,sysloginname:"zhaowu"},
 		   //      ];
         var promise;
-        vm.currentPromise = promise = khttp.getAll("http://kidsit.cn/admin/api/system/teacher/");
+        vm.currentPromise = promise = khttp.getAll(basetempurl+"/admin/api/system/teacher/");
         promise.then(
             function(teachersdata) {/*success*/
 					$scope.teachersdata = vm.teachersOrginal = teachersdata.resp.data;
@@ -36,7 +36,7 @@
 			}
 			var promise;
 			vm.newClassroom._token = $window._token;
-			vm.currentPromise = promise = khttp.store("http://kidsit.cn/admin/api/system/classroom",vm.newClassroom);
+			vm.currentPromise = promise = khttp.store(basetempurl+"/admin/api/system/classroom",vm.newClassroom);
 			promise.then(
 				function (classroomsdata) {
 					if (classroomsdata.resp.code!==0){
@@ -57,7 +57,7 @@
         $scope.canUseThisName = function (thisname) {
 			var d = $q.defer();
 			var promise;
-			vm.verifysysnamepromise = promise = khttp.getOne('http://kidsit.cn/admin/api/system/classroom/',thisname);
+			vm.verifysysnamepromise = promise = khttp.getOne(basetempurl+'/admin/api/system/classroom/',thisname);
 			promise.then(
 				function (a) {
 					return d.reject();

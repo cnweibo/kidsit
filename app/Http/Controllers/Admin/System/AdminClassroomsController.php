@@ -5,6 +5,7 @@ namespace Kidsit\Http\Controllers\Admin\System;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Input;
 
 use Kidsit\Http\Requests;
 use Kidsit\Http\Controllers\Controller;

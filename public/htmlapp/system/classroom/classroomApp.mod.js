@@ -1,7 +1,7 @@
 // classroomApp.mod.js created by zhenghua@kidsit.cn on 26/01/2015 
-var basetempurl = window.location.origin;
 (function () {
     'use strict';
+    window.basetempurl = window.location.origin;
     document.write('<base href=' + basetempurl + '/admin/system/classroom' +'/>');
 
     var assetbase = "http://kidsit.cn/htmlapp/system/classroom/";
