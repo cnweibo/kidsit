@@ -9,7 +9,7 @@ class Student extends Model
 	protected $fillable = [];
 	public function belongingclass()
 	{
-		return $this->belongsTo('Classroom','classroom_id')->select('id','sysname');
+		return $this->belongsTo('Kidsit\Models\System\Classroom','classroom_id')->select('id','sysname');
 	}
 	public function mathscore()
 	{
