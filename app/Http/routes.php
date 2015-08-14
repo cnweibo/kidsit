@@ -145,7 +145,34 @@ Route::group(array('prefix' => 'admin' , 'middleware' => 'isAdmin'), function()
     Route::get('system/student/{id}/delete','Admin\System\AdminStudentsController@getDelete'); //delete page
     Route::get('system/student/data', 'Admin\System\AdminStudentsController@getData'); // ajax data feeding page
 
+// the math indexpage for all math admin features 
+    Route::get('math/', 'Admin\Math\AdminMathIndexController@indexpage'); // index page
 
+    // global mathskillcat information admin apis for data feeding
+    Route::group(array('prefix' => 'api'), function(){
+        Route::resource('math/skillcat', 'Admin\Math\AdminMathskillcatsController');
+    });
+    // Following is the GET request for laravel rendered html page funcioning as angular template partials
+    Route::get('math/skillcat/', 'Admin\Math\AdminMathskillcatsController@indexpage'); // index page
+    Route::get('math/skillcat/{id}/delete','Admin\Math\AdminMathskillcatsController@getDelete'); //delete page
+    Route::get('math/skillcat/data', 'Admin\Math\AdminMathskillcatsController@getData'); // ajax data feeding page
+    // global mathskill information admin apis for data feeding
+    Route::group(array('prefix' => 'api'), function(){
+        Route::resource('math/skill', 'Admin\Math\AdminMathskillsController');
+    });
+    // Following is the GET request for laravel rendered html page funcioning as angular template partials
+    Route::get('math/skill/', 'Admin\Math\AdminMathskillsController@indexpage'); // index page
+    Route::get('math/skill/{id}/delete','Admin\Math\AdminMathskillsController@getDelete'); //delete page
+    Route::get('math/skill/data', 'Admin\Math\AdminMathskillsController@getData'); // ajax data feeding page
+
+    // math relative default resource admin
+    // Route::resource('math/skillcat','Admin\Math\AdminMathskillcatsController');
+    // Route::resource('math/skill','Admin\Math\AdminMathskillsController');
+    // Route::resource('math/exercisecat', 'AdminMathexercisecatController');
+    // Route::resource('math/exercise', 'AdminMathexerciseController');
+    // Route::resource('math/opdata', 'AdminMathexerciseopdatasController');
+    // Route::resource('math/opsession', 'AdminMathexerciseopsessionsController');
+    Route::resource('math/difficulty', 'AdminMathexercisedifficultyController');
     // admin dashboard  Note:This must be the last route!!!
     Route::controller('/', 'Admin\AdminDashboardController');
 
