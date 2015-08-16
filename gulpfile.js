@@ -330,6 +330,109 @@ gulp.task('adminteacherapp-build',['adminteacherapp-injectbuildjs'],function(){
     return;
 });
 
+
+// adminClassroomAPP js build
+gulp.task('adminclassroomapp-dev',function () {
+    log('injecting dev dependency into  admin.system.classroom.index.blade.php ...');
+    var adminclassroomappjs = config.adminclassroomappdevjs;
+    var targetlocation = './resources/views/admin/system/classrooms/';
+    var targethtml = gulp.src('./resources/views/admin/system/classrooms/index.blade.php');
+    var sources = gulp.src(adminclassroomappjs, {read: false});
+    return targethtml.pipe(inject(sources.pipe(expect(adminclassroomappjs)).pipe(printfileinfo()),{
+        // remove the public relative path
+        transform: function (filepath) {
+        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+    }
+    }))
+    .pipe(gulp.dest(targetlocation));
+});
+gulp.task('adminclassroomapp-injectbuildjs',['adminclassroomapp-buildminjs'], function () {
+    log('injecting build js into admin.system.classroom.index.blade.php ...');
+    var adminclassroomappminjs = config.adminclassroomappbuildjs;
+    var targetlocation = './resources/views/admin/system/classrooms/';
+    var targethtml = gulp.src(targetlocation+ 'index.blade.php');
+    var sources = gulp.src(jsbuildpath+adminclassroomappminjs, {read: false});
+    return targethtml.pipe(inject(sources.pipe(expect(jsbuildpath+adminclassroomappminjs)).pipe(printfileinfo()),{
+        // remove the public relative path
+        transform: function (filepath) {
+        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+    }
+    }))
+    .pipe(gulp.dest(targetlocation));
+});
+gulp.task('adminclassroomapp-buildminjs',function(){
+
+    log('Building adminclassroomapp js to public/build for production...');
+    var adminclassroomappjs = config.adminclassroomappdevjs;
+    var adminclassroomappminjs = config.adminclassroomappbuildjs;
+    log(adminclassroomappminjs);
+    return gulp
+        .src(adminclassroomappjs)
+        .pipe(expect(adminclassroomappjs))
+        .pipe(printfileinfo())
+        .pipe(concat(adminclassroomappminjs))
+        .pipe(ngAnnotate())
+        .pipe(uglify())
+        .pipe(gulp.dest('public/build/js'));
+});
+gulp.task('adminclassroomapp-build',['adminclassroomapp-injectbuildjs'],function(){
+
+    log('Building adminclassroomapp dependency done ...');
+    
+    return;
+});
+
+
+// adminStudentAPP js build
+gulp.task('adminstudentapp-dev',function () {
+    log('injecting dev dependency into  admin.system.student.index.blade.php ...');
+    var adminstudentappjs = config.adminstudentappdevjs;
+    var targetlocation = './resources/views/admin/system/students/';
+    var targethtml = gulp.src('./resources/views/admin/system/students/index.blade.php');
+    var sources = gulp.src(adminstudentappjs, {read: false});
+    return targethtml.pipe(inject(sources.pipe(expect(adminstudentappjs)).pipe(printfileinfo()),{
+        // remove the public relative path
+        transform: function (filepath) {
+        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+    }
+    }))
+    .pipe(gulp.dest(targetlocation));
+});
+gulp.task('adminstudentapp-injectbuildjs',['adminstudentapp-buildminjs'], function () {
+    log('injecting build js into admin.system.student.index.blade.php ...');
+    var adminstudentappminjs = config.adminstudentappbuildjs;
+    var targetlocation = './resources/views/admin/system/students/';
+    var targethtml = gulp.src(targetlocation+ 'index.blade.php');
+    var sources = gulp.src(jsbuildpath+adminstudentappminjs, {read: false});
+    return targethtml.pipe(inject(sources.pipe(expect(jsbuildpath+adminstudentappminjs)).pipe(printfileinfo()),{
+        // remove the public relative path
+        transform: function (filepath) {
+        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+    }
+    }))
+    .pipe(gulp.dest(targetlocation));
+});
+gulp.task('adminstudentapp-buildminjs',function(){
+
+    log('Building adminstudentapp js to public/build for production...');
+    var adminstudentappjs = config.adminstudentappdevjs;
+    var adminstudentappminjs = config.adminstudentappbuildjs;
+    log(adminstudentappminjs);
+    return gulp
+        .src(adminstudentappjs)
+        .pipe(expect(adminstudentappjs))
+        .pipe(printfileinfo())
+        .pipe(concat(adminstudentappminjs))
+        .pipe(ngAnnotate())
+        .pipe(uglify())
+        .pipe(gulp.dest('public/build/js'));
+});
+gulp.task('adminstudentapp-build',['adminstudentapp-injectbuildjs'],function(){
+
+    log('Building adminstudentapp dependency done ...');
+    
+    return;
+});
 // support functions
 
 /**
