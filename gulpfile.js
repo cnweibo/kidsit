@@ -1,3 +1,4 @@
+var config = require('./gulp.config.js')();
 var gulp = require('gulp');
 var concat =require('gulp-concat');
 var uglify = require('gulp-uglify');
@@ -175,11 +176,7 @@ gulp.task('buildsiteindexjs',function(){
 
 gulp.task('yinbiaoappdev',function () {
     log('injecting dev dependency into site.yinbiao.show.blade.php ...');
-    var yinbiaojsfiles = ["public/preparebuild/assets/libs/jquery/dist/jquery.min.js","public/preparebuild/assets/libs/jquery-color/jquery.color.js","public/preparebuild/assets/libs/bootstrap/dist/bootstrap.min.js","public/htmlapp/syscommon/custom.js","public/preparebuild/assets/libs/angular/angular.min.js",
-                        "public/preparebuild/assets/libs/angular-route/angular-route.min.js","public/htmlapp/yinbiaoApp/angularinit.js",
-                        "public/preparebuild/assets/libs/angular-bootstrap/ui-bootstrap-tpls.min.js","public/preparebuild/assets/libs/greensock/src/minified/TweenMax.min.js",
-                        "public/htmlapp/yinbiaoApp/highlightppattern.js","public/htmlapp/syscommon/kidsitanimatelib.js","public/htmlapp/yinbiaoApp/guestaddword.js",
-                        "public/preparebuild/assets/libs/angular-animate/angular-animate.min.js","public/htmlapp/yinbiaoApp/yinbiaoapp.js"];
+    var yinbiaojsfiles = config.yinbiaoappjs;
     var targetfile = './resources/views/site/yinbiao/';
     var targethtml = gulp.src('./resources/views/site/yinbiao/show.blade.php');
     var sources = gulp.src(yinbiaojsfiles, {read: false});
