@@ -1,6 +1,6 @@
 module.exports = function () {
 	var config = {
-		yinbiaoappjs: ["public/preparebuild/assets/libs/jquery/dist/jquery.min.js",
+		yinbiaoappdevjs: ["public/preparebuild/assets/libs/jquery/dist/jquery.min.js",
                         "public/preparebuild/assets/libs/jquery-color/jquery.color.js",
                         "public/preparebuild/assets/libs/bootstrap/dist/js/bootstrap.min.js",
                         "public/htmlapp/syscommon/custom.js",
@@ -13,7 +13,8 @@ module.exports = function () {
                         "public/htmlapp/syscommon/kidsitanimatelib.js",
                         "public/htmlapp/yinbiaoApp/guestaddword.js",
                         "public/preparebuild/assets/libs/angular-animate/angular-animate.min.js",
-                        "public/htmlapp/yinbiaoApp/yinbiaoapp.js"]
+                        "public/htmlapp/yinbiaoApp/yinbiaoapp.js"],
+                yinbiaoappbuildjs: ["public/build/js/yinbiaoApp.min.js"]        
 	};
 	return config;
 }

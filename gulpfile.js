@@ -7,6 +7,7 @@ var expect = require('gulp-expect-file');
 var printfileinfo = require('gulp-print');
 var inject = require('gulp-inject');
 var argv = require('yargs').argv;
+var ngAnnotate = require('gulp-ng-annotate');
 // lazy load gulp plugins
 var $ = require('gulp-load-plugins')({lazy: true});
 /**
@@ -174,9 +175,10 @@ gulp.task('buildsiteindexjs',function(){
         .pipe(gulp.dest('public/build/js'));
 });
 
-gulp.task('yinbiaoappdev',function () {
+// yinbiaoAPP js build
+gulp.task('yinbiaoapp-dev',function () {
     log('injecting dev dependency into site.yinbiao.show.blade.php ...');
-    var yinbiaojsfiles = config.yinbiaoappjs;
+    var yinbiaojsfiles = config.yinbiaoappdevjs;
     var targetfile = './resources/views/site/yinbiao/';
     var targethtml = gulp.src('./resources/views/site/yinbiao/show.blade.php');
     var sources = gulp.src(yinbiaojsfiles, {read: false});
@@ -187,6 +189,42 @@ gulp.task('yinbiaoappdev',function () {
     }
     }))
     .pipe(gulp.dest(targetfile));
+});
+
+gulp.task('yinbiaoapp-injectbuildjs',['yinbiaoapp-buildminjs'], function () {
+    log('injecting build js into site.yinbiao.show.blade.php ...');
+    var yinbiaojsfiles = config.yinbiaoappbuildjs;
+    var targetfile = './resources/views/site/yinbiao/';
+    var targethtml = gulp.src('./resources/views/site/yinbiao/show.blade.php');
+    var sources = gulp.src(yinbiaojsfiles, {read: false});
+    return targethtml.pipe(inject(sources.pipe(expect(yinbiaojsfiles)).pipe(printfileinfo()),{
+        // remove the public relative path
+        transform: function (filepath) {
+        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+    }
+    }))
+    .pipe(gulp.dest(targetfile));
+});
+
+gulp.task('yinbiaoapp-buildminjs',function(){
+
+    log('Building yinbiaoapp js to public/build for production...');
+    var yinbiaojsfiles = config.yinbiaoappdevjs;
+    return gulp
+        .src(yinbiaojsfiles)
+        .pipe(expect(yinbiaojsfiles))
+        .pipe(printfileinfo())
+        .pipe(concat('yinbiaoApp.min.js'))
+        .pipe(ngAnnotate())
+        .pipe(uglify())
+        .pipe(gulp.dest('public/build/js'));
+});
+
+gulp.task('yinbiaoapp-build',['yinbiaoapp-injectbuildjs'],function(){
+
+    log('Building yinbiaoapp dependency done ...');
+    
+    return;
 });
 // support functions
 
