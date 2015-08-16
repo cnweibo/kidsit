@@ -106,6 +106,18 @@
 @section('scripts')
 <!-- inject:js -->
 <script src="/preparebuild/assets/libs/jquery/dist/jquery.min.js"></script>
+<script src="/preparebuild/assets/libs/jquery-color/jquery.color.js"></script>
+<script src="/preparebuild/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/htmlapp/syscommon/custom.js"></script>
+<script src="/preparebuild/assets/libs/angular/angular.min.js"></script>
+<script src="/preparebuild/assets/libs/angular-route/angular-route.min.js"></script>
+<script src="/htmlapp/yinbiaoApp/angularinit.js"></script>
+<script src="/preparebuild/assets/libs/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="/preparebuild/assets/libs/greensock/src/minified/TweenMax.min.js"></script>
+<script src="/htmlapp/yinbiaoApp/highlightppattern.js"></script>
+<script src="/htmlapp/syscommon/kidsitanimatelib.js"></script>
+<script src="/htmlapp/yinbiaoApp/guestaddword.js"></script>
+<script src="/preparebuild/assets/libs/angular-animate/angular-animate.min.js"></script>
 <script src="/htmlapp/yinbiaoApp/yinbiaoapp.js"></script>
 <!-- endinject -->
 <!-- inject:css -->
