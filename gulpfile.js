@@ -13,6 +13,7 @@ var $ = require('gulp-load-plugins')({lazy: true});
 /**
  * List the available gulp tasks
  */
+var jsbuildpath = config.jsbuildpath;
 gulp.task('help', $.taskListing);
 gulp.task('default', ['help']);
 gulp.task('less',function(){
@@ -179,7 +180,7 @@ gulp.task('buildsiteindexjs',function(){
 gulp.task('yinbiaoapp-dev',function () {
     log('injecting dev dependency into site.yinbiao.show.blade.php ...');
     var yinbiaojsfiles = config.yinbiaoappdevjs;
-    var targetfile = './resources/views/site/yinbiao/';
+    var targetlocation = './resources/views/site/yinbiao/';
     var targethtml = gulp.src('./resources/views/site/yinbiao/show.blade.php');
     var sources = gulp.src(yinbiaojsfiles, {read: false});
     return targethtml.pipe(inject(sources.pipe(expect(yinbiaojsfiles)).pipe(printfileinfo()),{
@@ -188,13 +189,13 @@ gulp.task('yinbiaoapp-dev',function () {
         return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
     }
     }))
-    .pipe(gulp.dest(targetfile));
+    .pipe(gulp.dest(targetlocation));
 });
 
 gulp.task('yinbiaoapp-injectbuildjs',['yinbiaoapp-buildminjs'], function () {
     log('injecting build js into site.yinbiao.show.blade.php ...');
     var yinbiaojsfiles = config.yinbiaoappbuildjs;
-    var targetfile = './resources/views/site/yinbiao/';
+    var targetlocation = './resources/views/site/yinbiao/';
     var targethtml = gulp.src('./resources/views/site/yinbiao/show.blade.php');
     var sources = gulp.src(yinbiaojsfiles, {read: false});
     return targethtml.pipe(inject(sources.pipe(expect(yinbiaojsfiles)).pipe(printfileinfo()),{
@@ -203,7 +204,7 @@ gulp.task('yinbiaoapp-injectbuildjs',['yinbiaoapp-buildminjs'], function () {
         return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
     }
     }))
-    .pipe(gulp.dest(targetfile));
+    .pipe(gulp.dest(targetlocation));
 });
 
 gulp.task('yinbiaoapp-buildminjs',function(){
@@ -226,6 +227,61 @@ gulp.task('yinbiaoapp-build',['yinbiaoapp-injectbuildjs'],function(){
     
     return;
 });
+
+// adminGradeAPP js build
+gulp.task('admingradeapp-dev',function () {
+    log('injecting dev dependency into site.yinbiao.show.blade.php ...');
+    var admingradeappjs = config.admingradeappdevjs;
+    var targetlocation = './resources/views/admin/system/grades/';
+    var targethtml = gulp.src('./resources/views/admin/system/grades/index.blade.php');
+    var sources = gulp.src(admingradeappjs, {read: false});
+    return targethtml.pipe(inject(sources.pipe(expect(admingradeappjs)).pipe(printfileinfo()),{
+        // remove the public relative path
+        transform: function (filepath) {
+        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+    }
+    }))
+    .pipe(gulp.dest(targetlocation));
+});
+
+gulp.task('admingradeapp-injectbuildjs',['admingradeapp-buildminjs'], function () {
+    log('injecting build js into admin.system.grade.index.blade.php ...');
+    var admingradeappminjs = config.admingradeappbuildjs;
+    var targetlocation = './resources/views/admin/system/grades/';
+    var targethtml = gulp.src(targetlocation+ 'index.blade.php');
+    var sources = gulp.src(jsbuildpath+admingradeappminjs, {read: false});
+    return targethtml.pipe(inject(sources.pipe(expect(jsbuildpath+admingradeappminjs)).pipe(printfileinfo()),{
+        // remove the public relative path
+        transform: function (filepath) {
+        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+    }
+    }))
+    .pipe(gulp.dest(targetlocation));
+});
+
+gulp.task('admingradeapp-buildminjs',function(){
+
+    log('Building admingradeapp js to public/build for production...');
+    var admingradeappjs = config.admingradeappdevjs;
+    var admingradeappminjs = config.admingradeappbuildjs;
+    log(admingradeappminjs);
+    return gulp
+        .src(admingradeappjs)
+        .pipe(expect(admingradeappjs))
+        .pipe(printfileinfo())
+        .pipe(concat(admingradeappminjs))
+        .pipe(ngAnnotate())
+        .pipe(uglify())
+        .pipe(gulp.dest('public/build/js'));
+});
+
+gulp.task('admingradeapp-build',['admingradeapp-injectbuildjs'],function(){
+
+    log('Building admingradeapp dependency done ...');
+    
+    return;
+});
+
 // support functions
 
 /**
