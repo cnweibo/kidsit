@@ -37,7 +37,31 @@ module.exports = function () {
                         "public/htmlapp/system/grade/gradeList.ctrl.js",
                         "public/htmlapp/system/grade/gradeCreate.ctrl.js",
                         "public/preparebuild/assets/libs/angular-xeditable/dist/js/xeditable.js"],
-                admingradeappbuildjs: "admingradeApp.min.js"
+                admingradeappbuildjs: "admingradeApp.min.js",
+                adminteacherappdevjs: [
+                        "public/preparebuild/assets/libs/jquery/dist/jquery.min.js",
+                        "public/preparebuild/assets/libs/angular/angular.js",
+                        "public/preparebuild/assets/libs/angular-route/angular-route.js",
+                        "public/preparebuild/assets/libs/angular-animate/angular-animate.js",        
+                        "public/preparebuild/assets/libs/angular-ui-utils/index.js",
+                        "public/preparebuild/assets/libs/angular-ui-scroll/dist/ui-scroll.js",
+                        "public/preparebuild/assets/libs/angular-ui-scrollpoint/dist/scrollpoint.js",
+                        "public/preparebuild/assets/libs/angular-ui-event/dist/event.js",
+                        "public/preparebuild/assets/libs/angular-ui-mask/dist/mask.js",
+                        "public/preparebuild/assets/libs/angular-ui-validate/dist/validate.js",
+                        "public/preparebuild/assets/libs/angular-ui-indeterminate/dist/indeterminate.js",
+                        "public/preparebuild/assets/libs/angular-ui-uploader/dist/uploader.js",
+                        "public/preparebuild/assets/libs/angular-busy/dist/angular-busy.js",
+                        "public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.js",      
+                        "public/htmlapp/system/teacher/teacherApp.mod.js",
+                        "public/htmlapp/system/container.ctrl.js",
+                        "public/htmlapp/syscommon/khttp.srv.js",
+                        "public/htmlapp/syscommon/simplevalidate.srv.js",
+                        "public/htmlapp/system/teacher/teacherList.ctrl.js",
+                        "public/htmlapp/system/teacher/teacherCreate.ctrl.js",
+                        "public/preparebuild/assets/libs/angular-xeditable/dist/js/xeditable.js",
+                        "public/preparebuild/assets/js/custom.js"],
+                adminteacherappbuildjs: "adminteacherApp.min.js"
 	};
 	return config;
 }

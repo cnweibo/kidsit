@@ -230,7 +230,7 @@ gulp.task('yinbiaoapp-build',['yinbiaoapp-injectbuildjs'],function(){
 
 // adminGradeAPP js build
 gulp.task('admingradeapp-dev',function () {
-    log('injecting dev dependency into site.yinbiao.show.blade.php ...');
+    log('injecting dev dependency into admin.system.grade.index.blade.phhp ...');
     var admingradeappjs = config.admingradeappdevjs;
     var targetlocation = './resources/views/admin/system/grades/';
     var targethtml = gulp.src('./resources/views/admin/system/grades/index.blade.php');
@@ -243,7 +243,6 @@ gulp.task('admingradeapp-dev',function () {
     }))
     .pipe(gulp.dest(targetlocation));
 });
-
 gulp.task('admingradeapp-injectbuildjs',['admingradeapp-buildminjs'], function () {
     log('injecting build js into admin.system.grade.index.blade.php ...');
     var admingradeappminjs = config.admingradeappbuildjs;
@@ -258,7 +257,6 @@ gulp.task('admingradeapp-injectbuildjs',['admingradeapp-buildminjs'], function (
     }))
     .pipe(gulp.dest(targetlocation));
 });
-
 gulp.task('admingradeapp-buildminjs',function(){
 
     log('Building admingradeapp js to public/build for production...');
@@ -274,10 +272,60 @@ gulp.task('admingradeapp-buildminjs',function(){
         .pipe(uglify())
         .pipe(gulp.dest('public/build/js'));
 });
-
 gulp.task('admingradeapp-build',['admingradeapp-injectbuildjs'],function(){
 
     log('Building admingradeapp dependency done ...');
+    
+    return;
+});
+
+// adminTeacherAPP js build
+gulp.task('adminteacherapp-dev',function () {
+    log('injecting dev dependency into  admin.system.teacher.index.blade.php ...');
+    var adminteacherappjs = config.adminteacherappdevjs;
+    var targetlocation = './resources/views/admin/system/teachers/';
+    var targethtml = gulp.src('./resources/views/admin/system/teachers/index.blade.php');
+    var sources = gulp.src(adminteacherappjs, {read: false});
+    return targethtml.pipe(inject(sources.pipe(expect(adminteacherappjs)).pipe(printfileinfo()),{
+        // remove the public relative path
+        transform: function (filepath) {
+        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+    }
+    }))
+    .pipe(gulp.dest(targetlocation));
+});
+gulp.task('adminteacherapp-injectbuildjs',['adminteacherapp-buildminjs'], function () {
+    log('injecting build js into admin.system.grade.index.blade.php ...');
+    var adminteacherappminjs = config.adminteacherappbuildjs;
+    var targetlocation = './resources/views/admin/system/teachers/';
+    var targethtml = gulp.src(targetlocation+ 'index.blade.php');
+    var sources = gulp.src(jsbuildpath+adminteacherappminjs, {read: false});
+    return targethtml.pipe(inject(sources.pipe(expect(jsbuildpath+adminteacherappminjs)).pipe(printfileinfo()),{
+        // remove the public relative path
+        transform: function (filepath) {
+        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+    }
+    }))
+    .pipe(gulp.dest(targetlocation));
+});
+gulp.task('adminteacherapp-buildminjs',function(){
+
+    log('Building adminteacherapp js to public/build for production...');
+    var adminteacherappjs = config.adminteacherappdevjs;
+    var adminteacherappminjs = config.adminteacherappbuildjs;
+    log(adminteacherappminjs);
+    return gulp
+        .src(adminteacherappjs)
+        .pipe(expect(adminteacherappjs))
+        .pipe(printfileinfo())
+        .pipe(concat(adminteacherappminjs))
+        .pipe(ngAnnotate())
+        .pipe(uglify())
+        .pipe(gulp.dest('public/build/js'));
+});
+gulp.task('adminteacherapp-build',['adminteacherapp-injectbuildjs'],function(){
+
+    log('Building adminteacherapp dependency done ...');
     
     return;
 });
