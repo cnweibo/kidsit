@@ -118,7 +118,55 @@ module.exports = function () {
                         "public/htmlapp/syscommon/khttp.srv.js",
                         "public/htmlapp/system/student/studentList.ctrl.js",
                         "public/htmlapp/system/student/studentCreate.ctrl.js"],
-                adminstudentappbuildjs: "adminstudentApp.min.js"
+                adminstudentappbuildjs: "adminstudentApp.min.js",
+                adminmathappdevjs: [
+                       "public/preparebuild/assets/libs/jquery/dist/jquery.min.js",
+                       "public/preparebuild/assets/libs/underscore/underscore.js",
+                       "public/preparebuild/assets/libs/angular/angular.js",
+                       "public/preparebuild/assets/libs/angular-animate/angular-animate.js",
+                       "public/preparebuild/assets/libs/angular-messages/angular-messages.js",
+                       "public/preparebuild/assets/libs/ui-router/release/angular-ui-router.min.js",
+
+                       "public/preparebuild/assets/libs/angular-ui-utils/index.js",
+                       "public/preparebuild/assets/libs/angular-ui-scroll/dist/ui-scroll.js",
+                       "public/preparebuild/assets/libs/angular-ui-scrollpoint/dist/scrollpoint.js",
+                       "public/preparebuild/assets/libs/angular-ui-event/dist/event.js",
+                       "public/preparebuild/assets/libs/angular-ui-mask/dist/mask.js",
+                       "public/preparebuild/assets/libs/angular-ui-validate/dist/validate.js",
+                       "public/preparebuild/assets/libs/angular-ui-indeterminate/dist/indeterminate.js",
+                       "public/preparebuild/assets/libs/angular-ui-uploader/dist/uploader.js",
+                        <!-- introduce sync/async form validate mechanism -->
+                       "public/htmlapp/syscommon/angular-validate-directive/validate.js",
+                        
+                        
+                        "public/preparebuild/assets/libs/angular-busy/dist/angular-busy.js",
+                       "public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.js",
+
+
+                        <!-- we must place xeditable loading before module js -->
+                       "public/preparebuild/assets/libs/angular-xeditable/dist/js/xeditable.js",
+
+                        <!-- typeahead -->
+                       "public/preparebuild/assets/libs/angular-bootstrap/ui-bootstrap-tpls.js",     
+                        <!-- fuzzy search -->
+                       "public/preparebuild/assets/libs/angular-filter/dist/angular-filter.js",
+                        <!-- own js file -->
+                       "public/htmlapp/math/mathApp.mod.js",
+                       "public/htmlapp/system/container.ctrl.js",
+                       "public/htmlapp/syscommon/khttp.srv.js",
+                       "public/htmlapp/syscommon/simplevalidate.srv.js",
+                       "public/htmlapp/syscommon/parsers.srv.js",
+                       "public/htmlapp/math/skillcat/mathskillcatApp.mod.js",
+                       "public/htmlapp/math/skillcat/mathskillcatIndex.ctrl.js",
+                       "public/htmlapp/math/skillcat/mathskillcatList.ctrl.js",
+                       "public/htmlapp/math/skillcat/mathskillcatCreate.ctrl.js",
+                       "public/htmlapp/math/skill/mathskillApp.mod.js",
+                       "public/htmlapp/math/skill/mathskillIndex.ctrl.js",
+                       "public/htmlapp/math/skill/mathskillList.ctrl.js",
+                       "public/htmlapp/math/skill/mathskillCreate.ctrl.js",  
+                       "public/preparebuild/assets/libs/angular-xeditable/dist/js/xeditable.js",
+                       "public//preparebuild/assets/js/custom.js"],
+                adminmathappbuildjs: "adminmathindexApp.min.js"
 	};
 	return config;
 }
