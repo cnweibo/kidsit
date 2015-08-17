@@ -14,24 +14,16 @@
 @section('css')
 	<link rel="stylesheet" href="{{asset('preparebuild/assets/libs/angular-xeditable/dist/css/xeditable.css')}}">
 	<link rel="stylesheet" href="{{asset('preparebuild/assets/libs/angular-toastr/dist/angular-toastr.css')}}">
+	<link rel="stylesheet" href="{{ asset('preparebuild/assets/libs/angular-busy/angular-busy.css') }}">
 	<link rel="stylesheet" href="{{asset('preparebuild/assets/css/custom.css')}}">
 @stop
 @section('content')
 
-	<div class="container" ng-app="gradeApp" ng-controller="containerCtrl">
+	<div class="container" ng-app="mathApp" ng-controller="containerCtrl">
 		@include('admin.partials.indicatorcontainer')
 		
-		<div class="page-header">
-			<h3>
-				{{{ $title }}}
-
-				<div class="pull-right">
-					<a href="#/create" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> 新增年级</a>
-					<!-- <a href="{{{ URL::to('admin/system/grade/create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> 新增年级</a>  -->
-				</div>
-			</h3>
-		</div>
-		<div ng-view></div> <!-- web app view -->
+		
+		<div ui-view></div> <!-- web app view -->
 		
 	</div>
 @stop
@@ -43,9 +35,6 @@
 
 	</script>
 	<!-- inject:js -->
-	<script src="/build/js/admingradeApp.min.js"></script>
+	<script src="/build/js/adminmathindexApp.min.js"></script>
 	<!-- endinject -->
-<!--(if target mathrelease)><!-->
-<!-- <script type="text/javascript" src="{{asset('dist/appGrade.min.js')}}"></script>-->
-<!--<!(endif)-->
 @stop

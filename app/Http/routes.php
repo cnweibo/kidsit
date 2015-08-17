@@ -107,6 +107,7 @@ Route::group(array('prefix' => 'admin' , 'middleware' => 'isAdmin'), function()
     Route::post('permissions/{permission}/delete', 'Admin\AdminPermissionsController@postDelete');
     Route::controller('permissions', 'Admin\AdminPermissionsController');
 
+    
     // system grade management
     // global grade information admin apis for data feeding
     Route::group(array('prefix' => 'api'), function(){
@@ -118,7 +119,60 @@ Route::group(array('prefix' => 'admin' , 'middleware' => 'isAdmin'), function()
     // Route::get('system/grade/{id}','Admin\System\AdminGradesController@show'); // show page
     Route::get('system/grade/{id}/delete','Admin\System\AdminGradesController@getDelete'); //delete page
     Route::get('system/grade/data', 'Admin\System\AdminGradesController@getData'); // ajax data feeding page
+    // system teacher management
+    // global teacher information admin apis for data feeding
+    Route::group(array('prefix' => 'api'), function(){
+        Route::resource('system/teacher', 'Admin\System\AdminTeachersController');
+    });
+    // Following is the GET request for laravel rendered html page funcioning as angular template partials
+    Route::get('system/teacher/', 'Admin\System\AdminTeachersController@indexpage'); // index page
+    Route::get('system/teacher/{id}/delete','Admin\System\AdminTeachersController@getDelete'); //delete page
+    Route::get('system/teacher/data', 'Admin\System\AdminTeachersController@getData'); // ajax data feeding page
+    // global classroom information admin apis for data feeding
+    Route::group(array('prefix' => 'api'), function(){
+        Route::resource('system/classroom', 'Admin\System\AdminClassroomsController');
+    });
+    // Following is the GET request for laravel rendered html page funcioning as angular template partials
+    Route::get('system/classroom/', 'Admin\System\AdminClassroomsController@indexpage'); // index page
+    Route::get('system/classroom/{id}/delete','Admin\System\AdminClassroomsController@getDelete'); //delete page
+    Route::get('system/classroom/data', 'Admin\System\AdminClassroomsController@getData'); // ajax data feeding page
+    // global student information admin apis for data feeding
+    Route::group(array('prefix' => 'api'), function(){
+        Route::resource('system/student', 'Admin\System\AdminStudentsController');
+    });
+    // Following is the GET request for laravel rendered html page funcioning as angular template partials
+    Route::get('system/student/', 'Admin\System\AdminStudentsController@indexpage'); // index page
+    Route::get('system/student/{id}/delete','Admin\System\AdminStudentsController@getDelete'); //delete page
+    Route::get('system/student/data', 'Admin\System\AdminStudentsController@getData'); // ajax data feeding page
 
+// the math indexpage for all math admin features 
+    Route::get('math/', 'Admin\Math\AdminMathIndexController@indexpage'); // index page
+
+    // global mathskillcat information admin apis for data feeding
+    Route::group(array('prefix' => 'api'), function(){
+        Route::resource('math/skillcat', 'Admin\Math\AdminMathskillcatsController');
+    });
+    // Following is the GET request for laravel rendered html page funcioning as angular template partials
+    Route::get('math/skillcat/', 'Admin\Math\AdminMathskillcatsController@indexpage'); // index page
+    Route::get('math/skillcat/{id}/delete','Admin\Math\AdminMathskillcatsController@getDelete'); //delete page
+    Route::get('math/skillcat/data', 'Admin\Math\AdminMathskillcatsController@getData'); // ajax data feeding page
+    // global mathskill information admin apis for data feeding
+    Route::group(array('prefix' => 'api'), function(){
+        Route::resource('math/skill', 'Admin\Math\AdminMathskillsController');
+    });
+    // Following is the GET request for laravel rendered html page funcioning as angular template partials
+    Route::get('math/skill/', 'Admin\Math\AdminMathskillsController@indexpage'); // index page
+    Route::get('math/skill/{id}/delete','Admin\Math\AdminMathskillsController@getDelete'); //delete page
+    Route::get('math/skill/data', 'Admin\Math\AdminMathskillsController@getData'); // ajax data feeding page
+
+    // math relative default resource admin
+    // Route::resource('math/skillcat','Admin\Math\AdminMathskillcatsController');
+    // Route::resource('math/skill','Admin\Math\AdminMathskillsController');
+    // Route::resource('math/exercisecat', 'AdminMathexercisecatController');
+    // Route::resource('math/exercise', 'AdminMathexerciseController');
+    // Route::resource('math/opdata', 'AdminMathexerciseopdatasController');
+    // Route::resource('math/opsession', 'AdminMathexerciseopsessionsController');
+    Route::resource('math/difficulty', 'AdminMathexercisedifficultyController');
     // admin dashboard  Note:This must be the last route!!!
     Route::controller('/', 'Admin\AdminDashboardController');
 

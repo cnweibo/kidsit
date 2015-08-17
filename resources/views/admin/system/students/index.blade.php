@@ -18,7 +18,7 @@
 @stop
 @section('content')
 
-	<div class="container" ng-app="gradeApp" ng-controller="containerCtrl">
+	<div class="container" ng-app="studentApp" ng-controller="containerCtrl">
 		@include('admin.partials.indicatorcontainer')
 		
 		<div class="page-header">
@@ -26,8 +26,7 @@
 				{{{ $title }}}
 
 				<div class="pull-right">
-					<a href="#/create" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> 新增年级</a>
-					<!-- <a href="{{{ URL::to('admin/system/grade/create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> 新增年级</a>  -->
+					<a href="#/create" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> 新增学生</a>
 				</div>
 			</h3>
 		</div>
@@ -43,9 +42,6 @@
 
 	</script>
 	<!-- inject:js -->
-	<script src="/build/js/admingradeApp.min.js"></script>
+	<script src="/build/js/adminstudentApp.min.js"></script>
 	<!-- endinject -->
-<!--(if target mathrelease)><!-->
-<!-- <script type="text/javascript" src="{{asset('dist/appGrade.min.js')}}"></script>-->
-<!--<!(endif)-->
 @stop
