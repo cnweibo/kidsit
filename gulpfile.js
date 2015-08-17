@@ -433,6 +433,58 @@ gulp.task('adminstudentapp-build',['adminstudentapp-injectbuildjs'],function(){
     
     return;
 });
+
+
+// adminMathAPP js build
+gulp.task('adminmathapp-dev',function () {
+    log('injecting dev dependency into  admin.math.indexpage.blade.php ...');
+    var adminmathappjs = config.adminmathappdevjs;
+    var targetlocation = './resources/views/admin/math/';
+    var targethtml = gulp.src('./resources/views/admin/math/indexpage.blade.php');
+    var sources = gulp.src(adminmathappjs, {read: false});
+    return targethtml.pipe(inject(sources.pipe(expect(adminmathappjs)).pipe(printfileinfo()),{
+        // remove the public relative path
+        transform: function (filepath) {
+        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+    }
+    }))
+    .pipe(gulp.dest(targetlocation));
+});
+gulp.task('adminmathapp-injectbuildjs',['adminmathapp-buildminjs'], function () {
+    log('injecting build js into admin.math.indexpage.blade.php ...');
+    var adminmathappminjs = config.adminmathappbuildjs;
+    var targetlocation = './resources/views/admin/math/';
+    var targethtml = gulp.src(targetlocation+ 'indexpage.blade.php');
+    var sources = gulp.src(jsbuildpath+adminmathappminjs, {read: false});
+    return targethtml.pipe(inject(sources.pipe(expect(jsbuildpath+adminmathappminjs)).pipe(printfileinfo()),{
+        // remove the public relative path
+        transform: function (filepath) {
+        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+    }
+    }))
+    .pipe(gulp.dest(targetlocation));
+});
+gulp.task('adminmathapp-buildminjs',function(){
+
+    log('Building adminmathapp js to public/build for production...');
+    var adminmathappjs = config.adminmathappdevjs;
+    var adminmathappminjs = config.adminmathappbuildjs;
+    log(adminmathappminjs);
+    return gulp
+        .src(adminmathappjs)
+        .pipe(expect(adminmathappjs))
+        .pipe(printfileinfo())
+        .pipe(concat(adminmathappminjs))
+        .pipe(ngAnnotate())
+        .pipe(uglify())
+        .pipe(gulp.dest('public/build/js'));
+});
+gulp.task('adminmathapp-build',['adminmathapp-injectbuildjs'],function(){
+
+    log('Building adminmathapp dependency done ...');
+    
+    return;
+});
 // support functions
 
 /**
