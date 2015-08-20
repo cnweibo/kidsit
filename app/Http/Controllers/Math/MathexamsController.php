@@ -8,11 +8,11 @@ use Kidsit\Http\Requests;
 use Kidsit\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
 use Kidsit\Models\Math\Mathexam;
-use Kidsit\models\math\Mathsum1;
-use Kidsit\models\math\Mathsum2;
-use Kidsit\models\math\Mathsum4;
-use Kidsit\models\math\Mathmultiply1;
-use Kidsit\models\math\Mathsummultiply;
+use Kidsit\Models\Math\Mathsum1;
+use Kidsit\Models\Math\Mathsum2;
+use Kidsit\Models\Math\Mathsum4;
+use Kidsit\Models\Math\Mathmultiply1;
+use Kidsit\Models\Math\Mathsummultiply;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Log;
 
