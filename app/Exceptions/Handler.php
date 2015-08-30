@@ -38,7 +38,8 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
-	// for merge strategy: protect here on master and handle redirect to home
+
+	   // for merge strategy: protect here on master and handle redirect to home
         // if ($e instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException)
         //     return response(view('site.index'), 404);
         return parent::render($request, $e);
