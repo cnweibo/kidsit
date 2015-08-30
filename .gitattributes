@@ -20,4 +20,4 @@
 *.pptx filter=fat -crlf
 *.zip filter=fat -crlf
 *.rar filter=fat -crlf
-
+app/Exceptions/Handler.php merge=ours
