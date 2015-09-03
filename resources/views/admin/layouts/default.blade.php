@@ -51,6 +51,9 @@
     <link rel="stylesheet" href="{{asset('preparebuild/assets/libs/datatables/media/css/jquery.dataTables.min.css')}}">
     <link rel="stylesheet" href="{{asset('preparebuild/assets/libs/jquery-colorbox/example2/colorbox.css')}}">
     <link rel="stylesheet" href="{{asset('build/fonts/shockiconedu/stylesheet.css')}}">
+
+    <link rel="stylesheet" href="{{asset('preparebuild/assets/libs/angular-loading/angular-loading.css')}}">
+
     <link rel="stylesheet" href="{{asset('preparebuild/assets/css/custom.css')}}">
     <link rel="stylesheet" href="{{asset('build/fonts/font-awesome-4.1.0/css/font-awesome.min.css')}}">
     @yield('css')

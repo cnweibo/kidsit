@@ -5,19 +5,26 @@
         .module('teacherApp')
         .controller('teacherListCtrl',teacherListCtrl);
 
-    teacherListCtrl.$inject = ['$scope','khttp','$location','toastr','$q','$window','simplevalidate'];
+    teacherListCtrl.$inject = ['$scope','khttp','$location','toastr','$q','$window','simplevalidate','$loading'];
 
-    function teacherListCtrl($scope,khttp,$location,toastr,$q,$window,simplevalidate) {
+    function teacherListCtrl($scope,khttp,$location,toastr,$q,$window,simplevalidate,$loading) {
         /*jshint validthis: true */
         var vm = this;
         var promise;
-        vm.currentPromise = promise = khttp.getAll(basetempurl+"/admin/api/system/teacher/");
+        // initialize angular loading spinner text to false
+        $loading.setDefaultOptions({text:false});
+        $loading.start('getteacherlist');
+        vm.currentPromise = promise = vm.fetchTeacherPromise = khttp.getAll(basetempurl+"/admin/api/system/teacher/");
+        console.log(vm.fetchTeacherPromise);
         promise.then(
             function(teachersdata) {/*success*/
                 $scope.teachers = vm.teachersOrginal = teachersdata.resp.data;
                 },
             function(status) {console.log("error status code:"+status);}
-        );
+        )
+        .finally(function(){
+            $loading.finish('getteacherlist');
+        });
         vm.deleteTeacher = function(teacher){
 
             khttp.destroy(basetempurl+"/admin/api/system/teacher/",teacher).then(
