@@ -20,7 +20,7 @@ module.exports = function () {
                         "public/preparebuild/assets/libs/jquery/dist/jquery.min.js",
                         "public/preparebuild/assets/libs/angular/angular.js",
                         "public/preparebuild/assets/libs/angular-route/angular-route.js",
-                        "public/preparebuild/assets/libs/angular-animate/angular-animate.js",                        
+                        "public/preparebuild/assets/libs/angular-animate/angular-animate.js",
                         "public/preparebuild/assets/libs/angular-ui-utils/index.js",
                         "public/preparebuild/assets/libs/angular-ui-scroll/dist/ui-scroll.js",
                         "public/preparebuild/assets/libs/angular-ui-scrollpoint/dist/scrollpoint.js",
@@ -30,7 +30,7 @@ module.exports = function () {
                         "public/preparebuild/assets/libs/angular-ui-indeterminate/dist/indeterminate.js",
                         "public/preparebuild/assets/libs/angular-ui-uploader/dist/uploader.js",
                         "public/preparebuild/assets/libs/angular-busy/dist/angular-busy.js",
-                        "public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.js",      
+                        "public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.js",
                         "public/htmlapp/system/grade/gradeApp.mod.js",
                         "public/htmlapp/system/container.ctrl.js",
                         "public/htmlapp/syscommon/khttp.srv.js",
@@ -40,9 +40,10 @@ module.exports = function () {
                 admingradeappbuildjs: "admingradeApp.min.js",
                 adminteacherappdevjs: [
                         "public/preparebuild/assets/libs/jquery/dist/jquery.min.js",
+                        "public/preparebuild/assets/libs/spin.js/spin.js",
                         "public/preparebuild/assets/libs/angular/angular.js",
                         "public/preparebuild/assets/libs/angular-route/angular-route.js",
-                        "public/preparebuild/assets/libs/angular-animate/angular-animate.js",        
+                        "public/preparebuild/assets/libs/angular-animate/angular-animate.js",
                         "public/preparebuild/assets/libs/angular-ui-utils/index.js",
                         "public/preparebuild/assets/libs/angular-ui-scroll/dist/ui-scroll.js",
                         "public/preparebuild/assets/libs/angular-ui-scrollpoint/dist/scrollpoint.js",
@@ -51,8 +52,8 @@ module.exports = function () {
                         "public/preparebuild/assets/libs/angular-ui-validate/dist/validate.js",
                         "public/preparebuild/assets/libs/angular-ui-indeterminate/dist/indeterminate.js",
                         "public/preparebuild/assets/libs/angular-ui-uploader/dist/uploader.js",
-                        "public/preparebuild/assets/libs/angular-busy/dist/angular-busy.js",
-                        "public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.js",      
+                        "public/preparebuild/assets/libs/angular-loading/angular-loading.js",
+                        "public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.js",
                         "public/htmlapp/system/teacher/teacherApp.mod.js",
                         "public/htmlapp/system/container.ctrl.js",
                         "public/htmlapp/syscommon/khttp.srv.js",
@@ -81,7 +82,7 @@ module.exports = function () {
                         "public/preparebuild/assets/libs/angular-busy/dist/angular-busy.js",
                         "public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.js",
                         "public/preparebuild/assets/libs/angular-bootstrap/ui-bootstrap-tpls.js",
-                        "public/preparebuild/assets/libs/angular-filter/dist/angular-filter.js",      
+                        "public/preparebuild/assets/libs/angular-filter/dist/angular-filter.js",
                         "public/preparebuild/assets/libs/angular-xeditable/dist/js/xeditable.js",
                         "public/htmlapp/system/classroom/classroomApp.mod.js",
                         "public/htmlapp/system/container.ctrl.js",
@@ -108,10 +109,11 @@ module.exports = function () {
                         "public/preparebuild/assets/libs/angular-ui-uploader/dist/uploader.js",
                         "public/htmlapp/syscommon/angular-validate-directive/validate.js",
                         "public/preparebuild/assets/libs/angular-busy/dist/angular-busy.js",
+                        "public/preparebuild/assets/libs/angular-loading/angular-loading.min.js",
                         "public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.js",
                         "public/preparebuild/assets/libs/angular-xeditable/dist/js/xeditable.js",
-                        "public/preparebuild/assets/libs/angular-bootstrap/ui-bootstrap-tpls.js",     
-                        <!-- fuzzy search -->
+                        "public/preparebuild/assets/libs/angular-bootstrap/ui-bootstrap-tpls.js",
+                        // <!-- fuzzy search -->
                         "public/preparebuild/assets/libs/angular-filter/dist/angular-filter.js",
                         "public/htmlapp/system/student/studentApp.mod.js",
                         "public/htmlapp/system/container.ctrl.js",
@@ -135,7 +137,7 @@ module.exports = function () {
                        "public/preparebuild/assets/libs/angular-ui-validate/dist/validate.js",
                        "public/preparebuild/assets/libs/angular-ui-indeterminate/dist/indeterminate.js",
                        "public/preparebuild/assets/libs/angular-ui-uploader/dist/uploader.js",
-                        <!-- introduce sync/async form validate mechanism -->
+                        // <!-- introduce sync/async form validate mechanism -->
                        "public/htmlapp/syscommon/angular-validate-directive/validate.js",
                         
                         
@@ -143,14 +145,14 @@ module.exports = function () {
                        "public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.js",
 
 
-                        <!-- we must place xeditable loading before module js -->
+                        // <!-- we must place xeditable loading before module js -->
                        "public/preparebuild/assets/libs/angular-xeditable/dist/js/xeditable.js",
 
-                        <!-- typeahead -->
-                       "public/preparebuild/assets/libs/angular-bootstrap/ui-bootstrap-tpls.js",     
-                        <!-- fuzzy search -->
+                        // <!-- typeahead -->
+                       "public/preparebuild/assets/libs/angular-bootstrap/ui-bootstrap-tpls.js",
+                        // <!-- fuzzy search -->
                        "public/preparebuild/assets/libs/angular-filter/dist/angular-filter.js",
-                        <!-- own js file -->
+                        // <!-- own js file -->
                        "public/htmlapp/math/mathApp.mod.js",
                        "public/htmlapp/system/container.ctrl.js",
                        "public/htmlapp/syscommon/khttp.srv.js",
@@ -163,10 +165,10 @@ module.exports = function () {
                        "public/htmlapp/math/skill/mathskillApp.mod.js",
                        "public/htmlapp/math/skill/mathskillIndex.ctrl.js",
                        "public/htmlapp/math/skill/mathskillList.ctrl.js",
-                       "public/htmlapp/math/skill/mathskillCreate.ctrl.js",  
+                       "public/htmlapp/math/skill/mathskillCreate.ctrl.js",
                        "public/preparebuild/assets/libs/angular-xeditable/dist/js/xeditable.js",
                        "public//preparebuild/assets/js/custom.js"],
                 adminmathappbuildjs: "adminmathindexApp.min.js"
 	};
 	return config;
-}
+};

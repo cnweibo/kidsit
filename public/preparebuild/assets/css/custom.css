@@ -343,3 +343,8 @@ color: #428bca;
 cursor: pointer;
 border-bottom: none;
 }
+/*angular loading overlay css*/
+.dw-loading.dw-loading-overlay {
+    background-color: rgba(0, 0, 0, .4);
+    z-index: 9999;
+}
