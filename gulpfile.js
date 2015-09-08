@@ -175,6 +175,38 @@ gulp.task('buildsiteindexjs',function(){
         .pipe(uglify())
         .pipe(gulp.dest('public/build/js'));
 });
+// layoutcss-dev build
+gulp.task('layoutcss-dev',function () {
+    log('injecting dev dependency into site.layouts.default.blade.php ...');
+    var layoutcssfiles = config.layoutcss;
+    var targetlocation = './resources/views/site/layouts/';
+    var targethtml = gulp.src('./resources/views/site/layouts/default.blade.php');
+    var sources = gulp.src(layoutcssfiles, {read: false});
+    return targethtml.pipe(inject(sources.pipe(expect(layoutcssfiles)).pipe(printfileinfo()),{
+        // remove the public relative path
+        transform: function (filepath) {
+            return '<link rel="stylesheet" href="'+filepath.replace('public/','')+'">';
+        // return '<link src="'+ filepath.replace('public/','')+'"></script>' ;
+    }
+    }))
+    .pipe(gulp.dest(targetlocation));
+});
+
+gulp.task('yinbiaoapp-dev2',function () {
+    log('injecting dev dependency into site.yinbiao.show.blade.php ...');
+    var yinbiaojsfiles = config.layoutcss;
+    var targetlocation = './resources/views/site/yinbiao/';
+    var targethtml = gulp.src('./resources/views/site/yinbiao/show.blade.php');
+    var sources = gulp.src(yinbiaojsfiles, {read: false});
+    return targethtml.pipe(inject(sources.pipe(expect(yinbiaojsfiles)).pipe(printfileinfo()),{
+        // remove the public relative path
+        transform: function (filepath) {
+        return '<link src="'+ filepath.replace('public/','')+'"></script>' ;
+    }
+    }))
+    .pipe(gulp.dest(targetlocation));
+});
+
 
 // yinbiaoAPP js build
 gulp.task('yinbiaoapp-dev',function () {

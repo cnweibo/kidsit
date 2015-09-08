@@ -1,7 +1,13 @@
 module.exports = function () {
 	var config = {
+                layoutcss:[
+                      'public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap.css',
+                      'public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap-theme.min.css',
+                      'public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.css',
+                      'public/preparebuild/assets/css/custom.css'],
                 jsbuildpath: "public/build/js/",
-		yinbiaoappdevjs: ["public/preparebuild/assets/libs/jquery/dist/jquery.min.js",
+                yinbiaoappdevjs: [
+                        "public/preparebuild/assets/libs/jquery/dist/jquery.min.js",
                         "public/preparebuild/assets/libs/jquery-color/jquery.color.js",
                         "public/preparebuild/assets/libs/bootstrap/dist/js/bootstrap.min.js",
                         "public/htmlapp/syscommon/custom.js",

@@ -13,8 +13,13 @@
 		@show"
 		/>
 		<meta name="viewport" content="width=1024, initial-scale=1.0, user-scalable=yes">
-
-		<link rel="stylesheet" type="text/css" href="{{asset('build/css/bladelayout.min.css')}}">
+		<!-- inject:css -->
+		<link rel="stylesheet" href="/preparebuild/assets/libs/bootstrap/dist/css/bootstrap.css">
+		<link rel="stylesheet" href="/preparebuild/assets/libs/bootstrap/dist/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.css">
+		<link rel="stylesheet" href="/preparebuild/assets/css/custom.css">
+		<!-- endinject -->
+		<!-- <link rel="stylesheet" type="text/css" href="{{asset('build/css/bladelayout.min.css')}}"> -->
 		
         @yield('css')
  		<style>
@@ -56,7 +61,7 @@
 		<link rel="shortcut icon" href="{{{ asset('preparebuild/assets/images/favicon.ico') }}}">
 	</head>
 	@section('bodyhead')	
-	<body>
+	<body id="fixedlayout">
 	@show
 		<!-- To make sticky footer need to wrap in a div -->
 		<div id="wrap">
@@ -107,7 +112,7 @@
 				</div><!-- ./ nav-collapse end --> 
 			</div> <!-- mainnavbar end -->
 			<div id="loadingBar"></div> <!-- global loading bar placeholder-->
-			<div class="container"><!--  container of content start-->
+			<div class="container fixedlayout"><!--  container of content start-->
 				<!-- Notifications -->
 				@include('notifications')
 				<!-- ./ notifications -->

@@ -348,3 +348,7 @@ border-bottom: none;
     background-color: rgba(0, 0, 0, .4);
     z-index: 9999;
 }
+#wrap,#fixedlayout,.fixedlayout{
+  width: 960px;
+  margin: 0 auto;
+}
