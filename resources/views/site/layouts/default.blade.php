@@ -56,7 +56,7 @@
 		<link rel="shortcut icon" href="{{{ asset('preparebuild/assets/images/favicon.ico') }}}">
 	</head>
 	@section('bodyhead')	
-	<body class="bodycontainer">
+	<body id="fixedlayout">
 	@show
 		<!-- To make sticky footer need to wrap in a div -->
 		<div id="wrap" class="container-fixed">
@@ -107,7 +107,7 @@
 				</div><!-- ./ nav-collapse end --> 
 			</div> <!-- mainnavbar end -->
 			<div id="loadingBar"></div> <!-- global loading bar placeholder-->
-			<div class="main-content "><!--  container of main content start-->
+			<div class="container fixedlayout"><!--  container of content start-->
 				<!-- Notifications -->
 				@include('notifications')
 				<!-- ./ notifications -->

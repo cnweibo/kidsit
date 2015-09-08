@@ -19,6 +19,11 @@ module.exports = function () {
                         projectrootdir+"public/htmlapp/yinbiaoApp/guestaddword.js",
                         projectrootdir+"public/preparebuild/assets/libs/angular-animate/angular-animate.min.js",
                         projectrootdir+"public/htmlapp/yinbiaoApp/yinbiaoapp.js"],
+                layoutcss:[
+                      'public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap.css',
+                      'public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap-theme.min.css',
+                      'public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.css',
+                      'public/preparebuild/assets/css/custom.css'],
                 yinbiaoappbuildjs: "yinbiaoApp.min.js",
                 admingradeappdevjs: [
                         projectrootdir+"public/preparebuild/assets/libs/jquery/dist/jquery.min.js",
