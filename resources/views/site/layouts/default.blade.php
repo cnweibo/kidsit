@@ -12,7 +12,6 @@
 		<meta name="description" content="@section('description')中国计算机从娃娃抓起的践行者和推动者，IT宝贝网-中国青少年信息化推动者，信息教育的先锋队 IT style learning,NIT competence for China kids
 		@show"
 		/>
-		<meta name="viewport" content="width=1024, initial-scale=1.0, user-scalable=yes">
 		<!-- inject:css -->
 		<link rel="stylesheet" href="/preparebuild/assets/libs/bootstrap/dist/css/bootstrap.css">
 		<link rel="stylesheet" href="/preparebuild/assets/libs/bootstrap/dist/css/bootstrap-theme.min.css">
@@ -23,9 +22,6 @@
 		
         @yield('css')
  		<style>
-		    body {
-		        padding: 60px 0;
-		    }
 		    /*ngcloak solve the flash issue*/
 		    [ng\:cloak], [ng-cloak], .ng-cloak {
 		      display: none !important;
@@ -61,12 +57,12 @@
 		<link rel="shortcut icon" href="{{{ asset('preparebuild/assets/images/favicon.ico') }}}">
 	</head>
 	@section('bodyhead')	
-	<body id="fixedlayout">
+	<body class="bodycontainer">
 	@show
 		<!-- To make sticky footer need to wrap in a div -->
-		<div id="wrap">
+		<div id="wrap" class="container-fixed">
 			<!-- Navbar -->
-			<div id="mainnavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top navbar-top-background">
+			<div id="mainnavbar" class="navbar navbar-default navbar-inverse navbar-top-background">
                 <div class="navbar-header">
                 	<img style="width:150;height:40px;margin:5px" src="{{{asset('build/images/Logo_175x60.png')}}}" alt="IT宝贝网" />
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -112,7 +108,7 @@
 				</div><!-- ./ nav-collapse end --> 
 			</div> <!-- mainnavbar end -->
 			<div id="loadingBar"></div> <!-- global loading bar placeholder-->
-			<div class="container fixedlayout"><!--  container of content start-->
+			<div class="main-content "><!--  container of main content start-->
 				<!-- Notifications -->
 				@include('notifications')
 				<!-- ./ notifications -->
