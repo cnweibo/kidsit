@@ -11,7 +11,7 @@
 	@parent
 @stop
 @section('content')
-	<div class="container fixedlayout">	
+	<div class="yinbiaocat">	
 		{{--*/$layoutloopcount=0;/*--}}
 		@foreach ($yinbiaocategories as $ybcategory)
 			@if ($layoutloopcount%2==0)
