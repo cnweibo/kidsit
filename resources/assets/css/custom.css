@@ -357,3 +357,7 @@ border-bottom: none;
 .container-fixed > hr {
   margin: 30px 0;
 }
+.container {
+  width: 960px;
+  max-width: none !important;
+}

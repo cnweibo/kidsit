@@ -126,18 +126,18 @@
 
 			<!-- the following div is needed to make a sticky footer -->
 			<div id="push"></div>
+		    <div id="footer">
+				<div class="container-fixed">
+					<p class="muted credit aligncenter inlineblock">版权所有 © {{date('Y')}} <a href="http://kidsit.cn">IT宝贝网</a> <span> | </span> <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=00124dc114c0de6a4a9d49ad355c597a8abd9fdf82e3a0ea5aed445f1db69cee"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="IT宝贝网学员学习群" title="IT宝贝网学员学习群"></a></p>
+					<!-- baidu tongji -->
+					<script type="text/javascript">
+					var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+					document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F53722a1e9a4275bed7713037cafa3b9d' type='text/javascript'%3E%3C/script%3E"));
+					</script>
+				</div>
+		    </div>
 		</div><!-- ./wrap -->
 
-	    <div id="footer">
-			<div class="container">
-				<p class="muted credit aligncenter inlineblock">版权所有 © {{date('Y')}} <a href="http://kidsit.cn">IT宝贝网</a> <span> | </span> <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=00124dc114c0de6a4a9d49ad355c597a8abd9fdf82e3a0ea5aed445f1db69cee"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="IT宝贝网学员学习群" title="IT宝贝网学员学习群"></a></p>
-				<!-- baidu tongji -->
-				<script type="text/javascript">
-				var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-				document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F53722a1e9a4275bed7713037cafa3b9d' type='text/javascript'%3E%3C/script%3E"));
-				</script>
-			</div>
-	    </div>
 
 		<!-- Javascripts
 		================================================== -->    
