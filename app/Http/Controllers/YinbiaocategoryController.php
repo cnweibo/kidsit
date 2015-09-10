@@ -68,7 +68,7 @@ class YinbiaocategoryController extends Controller
     public function show($id)
     {
         $ybcategory = Yinbiaocategory::with('yinbiao')->find($id);
-        return View::make('site.yinbiaocategory.show',compact('ybcategory'));
+        return \View::make('site.yinbiaocategory.show',compact('ybcategory'));
     }
 
     /**
