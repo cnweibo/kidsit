@@ -1,5 +1,5 @@
 <?php
-
+// changed for testing ignore
 namespace Kidsit;
 use Zizaco\Confide\ConfideUser;
 use Zizaco\Confide\ConfideUserInterface;
