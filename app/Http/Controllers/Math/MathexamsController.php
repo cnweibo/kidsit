@@ -3,6 +3,7 @@
 namespace Kidsit\Http\Controllers\Math;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 use Kidsit\Http\Requests;
 use Kidsit\Http\Controllers\Controller;
@@ -42,21 +43,21 @@ class MathexamsController extends Controller
         $examcreatedat = $mathexam->created_at;
         switch ($tablename) {
             case 'mathsum4exercises':
-                $exerciseModel = 'Mathsum4';
+                $exerciseModel = 'Kidsit\Models\Math\Mathsum4';
                 break;
             case 'mathsum2exercises':
-                $exerciseModel = 'Mathsum2';
+                $exerciseModel = 'Kidsit\Models\Math\Mathsum2';
                 break;
             case 'mathsum1exercises':
-                $exerciseModel = 'Mathsum1';
+                $exerciseModel = 'Kidsit\Models\Math\Mathsum1';
                 break;  
             case 'mathsum3exercises':
                 $exerciseModel = 'Mathsum3';
                 break;  
             case 'mathmultiply1exercises':
-                    $exerciseModel = 'Mathmultiply1';
+                    $exerciseModel = 'Kidsit\Models\Math\Mathmultiply1';
             case 'mathmultiply2exercises':
-                $exerciseModel = 'Mathmultiply2';
+                $exerciseModel = 'Kidsit\Models\Math\Mathmultiply2';
             default:
                 break;
         }
