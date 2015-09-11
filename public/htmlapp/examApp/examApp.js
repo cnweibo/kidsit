@@ -34,6 +34,7 @@ var kidsitAppCtrl = app.controller('kidsitAppCtrl', ['$scope', '$rootScope', '$h
 	$scope.showReports = undefined;
 	$scope.user={};
 	$scope.showconf={};
+	$scope.hosturl = basetempurl;
 	$scope.metadata = {shouldDisabled1: false,shouldDisabled2: true, shouldDisabled3: true, shouldDisabled4: true, shouldDisabled5: true};
 	$scope.mathexam = {
 		'mathQuantity' : 50,
