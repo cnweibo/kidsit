@@ -1,4 +1,12 @@
 /*@import url(bootstrap.css);*/
+html{
+  position: relative;
+  min-height: 100%;
+}
+#footer{
+  position: absolute;
+  bottom: 0;
+}
 ul#top-nav-left > li >a {
 color: white;
 font-weight: 800;
