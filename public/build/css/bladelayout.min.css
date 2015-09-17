@@ -263,8 +263,8 @@ th {
 @font-face {
   font-family: 'Glyphicons Halflings';
 
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../../../../../../build/fonts/glyphicons-halflings-regular.eot');
+  src: url('../../../../../../build/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../../../../../build/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../../../../../../build/fonts/glyphicons-halflings-regular.woff') format('woff'), url('../../../../../../build/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../../../../../../build/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -6984,6 +6984,14 @@ button.toast-close-button {
 }
 
 /*@import url(bootstrap.css);*/
+html{
+  position: relative;
+  min-height: 100%;
+}
+#footer{
+  position: absolute;
+  bottom: 0;
+}
 ul#top-nav-left > li >a {
 color: white;
 font-weight: 800;
@@ -7001,30 +7009,30 @@ background-color: #FF9900;
 color:black;
 }
 .dropdown,.dropdown-menu{
-	z-index: 10000;
+  z-index: 10000;
 }
 body{
-  font-family: tahoma,arial,"微软雅黑",sans-serif;	
-	background-color: #fff;
+  font-family: tahoma,arial,"微软雅黑",sans-serif;  
+  background-color: #fff;
 }
 .label-lg {
     font-size: 150%;
 }
 
 .navbar-inverse{
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff9800), to(#f60));
-	background-image: -webkit-linear-gradient(#ff9800, #f60);
-	background-image: linear-gradient(#ff9800, #f60);
-	background-color: #ff9800;
-	/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9800', endColorstr='#f60',GradientType=0 );*/
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff9800), to(#f60));
+  background-image: -webkit-linear-gradient(#ff9800, #f60);
+  background-image: linear-gradient(#ff9800, #f60);
+  background-color: #ff9800;
+  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9800', endColorstr='#f60',GradientType=0 );*/
 }
 /*.navbar-top-background{
-	background-color: blue;
+  background-color: blue;
 }
 */
 /*.navbar-inverse{
-	background-color: #00D200;
-	border:1px dashed thick green;
+  background-color: #00D200;
+  border:1px dashed thick green;
 }*/
 /*active navbar styling*/
 .navbar-inverse .navbar-nav > .active > a {
@@ -7035,8 +7043,8 @@ body{
 }
 .carousel-inner > .item > img.carouselimg
 {
-	/*width:80%;
-	height:400px;*/
+  /*width:80%;
+  height:400px;*/
 }
 .carousel-control.right {
   right: 0;
@@ -7077,13 +7085,13 @@ body{
 
 /*some helper css*/
 .inlineblock{
-	display:inline-block;
+  display:inline-block;
 }
 .elementblock,#elementblock{
   display:block;
 }
 .aligncenter{
-	margin:0 auto;
+  margin:0 auto;
   display:block;
   text-align: center;
 }
@@ -7327,4 +7335,9 @@ text-decoration: none;
 color: #428bca;
 cursor: pointer;
 border-bottom: none;
+}
+/*angular loading overlay css*/
+.dw-loading.dw-loading-overlay {
+    background-color: rgba(0, 0, 0, .4);
+    z-index: 9999;
 }
