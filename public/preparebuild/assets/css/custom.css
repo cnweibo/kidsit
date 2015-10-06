@@ -28,7 +28,7 @@ color:black;
 }
 body{
   font-family: tahoma,arial,"微软雅黑",sans-serif;  
-  background-color: #fff;
+  /*background-color: #fff;*/
 }
 .label-lg {
     font-size: 150%;

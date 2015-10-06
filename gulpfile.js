@@ -8,6 +8,7 @@ var printfileinfo = require('gulp-print');
 var inject = require('gulp-inject');
 var argv = require('yargs').argv;
 var ngAnnotate = require('gulp-ng-annotate');
+var rename = require('gulp-rename');
 // lazy load gulp plugins
 var $ = require('gulp-load-plugins')({lazy: true});
 /**
@@ -20,8 +21,9 @@ gulp.task('less',function(){
    return gulp
        .src('resources/assets/less/app.less')
        .pipe(less())
+       .pipe(rename('bootstrap.css'))
        .on('error',console.log)
-       .pipe(gulp.dest('./public/build/css/style.css'));
+       .pipe(gulp.dest('./public/preparebuild/assets/libs/bootstrap/dist/css/'));
 });
 gulp.task('layoutcss', function() {
     log('Processing site layout css files...');
