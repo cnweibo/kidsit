@@ -1,3 +1,4 @@
+// node and gulp plugin section
 var config = require('./gulp.config.js')();
 var gulp = require('gulp');
 var concat =require('gulp-concat');
@@ -9,6 +10,8 @@ var inject = require('gulp-inject');
 var argv = require('yargs').argv;
 var ngAnnotate = require('gulp-ng-annotate');
 var rename = require('gulp-rename');
+// local variable defination section
+var projectrootdir = config.projectrootdir;
 // lazy load gulp plugins
 var $ = require('gulp-load-plugins')({lazy: true});
 /**
@@ -19,27 +22,27 @@ gulp.task('help', $.taskListing);
 gulp.task('default', ['help']);
 gulp.task('less',function(){
    return gulp
-       .src('resources/assets/less/app.less')
+       .src(projectrootdir+'resources/assets/less/app.less')
        .pipe(less())
        .pipe(rename('bootstrap.css'))
        .on('error',console.log)
-       .pipe(gulp.dest('./public/preparebuild/assets/libs/bootstrap/dist/css/'));
+       .pipe(gulp.dest(projectrootdir+'public/build/css/'));
 });
 gulp.task('layoutcss', function() {
     log('Processing site layout css files...');
     var layoutcssfiles = [
-        'public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap.css',
-        'public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap-theme.min.css',
-        'public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.css',
+        projectrootdir+'public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap.css',
+        projectrootdir+'public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap-theme.min.css',
+        projectrootdir+'public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.css',
         //'preparebuild/assets/libs/PACE/themes/blue/*.css',
-        'public/preparebuild/assets/css/custom.css'
+        projectrootdir+'public/preparebuild/assets/css/custom.css'
     ];
     return gulp
         .src(layoutcssfiles)
         .pipe(expect(layoutcssfiles))
         .pipe(printfileinfo())
         .pipe($.concat('bladelayout.min.css'))
-        .pipe(gulp.dest('./public/build/css/'));
+        .pipe(gulp.dest(projectrootdir+'public/build/css/'));
 });
 
 
@@ -48,117 +51,117 @@ gulp.task('prebuildlib',function(){
     log('Publish bower components main files(js,css,image) to public/preparebuild for further build...');
     var prebuildedfiles = [
             //bower installed lib css files
-            'resources/assets/bower_components/**/*.css',
+            projectrootdir+'resources/assets/bower_components/**/*.css',
      
-            'resources/assets/bower_components/**/*.js',
+            projectrootdir+'resources/assets/bower_components/**/*.js',
             // images
-            'resources/assets/bower_components/**/*.gif',
-            'resources/assets/bower_components/**/*.png',
-            'resources/assets/bower_components/**/*.jpg',
-            'resources/assets/bower_components/**/*.ico',
-            'resources/assets/bower_components/**/*.svg'
+            projectrootdir+'resources/assets/bower_components/**/*.gif',
+            projectrootdir+'resources/assets/bower_components/**/*.png',
+            projectrootdir+'resources/assets/bower_components/**/*.jpg',
+            projectrootdir+'resources/assets/bower_components/**/*.ico',
+            projectrootdir+'resources/assets/bower_components/**/*.svg'
     ];
     return gulp
-        .src(prebuildedfiles,{base: 'resources/assets/bower_components'})
+        .src(prebuildedfiles,{base: projectrootdir+'resources/assets/bower_components'})
         .pipe(expect(prebuildedfiles))
         .pipe(printfileinfo())
         .on('error',console.log)
-        .pipe(gulp.dest('public/preparebuild/assets/libs'));
+        .pipe(gulp.dest(projectrootdir+'public/preparebuild/assets/libs'));
 });
 gulp.task('prebuildown',function(){
 
     log('Publish own components main files(js,css,image) to public/preparebuild for further build...');
     var prebuildedownfiles = [
             //bower installed lib css files
-            'resources/assets/css/**/*.css',
-            'resources/assets/js/**/*.js',
-            'resources/assets/images/**/*.gif',
-            'resources/assets/images/**/*.png',
-            'resources/assets/images/**/*.jpg',
-            'resources/assets/images/**/*.ico',
-            'resources/assets/images/**/*.svg',
+            projectrootdir+'resources/assets/css/**/*.css',
+            projectrootdir+'resources/assets/js/**/*.js',
+            projectrootdir+'resources/assets/images/**/*.gif',
+            projectrootdir+'resources/assets/images/**/*.png',
+            projectrootdir+'resources/assets/images/**/*.jpg',
+            projectrootdir+'resources/assets/images/**/*.ico',
+            projectrootdir+'resources/assets/images/**/*.svg',
 
     ];
     return gulp
-        .src(prebuildedownfiles,{base: 'resources/assets'})
+        .src(prebuildedownfiles,{base: projectrootdir+'resources/assets'})
         .pipe(expect(prebuildedownfiles))
         .pipe(printfileinfo())
         .on('error',console.log)
-        .pipe(gulp.dest('public/preparebuild/assets'));
+        .pipe(gulp.dest(projectrootdir+'public/preparebuild/assets'));
 });
 gulp.task('prebuildcss',function(){
 
     log('Publish resources CSS to public/preparebuild for clearifying bower installed libs...');
     var prebuildedcssfiles = [
             //bower installed lib css files
-            'resources/assets/bower_components/**/*.css',
+            projectrootdir+'resources/assets/bower_components/**/*.css',
             // inhouse css design files
-            'resources/assets/css/**/*.css'
+            projectrootdir+'resources/assets/css/**/*.css'
     ];
     return gulp
-        .src(prebuildedcssfiles,{base: 'resources/assets/bower_components'})
+        .src(prebuildedcssfiles,{base: projectrootdir+'resources/assets/bower_components'})
         .pipe(expect(prebuildedcssfiles))
         .pipe(printfileinfo())
         .on('error',console.log)
-        .pipe(gulp.dest('public/preparebuild/assets/libs'));
+        .pipe(gulp.dest(projectrootdir+'public/preparebuild/assets/libs'));
 });
 gulp.task('prebuildjs',function(){
 
     log('Publish resources JS to public/preparebuild for clearifying bower installed libs...');
     var prebuildedjsfiles = [
             //bower installed lib js files 
-            'resources/assets/bower_components/**/*.js',
+            projectrootdir+'resources/assets/bower_components/**/*.js',
             // //inhouse js
-            'resources/assets/js/custom.js'
+            projectrootdir+'resources/assets/js/custom.js'
     ];
     return gulp
-        .src(prebuildedjsfiles,{base: 'resources/assets/bower_components'})
+        .src(prebuildedjsfiles,{base: projectrootdir+'resources/assets/bower_components'})
         .pipe(expect(prebuildedjsfiles))
         .pipe(printfileinfo())
         // .on('error',console.log)
-        .pipe(gulp.dest('public/preparebuild/assets/libs'));
+        .pipe(gulp.dest(projectrootdir+'public/preparebuild/assets/libs'));
 });
 gulp.task('prebuildimage',function(){
 
     log('Publish resources images to public/preparebuild for further handling and dev serving...');
     var prebuildedimagefiles = [
-            'resources/assets/images/**/*.gif',
-            'resources/assets/images/**/*.png',
-            'resources/assets/images/**/*.jpg',
-            'resources/assets/images/**/*.ico',
-            'resources/assets/images/**/*.svg',
+            projectrootdir+'resources/assets/images/**/*.gif',
+            projectrootdir+'resources/assets/images/**/*.png',
+            projectrootdir+'resources/assets/images/**/*.jpg',
+            projectrootdir+'resources/assets/images/**/*.ico',
+            projectrootdir+'resources/assets/images/**/*.svg',
     ];
     return gulp
-        .src(prebuildedimagefiles,{base: 'resources/assets/'})
+        .src(prebuildedimagefiles,{base: projectrootdir+'resources/assets/'})
         .pipe(expect(prebuildedimagefiles))
         .pipe(printfileinfo())
-        .pipe(gulp.dest('public/preparebuild/assets/'));
+        .pipe(gulp.dest(projectrootdir+'public/preparebuild/assets/'));
 });
 gulp.task('buildfont',function(){
 
     log('Building font to public/build for production...');
     var buildfontfiles = [
-            'resources/assets/bower_components/bootstrap/fonts/*.*',
+            projectrootdir+'resources/assets/bower_components/bootstrap/fonts/*.*',
     ];
     return gulp
-        .src(buildfontfiles,{base: 'resources/assets/bower_components/bootstrap'})
+        .src(buildfontfiles,{base: projectrootdir+'resources/assets/bower_components/bootstrap'})
         .pipe(expect(buildfontfiles))
         .pipe(printfileinfo())
-        .pipe(gulp.dest('public/build/'));
+        .pipe(gulp.dest(projectrootdir+'public/build/'));
 });
 gulp.task('buildimage',function(){
 
     log('Building images to public/build for production...');
     var buildimagefiles = [
-            'resources/assets/images/**/*.gif',
-            'resources/assets/images/**/*.png',
-            'resources/assets/images/**/*.jpg',
+            projectrootdir+'resources/assets/images/**/*.gif',
+            projectrootdir+'resources/assets/images/**/*.png',
+            projectrootdir+'resources/assets/images/**/*.jpg',
     ];
     return gulp
-        .src(buildimagefiles,{base: 'resources/assets/'})
+        .src(buildimagefiles,{base: projectrootdir+'resources/assets/'})
         .pipe(expect(buildimagefiles))
         .pipe(printfileinfo())
-        .pipe(gulp.dest('public/build/'));
+        .pipe(gulp.dest(projectrootdir+'public/build/'));
 });
 gulp.task('buildsiteindexjs',function(){
 
@@ -175,7 +178,7 @@ gulp.task('buildsiteindexjs',function(){
         .pipe(printfileinfo())
         .pipe(concat('siteindex.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('public/build/js'));
+        .pipe(gulp.dest(projectrootdir+'public/build/js'));
 });
 
 // yinbiaoAPP js build
@@ -188,7 +191,7 @@ gulp.task('yinbiaoapp-dev',function () {
     return targethtml.pipe(inject(sources.pipe(expect(yinbiaojsfiles)).pipe(printfileinfo()),{
         // remove the public relative path
         transform: function (filepath) {
-        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+        return '<script src="'+ filepath.replace(projectrootdir+'public/','')+'"></script>' ;
     }
     }))
     .pipe(gulp.dest(targetlocation));
@@ -203,7 +206,7 @@ gulp.task('yinbiaoapp-injectbuildjs',['yinbiaoapp-buildminjs'], function () {
     return targethtml.pipe(inject(sources.pipe(expect(yinbiaojsfiles)).pipe(printfileinfo()),{
         // remove the public relative path
         transform: function (filepath) {
-        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+        return '<script src="'+ filepath.replace(projectrootdir+'public/','')+'"></script>' ;
     }
     }))
     .pipe(gulp.dest(targetlocation));
@@ -220,7 +223,7 @@ gulp.task('yinbiaoapp-buildminjs',function(){
         .pipe(concat('yinbiaoApp.min.js'))
         .pipe(ngAnnotate())
         .pipe(uglify())
-        .pipe(gulp.dest('public/build/js'));
+        .pipe(gulp.dest(projectrootdir+'public/build/js'));
 });
 
 gulp.task('yinbiaoapp-build',['yinbiaoapp-injectbuildjs'],function(){
@@ -240,7 +243,7 @@ gulp.task('admingradeapp-dev',function () {
     return targethtml.pipe(inject(sources.pipe(expect(admingradeappjs)).pipe(printfileinfo()),{
         // remove the public relative path
         transform: function (filepath) {
-        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+        return '<script src="'+ filepath.replace(projectrootdir+'public/','')+'"></script>' ;
     }
     }))
     .pipe(gulp.dest(targetlocation));
@@ -254,7 +257,7 @@ gulp.task('admingradeapp-injectbuildjs',['admingradeapp-buildminjs'], function (
     return targethtml.pipe(inject(sources.pipe(expect(jsbuildpath+admingradeappminjs)).pipe(printfileinfo()),{
         // remove the public relative path
         transform: function (filepath) {
-        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+        return '<script src="'+ filepath.replace(projectrootdir+'public/','')+'"></script>' ;
     }
     }))
     .pipe(gulp.dest(targetlocation));
@@ -272,7 +275,7 @@ gulp.task('admingradeapp-buildminjs',function(){
         .pipe(concat(admingradeappminjs))
         .pipe(ngAnnotate())
         .pipe(uglify())
-        .pipe(gulp.dest('public/build/js'));
+        .pipe(gulp.dest(projectrootdir+'public/build/js'));
 });
 gulp.task('admingradeapp-build',['admingradeapp-injectbuildjs'],function(){
 
@@ -291,7 +294,7 @@ gulp.task('adminteacherapp-dev',function () {
     return targethtml.pipe(inject(sources.pipe(expect(adminteacherappjs)).pipe(printfileinfo()),{
         // remove the public relative path
         transform: function (filepath) {
-        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+        return '<script src="'+ filepath.replace(projectrootdir+'public/','')+'"></script>' ;
     }
     }))
     .pipe(gulp.dest(targetlocation));
@@ -305,7 +308,7 @@ gulp.task('adminteacherapp-injectbuildjs',['adminteacherapp-buildminjs'], functi
     return targethtml.pipe(inject(sources.pipe(expect(jsbuildpath+adminteacherappminjs)).pipe(printfileinfo()),{
         // remove the public relative path
         transform: function (filepath) {
-        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+        return '<script src="'+ filepath.replace(projectrootdir+'public/','')+'"></script>' ;
     }
     }))
     .pipe(gulp.dest(targetlocation));
@@ -323,7 +326,7 @@ gulp.task('adminteacherapp-buildminjs',function(){
         .pipe(concat(adminteacherappminjs))
         .pipe(ngAnnotate())
         .pipe(uglify())
-        .pipe(gulp.dest('public/build/js'));
+        .pipe(gulp.dest(projectrootdir+'public/build/js'));
 });
 gulp.task('adminteacherapp-build',['adminteacherapp-injectbuildjs'],function(){
 
@@ -343,7 +346,7 @@ gulp.task('adminclassroomapp-dev',function () {
     return targethtml.pipe(inject(sources.pipe(expect(adminclassroomappjs)).pipe(printfileinfo()),{
         // remove the public relative path
         transform: function (filepath) {
-        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+        return '<script src="'+ filepath.replace(projectrootdir+'public/','')+'"></script>' ;
     }
     }))
     .pipe(gulp.dest(targetlocation));
@@ -357,7 +360,7 @@ gulp.task('adminclassroomapp-injectbuildjs',['adminclassroomapp-buildminjs'], fu
     return targethtml.pipe(inject(sources.pipe(expect(jsbuildpath+adminclassroomappminjs)).pipe(printfileinfo()),{
         // remove the public relative path
         transform: function (filepath) {
-        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+        return '<script src="'+ filepath.replace(projectrootdir+'public/','')+'"></script>' ;
     }
     }))
     .pipe(gulp.dest(targetlocation));
@@ -375,7 +378,7 @@ gulp.task('adminclassroomapp-buildminjs',function(){
         .pipe(concat(adminclassroomappminjs))
         .pipe(ngAnnotate())
         .pipe(uglify())
-        .pipe(gulp.dest('public/build/js'));
+        .pipe(gulp.dest(projectrootdir+'public/build/js'));
 });
 gulp.task('adminclassroomapp-build',['adminclassroomapp-injectbuildjs'],function(){
 
@@ -395,7 +398,7 @@ gulp.task('adminstudentapp-dev',function () {
     return targethtml.pipe(inject(sources.pipe(expect(adminstudentappjs)).pipe(printfileinfo()),{
         // remove the public relative path
         transform: function (filepath) {
-        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+        return '<script src="'+ filepath.replace(projectrootdir+'public/','')+'"></script>' ;
     }
     }))
     .pipe(gulp.dest(targetlocation));
@@ -409,7 +412,7 @@ gulp.task('adminstudentapp-injectbuildjs',['adminstudentapp-buildminjs'], functi
     return targethtml.pipe(inject(sources.pipe(expect(jsbuildpath+adminstudentappminjs)).pipe(printfileinfo()),{
         // remove the public relative path
         transform: function (filepath) {
-        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+        return '<script src="'+ filepath.replace(projectrootdir+'public/','')+'"></script>' ;
     }
     }))
     .pipe(gulp.dest(targetlocation));
@@ -427,7 +430,7 @@ gulp.task('adminstudentapp-buildminjs',function(){
         .pipe(concat(adminstudentappminjs))
         .pipe(ngAnnotate())
         .pipe(uglify())
-        .pipe(gulp.dest('public/build/js'));
+        .pipe(gulp.dest(projectrootdir+'public/build/js'));
 });
 gulp.task('adminstudentapp-build',['adminstudentapp-injectbuildjs'],function(){
 
@@ -447,7 +450,7 @@ gulp.task('adminmathapp-dev',function () {
     return targethtml.pipe(inject(sources.pipe(expect(adminmathappjs)).pipe(printfileinfo()),{
         // remove the public relative path
         transform: function (filepath) {
-        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+        return '<script src="'+ filepath.replace(projectrootdir+'public/','')+'"></script>' ;
     }
     }))
     .pipe(gulp.dest(targetlocation));
@@ -461,7 +464,7 @@ gulp.task('adminmathapp-injectbuildjs',['adminmathapp-buildminjs'], function () 
     return targethtml.pipe(inject(sources.pipe(expect(jsbuildpath+adminmathappminjs)).pipe(printfileinfo()),{
         // remove the public relative path
         transform: function (filepath) {
-        return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+        return '<script src="'+ filepath.replace(projectrootdir+'public/','')+'"></script>' ;
     }
     }))
     .pipe(gulp.dest(targetlocation));
@@ -479,7 +482,7 @@ gulp.task('adminmathapp-buildminjs',function(){
         .pipe(concat(adminmathappminjs))
         .pipe(ngAnnotate())
         .pipe(uglify())
-        .pipe(gulp.dest('public/build/js'));
+        .pipe(gulp.dest(projectrootdir+'public/build/js'));
 });
 gulp.task('adminmathapp-build',['adminmathapp-injectbuildjs'],function(){
 
