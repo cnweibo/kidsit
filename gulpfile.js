@@ -3,15 +3,19 @@ var config = require('./gulp.config.js')();
 var gulp = require('gulp');
 var concat =require('gulp-concat');
 var uglify = require('gulp-uglify');
-var less = require('gulp-less');
+var less = require('gulp-less-sourcemap');
 var expect = require('gulp-expect-file');
 var printfileinfo = require('gulp-print');
 var inject = require('gulp-inject');
 var argv = require('yargs').argv;
 var ngAnnotate = require('gulp-ng-annotate');
 var rename = require('gulp-rename');
+var sourcemaps = require('gulp-sourcemaps');
+var plumber = require('gulp-plumber');
+var spawn = require('child_process').spawn;
 // local variable defination section
 var projectrootdir = config.projectrootdir;
+
 // lazy load gulp plugins
 var $ = require('gulp-load-plugins')({lazy: true});
 /**
@@ -20,14 +24,46 @@ var $ = require('gulp-load-plugins')({lazy: true});
 var jsbuildpath = config.jsbuildpath;
 gulp.task('help', $.taskListing);
 gulp.task('default', ['help']);
-gulp.task('less',function(){
+gulp.task('less',['syncgulpfiletobuilddir'],function(){
+    var pagelessentry = config.pagelessentry;
+    log(pagelessentry);
    return gulp
-       .src(projectrootdir+'resources/assets/less/app.less')
+       .src(pagelessentry)
+       .pipe(plumber())
+       .pipe(expect({ checkRealFile: true },pagelessentry))
+       .pipe(printfileinfo())
+       
+       // .pipe(sourcemaps.init())
        .pipe(less())
-       .pipe(rename('bootstrap.css'))
-       .on('error',console.log)
+       // .pipe(rename('bootstrap.css'))
+       // .on('error',errorhandler)
+       // .pipe(sourcemaps.write())
        .pipe(gulp.dest(projectrootdir+'public/build/css/'));
 });
+gulp.task('syncgulpfiletobuilddir',function(){
+    return gulp.src(['../Code/kidsit/*.js'])
+            .pipe(printfileinfo())
+            .pipe(gulp.dest('./'));
+}); 
+
+gulp.task('watchless',function(){
+    gulp.watch(['../Code/kidsit/*.js'], ['less']);
+});
+gulp.task('reloadbuildincasegulpchange', function() {
+  var p;
+
+  gulp.watch(['../Code/kidsit/*.js'], spawnChildren);
+  spawnChildren();
+
+  function spawnChildren(e) {
+    // kill previous spawned process
+    if(p) { p.kill(); }
+
+    // `spawn` a child `gulp` process linked to the parent `stdio`
+    p = spawn('gulp', [argv.task], {stdio: 'inherit'});
+  }
+});
+
 gulp.task('layoutcss', function() {
     log('Processing site layout css files...');
     var layoutcssfiles = [
@@ -44,7 +80,22 @@ gulp.task('layoutcss', function() {
         .pipe($.concat('bladelayout.min.css'))
         .pipe(gulp.dest(projectrootdir+'public/build/css/'));
 });
-
+// layoutcss-dev js build
+gulp.task('layoutcss-dev',function () {
+    log('injecting dev dependency into  site.layouts.default.blade.php ...');
+    var layoutcssfiles = config.frontlayoutcssfiles;
+    var targetlocation = './resources/views/site/layouts/';
+    var targethtml = gulp.src('./resources/views/site/layouts/default.blade.php');
+    var sources = gulp.src(layoutcssfiles, {read: false});
+    return targethtml.pipe(inject(sources.pipe(expect(layoutcssfiles)).pipe(printfileinfo()),{
+        // remove the public relative path
+        transform: function (filepath) {
+        return '<link rel="stylesheet" href="'+ filepath.replace('public/','')+'">' ;
+        // return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
+    }
+    }))
+    .pipe(gulp.dest(targetlocation));
+});
 
 gulp.task('prebuildlib',function(){
 
@@ -506,4 +557,10 @@ function log(msg) {
     } else {
         $.util.log($.util.colors.blue(msg));
     }
+}
+function errorhandler (error) {
+    log('*** start of error: ***');
+    log(error);
+    log('*** end of error! ***');
+    this.emit('end');
 }
