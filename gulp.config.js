@@ -1,7 +1,8 @@
 module.exports = function () {
-  var projectrootdir = "/home/vagrant/code/kidsit/";
+  var projectrootdir = "../Code/kidsit/";
 	var config = {
                 projectrootdir: projectrootdir,
+                pagelessentry: [projectrootdir+"resources/assets/less/app.less"],
                 jsbuildpath: projectrootdir+"public/build/js/",
 		yinbiaoappdevjs: [projectrootdir+"public/preparebuild/assets/libs/jquery/dist/jquery.min.js",
                         projectrootdir+"public/preparebuild/assets/libs/jquery-color/jquery.color.js",
@@ -40,6 +41,13 @@ module.exports = function () {
                         projectrootdir+"public/htmlapp/system/grade/gradeCreate.ctrl.js",
                         projectrootdir+"public/preparebuild/assets/libs/angular-xeditable/dist/js/xeditable.js"],
                 admingradeappbuildjs: "admingradeApp.min.js",
+                frontlayoutcssfiles: [
+                    "public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap.css",
+                    "public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap-theme.min.css",
+                    "public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.css",
+                    //"preparebuild/assets/libs/PACE/themes/blue/*.css",
+                    "public/preparebuild/assets/css/custom.css"
+                ],
                 adminteacherappdevjs: [
                         projectrootdir+"public/preparebuild/assets/libs/jquery/dist/jquery.min.js",
                         projectrootdir+"public/preparebuild/assets/libs/spin.js/spin.js",
