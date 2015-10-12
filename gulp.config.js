@@ -3,6 +3,7 @@ module.exports = function () {
 	var config = {
                 projectrootdir: projectrootdir,
                 pagelessentry: [projectrootdir+"resources/assets/less/app.less"],
+                lessfiles: projectrootdir+'resources/assets/less/**/*.less',
                 jsbuildpath: projectrootdir+"public/build/js/",
 		yinbiaoappdevjs: [projectrootdir+"public/preparebuild/assets/libs/jquery/dist/jquery.min.js",
                         projectrootdir+"public/preparebuild/assets/libs/jquery-color/jquery.color.js",

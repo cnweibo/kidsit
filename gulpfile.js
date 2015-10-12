@@ -24,7 +24,7 @@ var $ = require('gulp-load-plugins')({lazy: true});
 var jsbuildpath = config.jsbuildpath;
 gulp.task('help', $.taskListing);
 gulp.task('default', ['help']);
-gulp.task('less',['syncgulpfiletobuilddir'],function(){
+gulp.task('less',function(){
     var pagelessentry = config.pagelessentry;
     log(pagelessentry);
    return gulp
@@ -44,10 +44,29 @@ gulp.task('syncgulpfiletobuilddir',function(){
     return gulp.src(['../Code/kidsit/*.js'])
             .pipe(printfileinfo())
             .pipe(gulp.dest('./'));
-}); 
+});  
 
-gulp.task('watchless',function(){
-    gulp.watch(['../Code/kidsit/*.js'], ['less']);
+gulp.task('watchless',['less'],function(){
+    log(config.lessfiles);
+    gulp.watch('../Code/kidsit/resources/assets/less/**/*.less', ['less']); 
+});
+gulp.task('autoreload', function() {
+  var p;
+
+  gulp.watch('../Code/kidsit/*.js', spawnChildren);
+  spawnChildren();
+
+  function spawnChildren(e) {
+    gulp.src(['../Code/kidsit/*.js'])
+            .pipe(printfileinfo())
+            .pipe(gulp.dest('./'));
+    // kill previous spawned process
+    if(p) { p.kill(); }
+
+    // `spawn` a child `gulp` process linked to the parent `stdio`
+    // command: gulp autoreload --task watchless
+    p = spawn('gulp', [argv.task], {stdio: 'inherit'});
+  }
 });
 gulp.task('reloadbuildincasegulpchange', function() {
   var p;
