@@ -43,11 +43,12 @@ module.exports = function () {
                         projectrootdir+"public/preparebuild/assets/libs/angular-xeditable/dist/js/xeditable.js"],
                 admingradeappbuildjs: "admingradeApp.min.js",
                 frontlayoutcssfiles: [
-                    "public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap.css",
-                    "public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap-theme.min.css",
-                    "public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.css",
+                    projectrootdir+"public/build/css/app.css",
+                    // projectrootdir+"public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap.css",
+                    projectrootdir+"public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap-theme.min.css",
+                    projectrootdir+"public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.css",
                     //"preparebuild/assets/libs/PACE/themes/blue/*.css",
-                    "public/preparebuild/assets/css/custom.css"
+                    projectrootdir+"public/preparebuild/assets/css/custom.css"
                 ],
                 adminteacherappdevjs: [
                         projectrootdir+"public/preparebuild/assets/libs/jquery/dist/jquery.min.js",
