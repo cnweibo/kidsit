@@ -13,6 +13,7 @@ var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var plumber = require('gulp-plumber');
 var spawn = require('child_process').spawn;
+var browserSync = require('browser-sync');
 // local variable defination section
 var projectrootdir = config.projectrootdir;
 
@@ -45,10 +46,39 @@ gulp.task('syncgulpfiletobuilddir',function(){
             .pipe(printfileinfo())
             .pipe(gulp.dest('./'));
 });  
+function startBrowserSync () {
+    if(browserSync.active){
+        return;
+    }
+    log('starting browser-sync ...');
+    var options={
+        proxy: 'kidsit.cn',
+        files: ['/build/css/**/*.css'], //projectrootdir+'public
+        ghostMode: {
+            clicks: true,
+            location: false,
+            forms: true,
+            scroll: true
+        },
+        injectChanges: true,
+        logFileChanges: true,
+        logLevel: 'debug',
+        logPrefix: 'kidist-browser-sync',
+        notify: true,
+        reloadDelay: 1000
+    };
+    browserSync(options);
 
-gulp.task('watchless',['less'],function(){
+}
+gulp.task('watchless',function(){
     log(config.lessfiles);
-    gulp.watch('../Code/kidsit/resources/assets/less/**/*.less', ['less']); 
+    gulp.watch('../Code/kidsit/resources/assets/less/**/*.less', ['less'])
+        .on('change',function (event) {
+            // var srcPattern = new RegExp('/.*(?=/')
+            log(event.type);
+        }); 
+    startBrowserSync();
+    
 });
 gulp.task('autoreload', function() {
   var p;
@@ -103,13 +133,13 @@ gulp.task('layoutcss', function() {
 gulp.task('layoutcss-dev',function () {
     log('injecting dev dependency into  site.layouts.default.blade.php ...');
     var layoutcssfiles = config.frontlayoutcssfiles;
-    var targetlocation = './resources/views/site/layouts/';
-    var targethtml = gulp.src('./resources/views/site/layouts/default.blade.php');
+    var targetlocation = projectrootdir+'./resources/views/site/layouts/';
+    var targethtml = gulp.src(projectrootdir+'./resources/views/site/layouts/default.blade.php');
     var sources = gulp.src(layoutcssfiles, {read: false});
     return targethtml.pipe(inject(sources.pipe(expect(layoutcssfiles)).pipe(printfileinfo()),{
         // remove the public relative path
         transform: function (filepath) {
-        return '<link rel="stylesheet" href="'+ filepath.replace('public/','')+'">' ;
+        return '<link rel="stylesheet" href="'+ filepath.replace(projectrootdir+'public/','')+'">' ;
         // return '<script src="'+ filepath.replace('public/','')+'"></script>' ;
     }
     }))
