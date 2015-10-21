@@ -14,9 +14,10 @@ var sourcemaps = require('gulp-sourcemaps');
 var plumber = require('gulp-plumber');
 var spawn = require('child_process').spawn;
 var browserSync = require('browser-sync');
+
 // local variable defination section
 var projectrootdir = config.projectrootdir;
-
+var projectrootabsdir = '/home/vagrant/Code/kidsit/';
 // lazy load gulp plugins
 var $ = require('gulp-load-plugins')({lazy: true});
 /**
@@ -53,7 +54,7 @@ function startBrowserSync () {
     log('starting browser-sync ...');
     var options={
         proxy: 'kidsit.cn',
-        files: ['/build/css/**/*.css'], //projectrootdir+'public
+        files: [projectrootabsdir+'public/build/css/**/*.css'], //projectrootdir+'public
         ghostMode: {
             clicks: true,
             location: false,
@@ -65,7 +66,7 @@ function startBrowserSync () {
         logLevel: 'debug',
         logPrefix: 'kidist-browser-sync',
         notify: true,
-        reloadDelay: 1000
+        reloadDelay: 0
     };
     browserSync(options);
 
