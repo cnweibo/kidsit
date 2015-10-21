@@ -13,9 +13,12 @@
 		@show"
 		/>
 		<meta name="viewport" content="width=1024, initial-scale=1.0, user-scalable=yes">
-
-		<link rel="stylesheet" type="text/css" href="{{asset('build/css/bladelayout.min.css')}}">
-		
+		<!-- inject:css -->
+		<link rel="stylesheet" href="/build/css/app.css">
+		<link rel="stylesheet" href="/preparebuild/assets/libs/bootstrap/dist/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.css">
+		<link rel="stylesheet" href="/preparebuild/assets/css/custom.css">
+		<!-- endinject -->		
         @yield('css')
  		<style>
 		    body {
