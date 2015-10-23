@@ -21,7 +21,7 @@ module.exports = function () {
                         projectrootdir+"public/htmlapp/yinbiaoApp/yinbiaoapp.js"],
                 layoutcss:[
                       'public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap.css',
-                      'public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap-theme.min.css',
+                      // 'public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap-theme.min.css',
                       'public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.css',
                       'public/preparebuild/assets/css/custom.css'],
                 yinbiaoappbuildjs: "yinbiaoApp.min.js",
@@ -49,11 +49,7 @@ module.exports = function () {
                 admingradeappbuildjs: "admingradeApp.min.js",
                 frontlayoutcssfiles: [
                     projectrootdir+"public/build/css/app.css",
-                    // projectrootdir+"public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap.css",
-                    projectrootdir+"public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap-theme.min.css",
-                    projectrootdir+"public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.css",
-                    //"preparebuild/assets/libs/PACE/themes/blue/*.css",
-                    projectrootdir+"public/preparebuild/assets/css/custom.css"
+                    projectrootdir+"public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.css"
                 ],
                 adminteacherappdevjs: [
                         projectrootdir+"public/preparebuild/assets/libs/jquery/dist/jquery.min.js",

@@ -116,13 +116,7 @@ gulp.task('reloadbuildincasegulpchange', function() {
 
 gulp.task('layoutcss', function() {
     log('Processing site layout css files...');
-    var layoutcssfiles = [
-        projectrootdir+'public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap.css',
-        projectrootdir+'public/preparebuild/assets/libs/bootstrap/dist/css/bootstrap-theme.min.css',
-        projectrootdir+'public/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.css',
-        //'preparebuild/assets/libs/PACE/themes/blue/*.css',
-        projectrootdir+'public/preparebuild/assets/css/custom.css'
-    ];
+    var layoutcssfiles = config.frontlayoutcssfiles;
     return gulp
         .src(layoutcssfiles)
         .pipe(expect(layoutcssfiles))
@@ -134,9 +128,11 @@ gulp.task('layoutcss', function() {
 gulp.task('layoutcss-dev',function () {
     log('injecting dev dependency into  site.layouts.default.blade.php ...');
     var layoutcssfiles = config.frontlayoutcssfiles;
+    log(layoutcssfiles);
     var targetlocation = projectrootdir+'./resources/views/site/layouts/';
     var targethtml = gulp.src(projectrootdir+'./resources/views/site/layouts/default.blade.php');
     var sources = gulp.src(layoutcssfiles, {read: false});
+    log(layoutcssfiles);
     return targethtml.pipe(inject(sources.pipe(expect(layoutcssfiles)).pipe(printfileinfo()),{
         // remove the public relative path
         transform: function (filepath) {
@@ -282,21 +278,22 @@ gulp.task('buildsiteindexjs',function(){
         .pipe(gulp.dest(projectrootdir+'public/build/js'));
 });
 // layoutcss-dev build
-gulp.task('layoutcss-dev',function () {
-    log('injecting dev dependency into site.layouts.default.blade.php ...');
-    var layoutcssfiles = config.layoutcss;
-    var targetlocation = './resources/views/site/layouts/';
-    var targethtml = gulp.src('./resources/views/site/layouts/default.blade.php');
-    var sources = gulp.src(layoutcssfiles, {read: false});
-    return targethtml.pipe(inject(sources.pipe(expect(layoutcssfiles)).pipe(printfileinfo()),{
-        // remove the public relative path
-        transform: function (filepath) {
-            return '<link rel="stylesheet" href="'+filepath.replace('public/','')+'">';
-        // return '<link src="'+ filepath.replace('public/','')+'"></script>' ;
-    }
-    }))
-    .pipe(gulp.dest(targetlocation));
-});
+// gulp.task('layoutcss-dev',function () {
+    
+//     var layoutcssfiles = config.frontlayoutcssfiles;
+//     var targetlocation = './resources/views/site/layouts/';
+//     var targethtml = gulp.src('./resources/views/site/layouts/default.blade.php');
+//     var sources = gulp.src(layoutcssfiles, {read: false});
+//     log('injecting dev dependency into site.layouts.default.blade.php ...'+layoutcssfiles);
+//     return targethtml.pipe(inject(sources.pipe(expect(layoutcssfiles)).pipe(printfileinfo()),{
+//         // remove the public relative path
+//         transform: function (filepath) {
+//             return '<link rel="stylesheet" href="'+filepath.replace('public/','')+'">';
+//         // return '<link src="'+ filepath.replace('public/','')+'"></script>' ;
+//     }
+//     }))
+//     .pipe(gulp.dest(targetlocation));
+// });
 
 gulp.task('yinbiaoapp-dev2',function () {
     log('injecting dev dependency into site.yinbiao.show.blade.php ...');

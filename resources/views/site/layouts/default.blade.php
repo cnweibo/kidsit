@@ -14,9 +14,7 @@
 		/>
 		<!-- inject:css -->
 		<link rel="stylesheet" href="/build/css/app.css">
-		<link rel="stylesheet" href="/preparebuild/assets/libs/bootstrap/dist/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="/preparebuild/assets/libs/angular-toastr/dist/angular-toastr.css">
-		<link rel="stylesheet" href="/preparebuild/assets/css/custom.css">
 		<!-- endinject -->		
         @yield('css')
  		<style>
