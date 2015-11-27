@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Log;
 
+use Kidsit\View\ThemeViewFinder;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -21,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
                 Log::info("query db:" . $query);
             });
         }
+        //overwrite default ViewFinder singleton
+        $this->app['view']->setFinder($this->app['theme.finder']);
     }
 
     /**
@@ -30,6 +34,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton('theme.finder',function($app){
+            $finder = new ThemeViewFinder($app['files'],$app['config']['view.paths']);
+            $config = $app['config']['kidsit.theme'];
+            $finder->setBasePath($app['path.public'].'/'.$config['folder']);
+            $finder->setActiveTheme($config['active']);
+            return $finder;
+        });
     }
 }
