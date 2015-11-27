@@ -20,3 +20,10 @@ function print_available_classes()
 		print_r(' ....  extends: '. '<strong>' .get_parent_class($value).'</strong></br>');
 	}
 }
+// theme helper: translate relative path to fully qualified addrurl
+if (!function_exists('theme')){
+	function theme($path){
+		$config = app('config')->get('kidsit.theme');
+		return url($config['folder'].'/'.$config['active'].'/assets/'.$path);
+	}
+}
