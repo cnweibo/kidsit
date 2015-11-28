@@ -40,21 +40,21 @@ gulp.task('less',function(){
        // .pipe(rename('bootstrap.css'))
        // .on('error',errorhandler)
        // .pipe(sourcemaps.write())
-       .pipe(gulp.dest(projectrootdir+'public/build/css/'));
+       .pipe(gulp.dest(projectrootdir+'public/preparebuild/assets/css/'));
 });
 gulp.task('syncgulpfiletobuilddir',function(){
     return gulp.src(['../Code/kidsit/*.js'])
             .pipe(printfileinfo())
             .pipe(gulp.dest('./'));
 });  
-function startBrowserSync () {
+function startBrowserSyncDev () {
     if(browserSync.active){
         return;
     }
     log('starting browser-sync ...');
     var options={
-        proxy: 'kidsit.cn',
-        files: [projectrootabsdir+'public/build/css/**/*.css'], //projectrootdir+'public
+        proxy: 'homestead.app',
+        files: [projectrootabsdir+'public/preparebuild/assets/css/**/*.css'], //projectrootdir+'public
         ghostMode: {
             clicks: true,
             location: false,
@@ -78,7 +78,7 @@ gulp.task('watchless',function(){
             // var srcPattern = new RegExp('/.*(?=/')
             log(event.type);
         }); 
-    startBrowserSync();
+    startBrowserSyncDev();
     
 });
 gulp.task('autoreload', function() {

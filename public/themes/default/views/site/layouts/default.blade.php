@@ -24,16 +24,16 @@
     <!-- Stylesheets -->
 		<!-- External -->
     	<!-- Mobile menu -->	
-    	<link href="{{theme('external/z-nav/z-nav.css')}}" rel="stylesheet">
+    	<link href="/preparebuild/assets/nonbowerlibs/z-nav/z-nav.css" rel="stylesheet">
 		
 		<!-- Sliders -->		
 		<!-- Royalsslider -->
-		<link rel="stylesheet" href="{{theme('external/royalslider/royalslider.css')}}">
+		<link rel="stylesheet" href="/preparebuild/assets/nonbowerlibs/royalslider/royalslider.css">
     	<!-- Touch slider - Swiper -->
-    	<link href="{{theme('external/swiper/idangerous.swiper.css')}}" rel="stylesheet" />
+    	<link href="/preparebuild/assets/nonbowerlibs/swiper/idangerous.swiper.css" rel="stylesheet" />
 
         <!-- Custom -->
-      <link href="{{theme('css/style.css?v=1')}}" rel="stylesheet" />
+      <link href="/preparebuild/assets/css/style.css?v=1" rel="stylesheet" />
       
 		<!-- *** Favicons *** -->
 			<!--[if IE]><link rel="icon"  href="favicons/favicon_16x16.ico" /><![endif]-->
@@ -47,7 +47,7 @@
 		
 		<!-- Basic JavaScript-->
 		<!-- Modernizr -->
-		<script src="{{theme('external/modernizr/modernizr.custom.js')}}"></script>
+		<script src="/preparebuild/assets/nonbowerlibs/modernizr/modernizr.custom.js"></script>
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> 
     <!--[if lt IE 9]> 
@@ -370,31 +370,31 @@
 		<!-- Royals full width slider -->
 		<div class="royalSlider">
 			<div class="slide slide--phone">
-				<img class="rsImg" src="{{theme('images/slider/full-width/image1.jpg')}}" alt="">
+				<img class="rsImg" src="/preparebuild/assets/images/slider/full-width/image1.jpg" alt="">
 				<!-- data-move-effect="top" data-fade-effect="true" data-speed="500" data-delay="1400" data-easing="easeOutSine" -->
 				<h2 class="slide__heading">Just Awesome &amp; Worth to Try</h2> 
 				<div class="slide__image">
-					<img class="" src="{{theme('images/slider/full-width/brand-phone.png')}}" alt="">
+					<img class="" src="/preparebuild/assets/images/slider/full-width/brand-phone.png" alt="">
 				</div>
 				<div class="slide__btn">
 					<a class="btn btn-warning btn--decorated" href="http://themeforest.net/item/allec-bootstrapless-template-with-page-builder/8986248#content">Purchase Template</a>
 				</div>
 
-				<img class="rsTmb" src="{{theme('images/slider/full-width/thumb1.jpg')}}" height="90" width="160">
+				<img class="rsTmb" src="/preparebuild/assets/images/slider/full-width/thumb1.jpg" height="90" width="160">
 			</div>
 			
 			<div class="slide slide--text">
-				<img class="rsImg" src="{{theme('images/slider/full-width/image2.jpg')}}" alt="">
+				<img class="rsImg" src="/preparebuild/assets/images/slider/full-width/image2.jpg" alt="">
 				<h2 class="slide__heading">High Professional Staff &amp;</h2>
 				<h2 class="slide__heading-sub">Best Engineers Ever</h2>
 				<p class="slide__info">Nam auctor dapibus ante vel facilisis. Cras eget adipiscing nisi.<br> Duis aliquet ligula non risus sollicitudin commodo. Donec ullamcorper<br> lacinia turpis at aliquet. Cras consectetur fermentum erat,<br> in placerat ligula pharetra eget.</p>
 				<a class="link" href="#">Learn more</a>
 
-				<img class="rsTmb" src="{{theme('images/slider/full-width/thumb2.jpg')}}" height="90" width="160">
+				<img class="rsTmb" src="/preparebuild/assets/images/slider/full-width/thumb2.jpg" height="90" width="160">
 			</div>
 			
 			<div class="slide slide--circle">
-				<img class="rsImg" src="{{theme('images/slider/full-width/image3.jpg')}}" alt="">
+				<img class="rsImg" src="/preparebuild/assets/images/slider/full-width/image3.jpg" alt="">
 				<div class="brand-circle"></div>
 				<h2 class="slide__heading">Find Your Way</h2>
 				<h2 class="slide__heading-sub">to Success with Allec</h2>
@@ -402,7 +402,7 @@
 					<a class="btn btn-warning btn--decorated" href="http://themeforest.net/item/allec-bootstrapless-template-with-page-builder/8986248#content">Purchase Template</a>
 				</div>
 
-				<img class="rsTmb" src="{{theme('images/slider/full-width/thumb3.jpg')}}" height="90" width="160">
+				<img class="rsTmb" src="/preparebuild/assets/images/slider/full-width/thumb3.jpg" height="90" width="160">
 			</div>
 		</div>
 
@@ -554,7 +554,7 @@
 							<div class="row">
 								<div class="one-column col-xs-6 col-sm-5 col-md-7 col-lg-6">
 									<div class="image-container image-container--max image-container--fading">
-										<img src="{{theme('images/sample/2.jpg')}}" alt="">
+										<img src="/preparebuild/assets/images/sample/2.jpg" alt="">
 										<span class="image-container__info">jan 02<br> 2015</span>
 									</div>
 								</div><!-- end col -->
@@ -574,7 +574,7 @@
 							<div class="row">
 								<div class="one-column col-xs-6 col-sm-5 col-md-7 col-lg-6">
 									<div class="image-container image-container--max image-container--fading">
-										<img src="{{theme('images/blog/full-width/2.jpg')}}" alt="">
+										<img src="/preparebuild/assets/images/blog/full-width/2.jpg" alt="">
 										<span class="image-container__info">jan 01<br> 2015</span>
 									</div>
 								</div><!-- end col -->
@@ -594,7 +594,7 @@
 							<div class="row">
 								<div class="one-column col-xs-6 col-sm-5 col-md-7 col-lg-6 col-sm-push-7 col-md-push-5 col-lg-push-6">
 									<div class="image-container image-container--max image-container--fading pull-right">
-										<img src="{{theme('images/blog/full-width/3.jpg')}}" alt="">
+										<img src="/preparebuild/assets/images/blog/full-width/3.jpg" alt="">
 										<span class="image-container__info">apr 30<br> 2015</span>
 									</div>
 								</div><!-- end col -->
@@ -616,7 +616,7 @@
 							<div class="row">
 								<div class="one-column col-xs-6 col-sm-5 col-md-7 col-lg-6 col-sm-push-7 col-md-push-5 col-lg-push-6">
 									<div class="image-container image-container--max image-container--fading pull-right">
-										<img src="{{theme('images/blog/full-width/4.jpg')}}" alt="">
+										<img src="/preparebuild/assets/images/blog/full-width/4.jpg" alt="">
 										<span class="image-container__info">apr 28<br> 2015</span>
 									</div>
 								</div><!-- end col -->
@@ -674,7 +674,7 @@
 							<article class="post post--latest">
 								<h3 class="not-visible">Latest post</h3>
 								<a class="post__images" href="single-post.html">
-									<img src="{{theme('images/blog/latest/1.jpg')}}" alt="">
+									<img src="/preparebuild/assets/images/blog/latest/1.jpg" alt="">
 								</a>
 								<a class="post__text" href="single-post.html">Mauris orci purus, ultrices dapibus justo non, eleifend consequat lorem. </a>
 								<time datetime="2015-07-17" class="post__date">July 17, 2015</time>
@@ -685,7 +685,7 @@
 							<article class="post post--latest">
 								<h3 class="not-visible">Latest post</h3>
 								<a class="post__images" href="single-post.html">
-									<img src="{{theme('images/blog/latest/2.jpg')}}" alt="">
+									<img src="/preparebuild/assets/images/blog/latest/2.jpg" alt="">
 								</a>
 								<a class="post__text" href="single-post.html">Pellentesque et magna malesuada, scelerisque elit ac, convallis lacus. </a>
 								<time datetime="2015-07-16" class="post__date">July 16, 2015</time>
@@ -775,27 +775,27 @@
 	<!-- JavaScript-->
 		<!-- External-->
 		<!-- jQuery 1.10.1--> 
-        <script src="{{theme('external/jquery/jquery-1.10.1.min.js')}}"></script>
-        <script>window.jQuery || document.write('<script src="{{theme('external/jquery/jquery-1.10.1.min.js')}}"><\/script>')</script>
+        <script src="/preparebuild/assets/nonbowerlibs/jquery/jquery-1.10.1.min.js"></script>
+        <script>window.jQuery || document.write('<script src="/preparebuild/assets/nonbowerlibs/jquery/jquery-1.10.1.min.js"><\/script>')</script>
 		<!-- Bootstrap 3--> 
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <!-- Mobile menu -->
-	    <script src="{{theme('external/z-nav/jquery.mobile.menu.js')}}"></script>
+	    <script src="/preparebuild/assets/nonbowerlibs/z-nav/jquery.mobile.menu.js"></script>
 	     <!-- Sliders -->
 		<!-- Royalsslider -->
-		<script src="{{theme('external/royalslider/jquery.royalslider.min.js')}}"></script>
+		<script src="/preparebuild/assets/nonbowerlibs/royalslider/jquery.royalslider.min.js"></script>
 	    <!-- Touch slider - Swiper -->
-	    <script src="{{theme('external/swiper/idangerous.swiper.js')}}"></script>
+	    <script src="/preparebuild/assets/nonbowerlibs/swiper/idangerous.swiper.js"></script>
 	    <!-- Scroll to piugin -->
-	    <script src="{{theme('external/scrollto/jquery.scrollTo.min.js')}}"></script>
+	    <script src="/preparebuild/assets/nonbowerlibs/scrollto/jquery.scrollTo.min.js"></script>
 	    <!-- Livicons -->
-		<script src="{{theme('external/livicons/livicons-1.3.min.js')}}"></script>
-		<script src="{{theme('external/livicons/raphael-min.js')}}"></script>
+		<script src="/preparebuild/assets/nonbowerlibs/livicons/livicons-1.3.min.js"></script>
+		<script src="/preparebuild/assets/nonbowerlibs/livicons/raphael-min.js"></script>
 	    <!-- Event that will trigger when the element is scrolled in to the viewport.--> 
-        <script src="{{theme('external/inview/jquery.inview.js')}}"></script>
+        <script src="/preparebuild/assets/nonbowerlibs/inview/jquery.inview.js"></script>
         
 		<!-- Custom -->
-        <script src="{{theme('js/custom.js')}}"></script>
+        <script src="/preparebuild/assets/js/custom.js"></script>
 
 		<script>
 			$(document).ready(function() {

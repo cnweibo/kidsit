@@ -2,7 +2,7 @@ module.exports = function () {
   var projectrootdir = "../Code/kidsit/";
 	var config = {
                 projectrootdir: projectrootdir,
-                pagelessentry: [projectrootdir+"resources/assets/less/app.less"],
+                pagelessentry: [projectrootdir+"resources/assets/less/style.less"],
                 lessfiles: projectrootdir+'resources/assets/less/**/*.less',
                 jsbuildpath: projectrootdir+"public/build/js/",
 		yinbiaoappdevjs: [projectrootdir+"public/preparebuild/assets/libs/jquery/dist/jquery.min.js",
