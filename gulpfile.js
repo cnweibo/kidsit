@@ -14,6 +14,13 @@ var sourcemaps = require('gulp-sourcemaps');
 var plumber = require('gulp-plumber');
 var spawn = require('child_process').spawn;
 var browserSync = require('browser-sync');
+var cache = require('gulp-cached');
+var LessPluginCleanCss = require('less-plugin-clean-css'),
+    cleanCss = new LessPluginCleanCss();
+var progeny = require('gulp-progeny');
+var filter = require('gulp-filter');
+var debug = require('gulp-debug');
+var remember = require('gulp-remember');
 
 // local variable defination section
 var projectrootdir = config.projectrootdir;
@@ -31,15 +38,30 @@ gulp.task('less',function(){
     log(pagelessentry);
    return gulp
        .src(pagelessentry)
-       .pipe(plumber())
-       .pipe(expect({ checkRealFile: true },pagelessentry))
-       .pipe(printfileinfo())
-       
-       // .pipe(sourcemaps.init())
-       .pipe(less())
+       .pipe(plumber({
+            errorhandler: errorhandler
+       }))
+       // .pipe(expect({ checkRealFile: true },pagelessentry))
+       // .pipe(printfileinfo())
+       .pipe(cache('lesscached'))
+       .pipe(progeny({
+            regexp: /^\s*@import\s*(?:\(\w+\)\s*)?['"]([^'"]+)['"]/
+       }))
+       .pipe(filter(['**/*.less', '!bootstrap/**/*.less']))
+       .pipe(debug({
+            title: 'LESS'
+       }))
+       .pipe(sourcemaps.init())
+       .pipe(sourcemaps.init())
+       .pipe(less(
+       {
+            plugins: [cleanCss]
+       }
+       ))
+       .pipe(remember('lesscached'))
        // .pipe(rename('bootstrap.css'))
        // .on('error',errorhandler)
-       // .pipe(sourcemaps.write())
+       .pipe(sourcemaps.write(projectrootdir+'public/preparebuild/assets/css/'))
        .pipe(gulp.dest(projectrootdir+'public/preparebuild/assets/css/'));
 });
 gulp.task('syncgulpfiletobuilddir',function(){
