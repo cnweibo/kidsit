@@ -2,7 +2,46 @@ module.exports = function () {
   var projectrootdir = "../Code/kidsit/";
 	var config = {
                 projectrootdir: projectrootdir,
-                pagelessentry: [projectrootdir+"resources/assets/less/style.less"],
+                pagelessentry: [
+                       projectrootdir+"resources/assets/less/style.less"
+                       // projectrootdir+"resources/assets/less/style2.less", //style2.less is used to test fast compiling and browsersync!!
+
+                ],
+                // pagelessentry: [
+                //     projectrootdir+"resources/assets/bower_components/bootstrap/less/variables.less",
+                //     projectrootdir+"resources/assets/less/base/vars.less",
+                //     projectrootdir+"resources/assets/bower_components/bootstrap/less/mixins.less",
+                //     projectrootdir+"resources/assets/less/base/normalize.less",
+                //     projectrootdir+"resources/assets/bower_components/bootstrap/less/scaffolding.less",
+                //     projectrootdir+"resources/assets/bower_components/bootstrap/less/type.less",
+                //     projectrootdir+"resources/assets/less/base/base.less",
+                //     projectrootdir+"resources/assets/less/base/customized.less",
+                //     projectrootdir+"resources/assets/bower_components/bootstrap/less/grid.less",
+                //     projectrootdir+"resources/assets/bower_components/bootstrap/less/utilities.less",
+                //     projectrootdir+"resources/assets/bower_components/bootstrap/less/responsive-utilities.less",
+                //     projectrootdir+"resources/assets/less/objects/header.less",
+                //     projectrootdir+"resources/assets/less/objects/footer.less",
+                //     projectrootdir+"resources/assets/less/objects/sliders.less",
+                //     projectrootdir+"resources/assets/less/objects/modals.less",
+                //     projectrootdir+"resources/assets/less/objects/forms.less",
+                //     projectrootdir+"resources/assets/bower_components/bootstrap/less/breadcrumbs.less",
+                //     projectrootdir+"resources/assets/bower_components/bootstrap/less/alerts.less",
+                //     projectrootdir+"resources/assets/bower_components/bootstrap/less/buttons.less",
+                //     projectrootdir+"resources/assets/bower_components/bootstrap/less/modals.less",
+                //     projectrootdir+"resources/assets/bower_components/bootstrap/less/panels.less",
+                //     projectrootdir+"resources/assets/bower_components/bootstrap/less/progress-bars.less",
+                //     projectrootdir+"resources/assets/bower_components/bootstrap/less/navs.less",
+                //     projectrootdir+"resources/assets/bower_components/bootstrap/less/dropdowns.less",
+                //     projectrootdir+"resources/assets/bower_components/bootstrap/less/tables.less",
+                //     projectrootdir+"resources/assets/bower_components/bootstrap/less/tooltip.less",
+                //     projectrootdir+"resources/assets/less/objects/widgets.less",
+                //     projectrootdir+"resources/assets/less/objects/rocket.less",
+                //     projectrootdir+"resources/assets/less/objects/objects.less",
+                //     projectrootdir+"resources/assets/less/objects/shop-ecwid.less",
+                //     projectrootdir+"resources/assets/less/state/state.less",
+                //     projectrootdir+"resources/assets/less/state/responsive.less",
+                //     projectrootdir+"resources/assets/less/style.less"
+                //     ],
                 lessfiles: projectrootdir+'resources/assets/less/**/*.less',
                 jsbuildpath: projectrootdir+"public/build/js/",
 		yinbiaoappdevjs: [projectrootdir+"public/preparebuild/assets/libs/jquery/dist/jquery.min.js",

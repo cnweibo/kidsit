@@ -21,6 +21,7 @@ var progeny = require('gulp-progeny');
 var filter = require('gulp-filter');
 var debug = require('gulp-debug');
 var remember = require('gulp-remember');
+var uncss = require('gulp-uncss');
 
 // local variable defination section
 var projectrootdir = config.projectrootdir;
@@ -43,14 +44,14 @@ gulp.task('less',function(){
        }))
        // .pipe(expect({ checkRealFile: true },pagelessentry))
        // .pipe(printfileinfo())
-       .pipe(cache('lesscached'))
-       .pipe(progeny({
-            regexp: /^\s*@import\s*(?:\(\w+\)\s*)?['"]([^'"]+)['"]/
-       }))
-       .pipe(filter(['**/*.less', '!bootstrap/**/*.less']))
-       .pipe(debug({
-            title: 'LESS'
-       }))
+       // .pipe(cache('lesscached'))
+       // .pipe(progeny({
+       //      regexp: /^\s*@import\s*(?:\(\w+\)\s*)?['"]([^'"]+)['"]/
+       // }))
+       // .pipe(filter(['**/*.less', '!bootstrap/**/*.less']))
+       // .pipe(debug({
+       //      title: 'LESS'
+       // }))
        .pipe(sourcemaps.init())
        .pipe(sourcemaps.init())
        .pipe(less(
@@ -58,7 +59,10 @@ gulp.task('less',function(){
             plugins: [cleanCss]
        }
        ))
-       .pipe(remember('lesscached'))
+       .pipe(uncss({
+            html: ['index.html', 'http://homestead.app']
+        }))
+       // .pipe(remember('lesscached'))
        // .pipe(rename('bootstrap.css'))
        // .on('error',errorhandler)
        .pipe(sourcemaps.write(projectrootdir+'public/preparebuild/assets/css/'))
