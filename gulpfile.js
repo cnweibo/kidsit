@@ -3,7 +3,7 @@ var config = require('./gulp.config.js')();
 var gulp = require('gulp');
 var concat =require('gulp-concat');
 var uglify = require('gulp-uglify');
-var less = require('gulp-less-sourcemap');
+var less = require('gulp-less');
 var expect = require('gulp-expect-file');
 var printfileinfo = require('gulp-print');
 var inject = require('gulp-inject');
@@ -53,19 +53,21 @@ gulp.task('less',function(){
        //      title: 'LESS'
        // }))
        .pipe(sourcemaps.init())
-       .pipe(sourcemaps.init())
        .pipe(less(
-       {
-            plugins: [cleanCss]
-       }
+       // {
+       //      // plugins: [cleanCss]
+       //      // sourceMap: {
+       //      //     sourceMapFileInline: true
+       //      // }
+       // }
        ))
-       .pipe(uncss({
-            html: ['index.html', 'http://homestead.app']
-        }))
+       // .pipe(uncss({
+       //      html: ['index.html', 'http://homestead.app']
+       //  }))
        // .pipe(remember('lesscached'))
        // .pipe(rename('bootstrap.css'))
        // .on('error',errorhandler)
-       .pipe(sourcemaps.write(projectrootdir+'public/preparebuild/assets/css/'))
+       .pipe(sourcemaps.write(projectrootdir+'public/preparebuild/assets/css/',{includeContent: true})) //projectrootdir+'public/preparebuild/assets/css/'
        .pipe(gulp.dest(projectrootdir+'public/preparebuild/assets/css/'));
 });
 gulp.task('syncgulpfiletobuilddir',function(){
