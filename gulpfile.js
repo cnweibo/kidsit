@@ -22,6 +22,7 @@ var filter = require('gulp-filter');
 var debug = require('gulp-debug');
 var remember = require('gulp-remember');
 var uncss = require('gulp-uncss');
+var insert = require('gulp-insert');
 
 // local variable defination section
 var projectrootdir = config.projectrootdir;
@@ -34,6 +35,26 @@ var $ = require('gulp-load-plugins')({lazy: true});
 var jsbuildpath = config.jsbuildpath;
 gulp.task('help', $.taskListing);
 gulp.task('default', ['help']);
+gulp.task('wraplessmagic-onlyONCE',function(){
+   return gulp
+       .src(projectrootdir+'resources/assets/less/**/*.less',{base: "./"})
+       .pipe(insert.transform(function(contents, file) {
+            var precomment = '/* file start: ' + file.path + '*/\n';
+            var postcomment = '/* file end: ' + file.path + '*/\n';
+            return precomment + contents +postcomment;
+        }))
+       .pipe(gulp.dest('./'));
+});
+gulp.task('wraplessmagicbootstrap-onlyONCE',function(){
+   return gulp
+       .src(projectrootdir+'resources/assets/bower_components/bootstrap/less/**/*.less',{base: "./"})
+       .pipe(insert.transform(function(contents, file) {
+            var precomment = '/* file start: ' + file.path + '*/\n';
+            var postcomment = '/* file end: ' + file.path + '*/\n';
+            return precomment + contents +postcomment;
+        }))
+       .pipe(gulp.dest('./'));
+});
 gulp.task('less',function(){
     var pagelessentry = config.pagelessentry;
     log(pagelessentry);
