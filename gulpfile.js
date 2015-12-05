@@ -61,9 +61,10 @@ gulp.task('less',function(){
        //      // }
        // }
        ))
-       // .pipe(uncss({
-       //      html: ['index.html', 'http://homestead.app']
-       //  }))
+       .pipe(uncss({
+            html: ['index.html', 'http://homestead.app'],
+            ignore: [/header-down/,/header-up/]
+        }))
        // .pipe(remember('lesscached'))
        // .pipe(rename('bootstrap.css'))
        // .on('error',errorhandler)
