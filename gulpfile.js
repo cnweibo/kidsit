@@ -70,9 +70,9 @@ gulp.task('less',function(){
        //      regexp: /^\s*@import\s*(?:\(\w+\)\s*)?['"]([^'"]+)['"]/
        // }))
        // .pipe(filter(['**/*.less', '!bootstrap/**/*.less']))
-       // .pipe(debug({
-       //      title: 'LESS'
-       // }))
+       .pipe(debug({
+            title: 'LESS'
+       }))
        .pipe(sourcemaps.init())
        .pipe(less(
        // {
@@ -84,7 +84,7 @@ gulp.task('less',function(){
        ))
        .pipe(uncss({
             html: ['index.html', 'http://homestead.app'],
-            ignore: [/header-down/,/header-up/]
+            ignore: [/header-/,/zoom/,/fade/]
         }))
        // .pipe(remember('lesscached'))
        // .pipe(rename('bootstrap.css'))
