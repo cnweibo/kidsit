@@ -90,6 +90,16 @@ gulp.task('wraplessmagic-onlyONCE',function(){
         }))
        .pipe(gulp.dest('./'));
 });
+gulp.task('removelessmagic',function(){
+   return gulp
+       .src(projectrootdir+'resources/assets/less/**/*.less',{base: "./"})
+       .pipe(insert.transform(function(contents, file) {
+            var precomment = '/* file start: ' + file.path + '*/';
+            var postcomment = '/* file end: ' + file.path + '*/';
+            return contents.replace(precomment,'').replace(postcomment,'');
+        }))
+       .pipe(gulp.dest('./'));
+});
 gulp.task('wraplessmagicbootstrap-onlyONCE',function(){
    return gulp
        .src(projectrootdir+'resources/assets/bower_components/bootstrap/less/**/*.less',{base: "./"})
