@@ -1,0 +1,25 @@
+
+
+//header--opacity
+
+.header--opacity{
+	background: rgba(243, 247, 247, 0.9);
+	position: fixed;
+	z-index: 250;
+	
+	.header-fixed{
+		max-height: 100px;
+	}
+	
+	.header-fixed,
+	.fixed-top{
+		background: rgba(243, 247, 247, 0.9);
+	}
+}
+
+@media (max-width: @screen-sm-min){
+	.header--opacity{
+		width: 100%;
+		position: relative;
+	}
+}

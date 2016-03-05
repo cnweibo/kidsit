@@ -1,0 +1,106 @@
+//error page
+
+
+.error{
+	
+	text-align: center;
+	background-color: @primary-background;
+	background-image: url(../images/components/error-stars.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	.wrapper{
+		position: relative;
+	}
+
+	.error__main{
+		width: 494px;
+		height: 199px;
+		margin-top: 458px;
+	}
+
+	.error__heading{
+		margin-top: 15px;
+		margin-bottom: 7px;
+		font-size: 32px;
+		font-family: @regular-font;
+		font-weight: 300;
+		color: #758594;
+	}
+
+	.error__info{
+		color: #758594;
+	}
+
+	.error__back{
+		position: relative;
+		display: inline-block;
+		margin-top: 150px;
+		margin-bottom: 188px;
+		font-size: 16px;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: @null-color;
+		z-index: 30;
+
+		&:hover{
+			color: @secondary-color;
+		}
+
+		&:before{
+			content: "";
+			position: absolute;
+			top: 40px;
+			left: -4px;
+			width: 120px;
+			height: 23px;
+			// background-image: url(../images/components/rocket.png);
+			// background-repeat: no-repeat;
+			// background-size: 120px 23px;
+		}
+	}
+}
+
+//orbite block (for planet positioning)
+.orbite{
+	&:before{
+		content: "";
+		position: absolute;
+		top: -17px;
+		left: 50%;
+		width: 42px;
+		height: 42px;
+		margin-left: -61px;
+		background-image: url(../images/components/planet-small.png);
+		background-repeat: no-repeat;
+		background-size: 42px 42px;
+	}
+}
+
+.orbite-double{
+	&:before{
+		content: "";
+		position: absolute;
+		top: 50%;
+		right: -6px;
+		width: 42px;
+		height: 42px;
+		margin-top: 75px;
+		background-image: url(../images/components/planet-small.png);
+		background-repeat: no-repeat;
+		background-size: 42px 42px;
+	}
+
+	&:after{
+		content: "";
+		position: absolute;
+		top: -20px;
+		left: 50%;
+		width: 76px;
+		height: 76px;
+		margin-left: 75px;
+		background-image: url(../images/components/planet-large.png);
+		background-repeat: no-repeat;
+		background-size: 76px 76px;
+	}
+}

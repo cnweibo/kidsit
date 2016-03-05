@@ -1,0 +1,76 @@
+
+//quantity block
+.quantity-choose{
+	width: 170px;
+	overflow: hidden;
+	margin-right: 25px;
+	margin-bottom: 15px;
+	float: left;
+}
+
+.quantity{
+	.quantity__elem{
+		height: 50px;
+		color: #737c85;
+		background: none;
+		border: none;
+		box-shadow: none;
+		float: left;
+	}
+
+	.qty{
+		width: 84px;
+		font-size: 14px;
+		text-align: center;
+		border: 1px solid #dfe6e7;
+	}
+
+	.qtyminus,
+	.qtyplus{
+		width: 42px;
+		position: relative;
+		z-index: 5;
+		color: transparent;
+	}
+
+	.qtyminus-wrap{
+		position: relative;
+
+		&:before{
+			content: "\f068";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 42px;
+			height: 50px;
+			padding-top: 18px;
+			padding-left: 18px;
+			font: 14px FontAwesome;
+			color: #737c85;
+			background-color: #dfe6e7;
+			.border-radius(25px 0 0 25px);
+			z-index: 2;
+
+		}
+	}
+
+	.qtyplus-wrap{
+		position: relative;
+
+		&:before{
+			content: "\f067";
+			position: absolute;
+			top: 0;
+			right: 2px;
+			width: 42px;
+			height: 50px;
+			padding-top: 18px;
+			padding-left: 14px;
+			font: 14px FontAwesome;
+			color: #737c85;
+			background-color: #dfe6e7;
+			.border-radius(0 25px 25px 0);
+			z-index: 2;
+		}
+	}
+}

@@ -1,0 +1,66 @@
+
+//special
+.special{
+	min-height: 385px;
+	padding-top: 47px;
+	background-color: @secondary-background;
+	text-align: center;
+	background-image: url(../images/components/browser.png);
+	background-repeat: no-repeat;
+	background-position: 50% 100%;
+	background-size: 580px 238px; 
+
+	.special__text{
+		font-size: 16px;
+		color: @null-color;
+		font-style: italic;
+	}
+
+	.special__price{
+		position: relative;
+		margin-top: 110px;
+		margin-bottom: 22px;
+		font: 50px @brand-font;
+		color: @primary-color;
+
+		&:before{
+			content: "{";
+			font: 50px @brand-font;
+			color: #e1e8e9;
+			margin-right: 13px;
+		}
+
+		&:after{
+			content: "}";
+			font: 50px @brand-font;
+			color: #e1e8e9;
+			margin-left: 13px;
+		}
+	}
+
+	.special-inner{
+		position: relative;
+
+		&:before{
+			content: "{";
+			position: absolute;
+			top: 50%;
+			left: 25px;
+			margin-top: -100px;
+			font: 200px @brand-font;
+			color: rgba(255, 255, 255, 0.2);
+			margin-right: 13px;
+		}
+
+		&:after{
+			content: "}";
+			position: absolute;
+			top: 50%;
+			right: 25px;
+			margin-top: -100px;
+			font: 200px @brand-font;
+			color: rgba(255, 255, 255, 0.2);
+			margin-left: 13px;
+		}
+	}
+}

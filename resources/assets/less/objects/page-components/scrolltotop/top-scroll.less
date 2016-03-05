@@ -1,0 +1,30 @@
+//Scroll to top
+.top-scroll{
+  display : none;
+	position: fixed;
+	bottom: 50px;
+	right: 5%;
+	z-index: 1000;
+	display: block;
+	width: 48px;
+	height: 48px;
+	font-size: 28px;
+	color: @null-color;
+	text-align: center;
+	background-color: rgba(red(@secondary-background),green(@secondary-background),blue(@secondary-background),0.3) ;
+  border: 2px solid #fff;
+	.border-radius(25px);
+	cursor: pointer;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  transform: translateZ(0);
+
+   &:hover{
+    color: @primary-color;
+    background-color: darken(@secondary-background, 10%)  ;
+  }
+}
+
+.top-scroll-special{
+  background-color: @special-second-color;
+}

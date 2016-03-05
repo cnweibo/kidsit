@@ -1,0 +1,47 @@
+
+//Tooltip
+.tooltip{
+	z-index: 300;
+}
+
+.tooltip-link{
+	display: inline-block;
+	font-size: 14px;
+	font-weight: bold;
+	color: @secondary-color;
+}
+
+.tooltip{
+
+	&.top .tooltip-arrow{
+		border-top-color: @primary-background;
+	}
+
+	.tooltip-inner{
+		padding: 6px 10px 4px;
+		background-color: @primary-background;
+		.border-radius(0);
+	}
+}
+
+/* tooltips */
+@min-width: ~"screen and (min-width: 0\0)";
+
+@media @min-width {
+	.tooltip-classic .tooltip-content,
+	.tooltip-flip .tooltip-content,
+	.tooltip-line .tooltip-content,
+	.tooltip-round .tooltip-content,
+	.tooltip-box .tooltip-content {
+		display: none;
+	}
+
+	.tooltip-classic:hover .tooltip-content,
+	.tooltip-flip:hover .tooltip-content,
+	.tooltip-line:hover .tooltip-content,
+	.tooltip-round:hover .tooltip-content,
+	.tooltip-box:hover .tooltip-content {
+		display: block;
+	}
+}
+

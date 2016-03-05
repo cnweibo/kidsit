@@ -1,0 +1,79 @@
+
+// header variant
+//*** social variant
+.header--social{
+
+	.header-line{
+		position: relative;
+		background: none;
+	
+		&:before{
+			content: "";
+			position: absolute;
+			bottom: 3px;
+			left: 0;
+			height: 1px;
+			width: 100%;
+			background: rgba(0, 0, 0, 0.15);
+		}
+		
+	}
+
+	.header-fixed{
+		max-height: 151px;
+	}
+
+	.fixed-top{
+		position: relative;
+		top: -3px;
+	}
+
+	.contact-info{
+		padding-top: 1px;
+
+		.contact-info__item{
+			position: relative;
+			padding-right: 29px;
+			margin-left: 31px;
+			display: inline-block;
+			
+			&:before{
+				content: "";
+				position: absolute;
+				top: -13px;
+				right: 0;
+				height: 44px;
+				width: 1px;
+				background: rgba(0, 0, 0, 0.15);
+			}
+		}
+
+		.contact-info__item:first-child{
+			
+			&:after{
+				content: "";
+				position: absolute;
+				top: -13px;
+				left: -31px;
+				height: 44px;
+				width: 1px;
+				background: rgba(0, 0, 0, 0.15);
+			}
+		}
+	}
+
+	.social--small{
+		float: right;
+		margin-top: -2px;
+
+		.social__link{
+			height: 28px;
+			width: 28px;
+			padding-top: 5px;
+		}
+
+		.social__icon{
+			font-size: 14px;
+		}
+	}
+}

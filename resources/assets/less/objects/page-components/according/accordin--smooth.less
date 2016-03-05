@@ -1,0 +1,50 @@
+
+
+.acoordion--smooth{
+	.panel + .panel{
+		margin-top: 10px;
+	}
+
+	.panel-heading .marker{
+		width: 50px;
+		height: 100%;
+		color: @null-color;
+		background: @primary-background;
+
+		.border-radius(25px);
+	}
+
+	.panel-heading .collapsed .marker{
+		background: #dfe6e7;
+		color: @primary-color;
+	}
+
+	.panel-heading .marker__close,
+	.panel-heading .marker__open{
+		top: 50%;
+		left: 50%;
+		margin-top: -7px;
+		margin-left: -5px;
+	}
+
+	.panel-heading .accordion-link{
+		padding: 16px 15px 17px;
+		font-size: 14px;
+		font-weight: 600;
+		font-family: @regular-font;
+		border: 1px solid transparent;
+		.border-radius(25px);
+		padding-left: 75px;
+	}
+
+	.panel-heading .collapsed.accordion-link{
+		border: 1px solid #dfe6e7;
+		font-weight: 600;
+	}
+
+	.panel-body{
+		padding-left: 75px;
+		padding-top: 5px;
+		color: @primary-color;
+	}
+}

@@ -1,0 +1,51 @@
+//Counter
+.couter{
+	margin-top: 135px;
+	margin-bottom: 355px;
+	font-size: 0;
+
+	.timer-input{
+		display: none;
+	}
+
+	.timer-wrap{
+		width: 185px;
+		margin: 0 15px 20px;
+		display: inline-block;
+		background: fade(@warning-color, 10%);
+		border-bottom: 5px solid @warning-color;
+	}
+
+	.timer-wrap--hour{
+		background: fade(@secondary-color, 10%);
+		border-bottom: 5px solid @secondary-color;
+	}
+
+	.timer-wrap--min{
+		background: fade(@null-color, 10%);
+		border-bottom: 5px solid @null-color;
+	}
+
+	.timer-wrap--sec{
+		background: fade(@danger-color, 10%);
+		border-bottom: 5px solid @danger-color;
+	}
+
+	.digits{
+		display: block;
+		margin-top: 34px;
+		margin-bottom: -6px;
+		font-family: @regular-font;
+		font-size: 80px;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: @null-color;
+	}
+
+	.digits-label{
+		margin-bottom: 18px;
+		font: 30px "Georgia", serif;
+		font-style: italic;
+		color: @null-color;
+	}
+}

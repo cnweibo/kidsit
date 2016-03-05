@@ -1,0 +1,59 @@
+
+//Animated header
+.place-shrink{
+  overflow-x: hidden;
+}
+
+.header-placement{
+	.header-fixed{
+		background: transparent;
+		top: 0;
+		padding-top: 0;
+	}
+/* uncss:ignore */
+	.header-up{
+		background-color: #34495e;
+		-webkit-transform: translate3d(0px, 0px, 0px);
+		-moz-transform: translate3d(0px, 0px, 0px);
+		-ms-transform: translate(0px, 0px);
+		transform: translate3d(0px, 0px, 0px);
+	}
+
+	.main-title{
+	  margin-top: -10px;
+	}
+
+	.main-title-helper{
+	  position: absolute;
+	  top: 50%;
+	  left: 0;
+	  width: 100%;
+	  margin-top: 50px;
+	  text-align: center;
+	  font-size: 24px;
+	  text-transform: none;
+	  color: #85d6de;
+	}
+
+	.scroll-next{
+	  background-color: rgba(86,104,121,0.5);
+	}
+
+	
+}
+
+@media (max-width: 768px) {
+  .header-placement .header-fixed{
+    position: relative;
+    margin-bottom: -104px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-placement .main-title{
+    font-size: 36px;
+  }
+  .header-placement .main-title-helper{
+    font-size: 22px;
+  }
+}

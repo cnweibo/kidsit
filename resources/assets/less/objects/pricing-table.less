@@ -1,0 +1,290 @@
+
+
+//Pricing tables
+.price{
+	margin-bottom: 80px;
+	background-color: #f3f7f7;
+	text-align: center;
+	color: @primary-color;
+
+	.price__head{
+		border-bottom: 1px solid @null-color;
+	}
+
+	.price__package{
+		font-family: @regular-font;
+		padding-top: 36px;
+		margin: 0;
+		font-size: 24px;
+		text-transform: uppercase;
+	}
+
+	.price__value{
+		margin-bottom: 0;
+		font-size: 44px;
+		line-height: 44px;
+		font-weight: 800;
+		color: @primary-color;
+	}
+
+	.price__descript{
+		margin-bottom: 29px;
+		font-size: 16px;
+		color: #bac3cd;
+	}
+
+	.price__content{
+		padding-top: 20px;
+	}
+
+	ul{
+		padding-left: 0;
+		list-style: none;
+	}
+
+	.price-quality{
+		padding: 10px 0;
+		font-style: normal;
+	}
+
+	.price__btn{
+		padding: 17px 33px 15px;
+		margin-top: 28px;
+		margin-bottom: 43px;
+	}
+}
+
+.price--full{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.price--popular{
+	background-color: @primary-background;
+	color: @null-color;
+
+	.price-quality,
+	.price__package,
+	.price__value{
+		color: @null-color;
+	}
+}
+
+.price--simple{
+	background-color: transparent;
+
+	.price__head{
+		background-color: @secondary-background;
+		border-bottom: 3px solid @null-color;
+		padding-bottom: 2px;
+	}
+
+	.price__content{
+		border-left: 3px solid #dfe6e7;
+		border-right: 3px solid #dfe6e7;
+		
+	}
+
+	.price__bottom{
+		border: 3px solid #dfe6e7;
+		border-top: none;
+	}
+
+	.price__descript{
+		color: @null-color;
+	}	
+
+	.price__btn{
+		margin-top: 25px;
+		margin-bottom: 38px;
+	}
+}
+
+.price--row{
+	background-color: @warning-color;
+	overflow: hidden;
+	margin-bottom: 80px;
+
+	.price{
+		background-color: transparent;
+		margin-bottom: 0;
+	}
+
+	.price__head{
+		border: none;
+	}
+
+	.price__package{
+		padding-top: 46px;
+		padding-bottom: 6px;
+		font: 50px @brand-font;
+		color: @null-color;
+		text-transform: none;
+	}
+
+	.price__package-main{
+		color: @primary-color;
+	}
+
+	.font-lg{
+		font-size: 30px;
+		line-height: 8px;
+	}
+
+	.price-quality{
+		padding: 6px 0;
+	}
+
+	.price-quality--special{
+		padding-top: 10px;
+		margin-bottom: 15px;
+		font: 30px @brand-font;
+		color: @primary-color;
+	}
+
+	.price-quality-value{
+		display: block;
+		margin-top: -5px;
+		font-size: 18px;
+		color: @null-color;
+	}
+
+	.price__btn{
+		margin-bottom: 31px;
+	} 
+}
+
+.price--stript{
+	border-right: 1px solid @null-color;
+
+	.price__head{
+		background-color: @secondary-background;
+		border: none;
+	}
+
+	.price__package{
+		padding-top: 43px;
+		padding-bottom: 1px;
+		font-size: 18px;
+	}
+
+	.price__descript{
+		color: @null-color;
+		padding-bottom: 29px;
+		margin-bottom: 0;
+	}
+
+	.price__content{
+		padding-top: 0px;
+	}
+
+	.price-quality{
+		padding: 20px 0;
+		font-style: normal;
+	}
+
+	.price-quality:nth-child(odd){
+		position: relative;
+		
+		&:before{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.04);
+		}
+	}
+
+	.price__btn{
+		margin-top: 29px;
+		margin-bottom: 31px;
+		padding-left: 35px;
+	}
+}
+
+	.price-info{
+		padding-left: 0;
+		margin-top: 163px;
+		list-style: none;
+	}
+
+	.price-info__item{
+		background-color: rgba(0, 0, 0, 0.01);
+	}
+
+	.price-info__item{
+		padding: 20px 0;
+		padding-left: 50px;
+		font-style: normal;
+	}
+
+	.price-info__item:nth-child(odd){
+		position: relative;
+		
+		&:before{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.04);
+		}
+	}
+
+.price--count{
+	.price__value{
+		padding-bottom: 43px;
+	}
+
+	.price__content{
+		padding-top: 30px;
+	}
+
+	.price__counter{
+		background: @null-color;
+
+		.price__counter_market{
+			padding-top: 18px;
+			margin-bottom: -5px;
+			font-family: Georgia, serif;
+			font-size: 16px;
+			font-weight: bold;
+			font-style: italic;
+			color: @warning-color;
+		}
+
+		.digits{
+			color: @primary-color;
+			font: 32px @regular-font;
+			font-weight: bold;
+			padding: 0 12px;
+		}
+
+		.timer-wrap{
+			position: relative;
+			display: inline-block;
+			padding-bottom: 25px;
+
+			&:before{
+				content: ":";
+				position: absolute;
+				top: 0;
+				left: -8px;
+				color: @primary-color;
+				font: 32px @regular-font;
+				font-weight: bold;
+			}
+
+			&:first-child:before{
+				display: none;
+			}
+		}
+		.digits-label,
+		.timer-input{
+			display: none;
+		}
+	}
+}

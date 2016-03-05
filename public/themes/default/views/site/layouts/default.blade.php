@@ -33,7 +33,7 @@
     	<link href="/preparebuild/assets/nonbowerlibs/swiper/idangerous.swiper.css" rel="stylesheet" />
 
         <!-- Custom -->
-      <link href="/preparebuild/assets/css/style.css?v=1" rel="stylesheet" />
+      <link href="/preparebuild/assets/css/style.css" rel="stylesheet" />
       
 		<!-- *** Favicons *** -->
 			<!--[if IE]><link rel="icon"  href="favicons/favicon_16x16.ico" /><![endif]-->
@@ -349,6 +349,21 @@
                         		<li class="z-nav__item"><a class="z-nav__link" href="shortcodes/modals.html"><i class="fa  fa-th-large"></i>Modal windows</a></li>
 			                    </div>
 			                    <!-- <li class="z-nav__item"><a class="z-nav__link" href="#">Shortcodes</a></li> -->
+			                </ul>
+			                <!-- end subsidiary menu list-->
+			            </li>
+			            <li class="z-nav__item">
+			                <!-- Subsidiary menu toogle button -->
+			            	<span class="z-nav__toggle-sub plus"><i class="fa fa-plus"></i><i class="fa fa-minus"></i></span>
+			            	<a class="z-nav__link" href="shortcodes/accordions.html"><i class="fa fa-search"></i></a>
+			                <!-- Subsidiary menu list-->
+			                <ul class="z-nav__list-secondary">
+			                	<form class="search pull-right" id="search-form" name="search-form" method="get" action="#">
+			                	    <input class="search__field" name="search-request" type="search" placeholder="search" value="">
+			                	    <button class="search__btn" type="submit">
+			                	        <i class="fa fa-search"></i>
+			                	    </button>
+			                	</form>
 			                </ul>
 			                <!-- end subsidiary menu list-->
 			            </li>

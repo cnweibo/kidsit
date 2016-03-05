@@ -1,0 +1,30 @@
+
+//Icons
+.icon--strips {
+
+	.icon__item{
+		position: relative;
+		display: inline-block;
+		width: 60px;
+		height: 60px;
+		padding-top: 19px;
+		margin: 0 10px 5px;
+		text-align: center;
+		background-color: @null-color;
+		.border-radius(50%);
+
+			&:after{
+				content: "";
+				position: absolute;
+				top: -7px;
+				left: -7px;
+				z-index: -1;
+				width: 74px;
+				height: 74px;
+				background-image: url(../images/components/icons-bg.png);
+				background-size: 74px;
+				background-repeat: no-repeat;
+			}
+	}
+}
+

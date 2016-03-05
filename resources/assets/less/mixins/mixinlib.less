@@ -1,0 +1,25 @@
+/*skin mixin*/
+.skin(@color:@primary-color;@bg-color:@primary-background;@border-color:darken(@bg-color, 10%)){
+	color: @color;
+	background-color:@bg-color;
+	border-color:@border-color;
+}
+/*size mixin*/
+.dimension(@fontsize:@font-size-base;@lineheight:@line-height-base;@borderradiussize:@border-radius-size-base;@paddingsize:@padding-size-base){
+	font-size: @fontsize;
+	line-height:@lineheight;
+	border-radius: @borderradiussize;
+	padding: @paddingsize;
+}
+.border-radius(@size){
+	-webkit-border-radius: @size;
+	-moz-border-radius: @size;
+	border-radius: @size;
+}
+.transition-delay(@time){
+	-webkit-transition-delay: @time;
+	-moz-transition-delay: @time;
+	-o-transition-delay: @time;
+	-ms-transition-delay: @time;
+	transition-delay: @time;
+}

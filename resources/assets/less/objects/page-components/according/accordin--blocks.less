@@ -1,0 +1,65 @@
+
+.accordion--blocks{
+	.panel + .panel{
+		margin-top: 3px;
+	}
+
+	.panel-heading{
+		.marker__close {
+			  left: 22px;
+			  margin-top: -5px;
+			  font-size: 9px;
+		}
+
+		.marker__open {
+			  left: 22px;
+			  margin-top: -5px;
+			  font-size: 9px;
+		}
+	}
+
+	.accordion-link.collapsed{
+		background-color: transparent;
+		border: 1px solid #dfe6e7;
+		color: @primary-color;
+
+		&:hover{
+			background: @primary-background;
+			border: 1px solid @primary-background;
+			color: @null-color;
+		}
+	}
+
+	.accordion-link{
+		display: block;
+		padding: 35px 15px 36px 48px;
+		background: @primary-background;
+		border: 1px solid @primary-background;
+		color: @null-color;
+		.transition(all 500ms ease);
+	}
+
+	.panel-title{
+		font-family: @regular-font;
+		font-size: 14px;
+		font-style: italic;
+		font-weight: bold;
+	}
+
+	.panel-body{
+		position: relative;
+		padding: 32px 0 70px 40px;
+		margin-bottom: 0;
+		
+	}
+
+	.panel-body:after{
+		content: "";
+		width: 100%;
+		height: 1px;
+		background: @primary-background;
+		position: absolute;
+		bottom: 37px;
+		left: 0;
+	}
+}

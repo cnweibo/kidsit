@@ -1,0 +1,54 @@
+
+//Gragable setting
+.mCSB_dragger{
+	min-width: 50px;
+	height: 11px !important;
+	margin-top: 3px;
+	background-color: @secondary-background;
+	.border-radius(6px);
+	.transition(background-color 300ms ease-in);
+
+	&:before{
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-image: url(../images/icons/three-lines.svg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 12px 11px;
+		z-index: 18;
+	}
+
+	&:after{
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 60%;
+		background-color: rgba(0, 0, 0, 0.1);
+		.border-radius(0 0 6px 6px);
+		z-index: 12;
+	}
+
+	&:hover{
+		background-color: @primary-background;
+	}
+}
+
+.mCSB_scrollTools{
+	opacity: 1;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_dragger:focus .mCSB_dragger_bar{
+	display: none;
+}
+
+.mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail{
+	height: 3px;
+	background-color: @primary-background;
+	opacity: 1;
+}

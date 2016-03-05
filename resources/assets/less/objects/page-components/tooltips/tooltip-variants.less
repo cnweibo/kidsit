@@ -1,0 +1,93 @@
+
+//Tooltips
+.tooltip--secondary + .tooltip{
+
+	&.top .tooltip-arrow{
+		border-top-color: @secondary-background;
+	}
+
+	.tooltip-inner{
+		background-color: @secondary-background;
+	}
+}
+
+.tooltip--bordered + .tooltip{
+	&.top .tooltip-arrow{
+		border-top-color: transparent;
+	}
+
+	.tooltip-inner{
+		position: relative;
+		color: @primary-color;
+		background-color: @null-color;
+		border: 1px solid @primary-background;
+		-webkit-box-shadow: 0 2px 5px rgba(0,0,0,.2);
+		   -moz-box-shadow: 0 2px 5px rgba(0,0,0,.2);
+		        box-shadow: 0 2px 5px rgba(0,0,0,.2);
+
+		&:after, &:before {
+			top: 100%;
+			left: 50%;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+		}
+
+		&:after {
+			border-color: rgba(255, 255, 255, 0);
+			border-top-color: #fff;
+			border-width: 5px;
+			margin-left: -5px;
+		}
+		&:before {
+			border-color: rgba(52, 73, 94, 0);
+			border-top-color: #34495e;
+			border-width: 6px;
+			margin-left: -6px;
+		}
+	}
+}
+
+.tooltip--shadow + .tooltip{
+
+	&.top .tooltip-arrow{
+		border-top-color: transparent;
+	}
+
+	.tooltip-inner{
+		position: relative;
+		color: #000;
+		background-color: #dfe6e7;
+		border: solid 1px #ccd7d8;
+		-webkit-box-shadow: 0 2px 5px rgba(0,0,0,.2), inset 0 1px 1px rgba(255,255,255,.75);
+		-moz-box-shadow: 0 2px 5px rgba(0,0,0,.2), inset 0 1px 1px rgba(255,255,255,.75);
+		box-shadow: 0 2px 5px rgba(0,0,0,.2), inset 0 1px 1px rgba(255,255,255,.75);
+
+		&:after, &:before {
+			top: 100%;
+			left: 50%;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+		}
+
+		&:after {
+			border-color: rgba(223, 230, 231, 0);
+			border-top-color: #dfe6e7;
+			border-width: 5px;
+			margin-left: -5px;
+		}
+		&:before {
+			border-color: rgba(204, 215, 216, 0);
+			border-top-color: #ccd7d8;
+			border-width: 6px;
+			margin-left: -6px;
+		}
+	}
+}

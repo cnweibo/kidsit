@@ -1,0 +1,126 @@
+
+//Banner conrol panel
+.banner-control{
+	width: 100%;
+	height: 80px;
+	margin-top: -1px;
+	background-color: @secondary-background;
+}
+
+.tparrows.default{
+	top: 100% !important;
+	width: 15%;
+	height: 79px;
+	background: none;
+	background-color: fade(@primary-background, 10%);
+	.transition(all 300ms ease-in);
+
+	&:hover{
+		background-color: @primary-background;
+	}
+
+	&:before{
+		content: "";
+		position: absolute;
+		top: 24px;
+		font: 30px FontAwesome;
+		color: @null-color;
+	}
+}
+
+.tp-leftarrow.default{
+	&:before{
+		content: "\f104";
+		right: 25px;
+	}
+}
+
+.tp-rightarrow.default{
+	&:before{
+		content: "\f105";
+		left: 25px;
+	}
+}
+
+.slider-info{
+	padding-top: 27px;
+	font-size: 18px;
+	text-align: center;
+	color: @null-color;
+}
+
+.mobile-full-placeholeder{
+	position: relative;
+	z-index: 50;
+	display: none;
+	text-align: center;
+	height: 450px;
+	background-image: url(../images/slider/full-width/image1.jpg);
+
+	.full-placeholeder__headind{
+		padding-top: 100px;
+		margin-top: 0;
+		margin-bottom: 60px;
+	}
+
+	.slider__heading--sm-danger{
+		padding-top: 160px;
+		margin: 0;
+	}
+
+	.slider__heading--lg-primary{
+		margin-top: 10px;
+		margin-bottom: 45px;
+	}
+
+	.brand-circle{
+		width: 390px;
+		height: 390px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: -1;
+		margin-top: -190px;
+		margin-left: -190px;
+
+		&:before{
+			top: 70px;
+		}
+	}
+
+	.slider__heading--dark{
+		margin: 0;
+		padding-top: 180px;
+	}
+
+	.slider__heading--dark-sm{
+		margin-top: 0;
+		margin-bottom: 40px;
+	}
+}
+
+.full-placeholeder--second{
+	background-image: url(../images/slider/full-width/image2-alt.jpg);
+	background-position: left center;
+	background-size: 768px 560px;
+}
+
+.full-placeholeder--third{
+	background-image: url(../images/slider/full-width/image3-alt.jpg);
+	background-position: center;
+	background-size: 768px 560px;
+}
+
+.placeholeder-control{
+	display: none;
+	padding: 20px 15px 18px;
+	background-color: @secondary-background;
+
+	.placeholeder-info{
+		color: @null-color;
+		font-size: 16px;
+		line-height: 20px;
+		text-align: center;
+	}
+}
+

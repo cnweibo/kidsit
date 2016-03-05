@@ -1,0 +1,55 @@
+
+.accordion--stack{
+	.panel{
+		background-color: #fcfcfc;
+	}
+
+	.panel:nth-child(odd){
+		background-color: #f5f5f5;
+	}
+
+	.panel + .panel{
+		margin-top: -1px;
+	}
+
+	.panel-heading{
+		.marker__close {
+			  left: 36px;
+			  margin-top: -10px;
+			  font-size: 20px;
+		}
+
+		.marker__open {
+			  left: 36px;
+			  margin-top: -10px;
+			  font-size: 20px;
+		}
+	}
+
+	.accordion-link.collapsed{
+		color: @primary-color;
+
+		&:hover{
+			color: @secondary-color;
+		}
+	}
+
+	.accordion-link{
+		display: block;
+		padding: 40px 15px 43px 78px;
+		color: @secondary-color;
+		.transition(all 300ms ease);
+	}
+
+	.panel-title{
+		font-family: @regular-font;
+		font-size: 16px;
+		font-weight: bold;
+	}
+
+	.panel-body{
+		padding: 0px 15px 52px 40px;
+		// margin-top: -8px;
+	}
+}
+

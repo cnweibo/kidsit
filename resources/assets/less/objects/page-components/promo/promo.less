@@ -1,0 +1,63 @@
+
+//Promo
+.promo{
+	padding: 32px 0;
+	margin-bottom: 10px;
+	text-align: center;
+	background-color: #dfe6e7;
+
+	.promo__heading{
+		padding: 22px 0;
+		margin: 0;
+		font-size: 22px;
+		font-family: @regular-font;
+		font-weight: bold;
+		color: @primary-color;
+		text-transform: uppercase;
+	}
+
+	.promo__btn{
+		margin-bottom: 18px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+.promo-present{
+	margin-bottom: 30px;
+}
+
+.pager{
+	position: relative;
+
+	.pager__next,
+	.pager__prev{
+		position: absolute;
+		top: 38px;
+		z-index: 20;
+		display: block;
+		width: 60px;
+		height: 60px;
+		padding-top: 21px;
+		padding-left: 11px;
+		color: @null-color;
+		font-weight: bold;
+		text-transform: uppercase;
+		background-color: @secondary-background;
+		border: none;
+		.transition(all 300ms ease-in);
+
+		&:hover{
+			background-color: @primary-color;
+		}
+	}
+	
+	.pager__prev{
+		left: 0;
+	}
+
+	.pager__next{
+		right: 0;
+	}
+
+}

@@ -1,0 +1,54 @@
+
+// header bubble
+.bubble-header{
+	
+	.main-title{
+		position: relative;
+		display: inline-block;
+		width: auto;
+		font-family: @brand-font;
+		font-size: 44px;
+		color: #000;
+
+		&:before{
+			content: "";
+			position: absolute;
+			bottom: -36px;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			background: #fff;
+		}
+
+		&:after{
+			content: "";
+			position: absolute;
+			bottom: -36px;
+			left: 50%;
+			width: 80px;
+			height: 3px;
+			margin-left: -40px;
+			background: @secondary-background;
+		}
+	}
+
+	.btn-container{
+		margin-top: 71px;
+		text-align: center;
+		display: block;
+
+		.btn{
+			padding-left: 25px;
+			padding-right: 25px;
+		}
+	}
+
+	.bubble-heade__content{
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		margin-top: -30px;
+	}
+}

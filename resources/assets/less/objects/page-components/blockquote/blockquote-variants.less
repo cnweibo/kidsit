@@ -1,0 +1,59 @@
+
+.blockquote--empty{
+	padding-left: 262px;
+	padding-right: 300px;
+	background-color: @null-color;
+
+	&:before{
+		display: none;
+	}
+
+	&:after{
+		content: "“";
+		position: absolute;
+		top: 89px;
+		left: 150px;
+		font-size: 120px;
+		font-weight: bold;
+		font-style: italic;
+		color: @primary-color;
+	}
+
+	.blockquote__author{
+		padding-right: 212px;
+		background-color: @null-color;
+	}
+}
+
+.blockquote--strong{
+	padding-left: 75px;
+	padding-right: 75px;
+	padding-top: 93px;
+	font-size: 38px;
+
+	&:before,
+	&:after{
+		display: none;
+	}
+
+	.blockquote__line{
+		font-size: 30px;
+		display: block;
+		margin-bottom: 21px;
+		line-height: 32px;
+
+		strong{
+			font-size: 38px;
+			font-weight: 800;
+		}
+	}
+
+	.blockquote__author{
+		padding-right: 47px;
+		padding-top: 5px;
+	}
+
+	.blockquote__divider:before{
+		top: 28px;
+	}
+}

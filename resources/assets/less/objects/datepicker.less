@@ -1,0 +1,189 @@
+
+//datepicker
+.datepicker{
+	background-color: #f3f7f7;
+	.border-radius(0);
+}
+
+.datepicker-inline{
+	width: 240px;
+	margin: 0 auto;
+	padding: 6px 20px 12px;
+}
+
+.datepicker .datepicker-switch{
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #737c85;
+}
+
+.datepicker th{
+	font-size: 13px;
+	font-weight: bold;
+	color: #737c85;
+	padding-top: 17px;
+	padding-bottom: 14px;
+}
+
+.datepicker thead tr:first-child th:hover, 
+.datepicker tfoot tr th:hover{
+	background-color: transparent;
+}
+
+.datepicker td, .datepicker td{
+	font-size: 13px;
+	color: @primary-color;
+	text-align: center;
+}
+
+.datepicker.dropdown-menu th.dow, 
+.datepicker.datepicker-inline th.dow{
+	padding: 19px 6px 13px;
+} 
+
+.datepicker.dropdown-menu td, 
+.datepicker.datepicker-inline td{
+	padding: 7px 6px;
+}
+
+.datepicker table tr td.day:hover, 
+.datepicker table tr td.day.focused{
+	background: none;
+}
+
+.datepicker table tr td.today, 
+.datepicker table tr td.today:hover, 
+.datepicker table tr td.today.disabled, 
+.datepicker table tr td.today.disabled:hover{
+	background: none;
+}
+
+.datepicker table tr td.today:hover, 
+.datepicker table tr td.today:hover:hover, 
+.datepicker table tr td.today.disabled:hover, 
+.datepicker table tr td.today.disabled:hover:hover, 
+.datepicker table tr td.today:active, 
+.datepicker table tr td.today:hover:active, 
+.datepicker table tr td.today.disabled:active, 
+.datepicker table tr td.today.disabled:hover:active, 
+.datepicker table tr td.today.active, 
+.datepicker table tr td.today.active:hover, 
+.datepicker table tr td.today.disabled.active, 
+.datepicker table tr td.today.disabled.active:hover, 
+.datepicker table tr td.today.disabled, 
+.datepicker table tr td.today.disabled:hover, 
+.datepicker table tr td.today.disabled.disabled, 
+.datepicker table tr td.today.disabled.disabled:hover, 
+.datepicker table tr td.today[disabled], 
+.datepicker table tr td.today[disabled]:hover, 
+.datepicker table tr td.today.disabled[disabled], 
+.datepicker table tr td.today.disabled[disabled]:hover{
+	background: none;
+}
+
+.today{
+	position: relative;
+	//display: inline-block;
+	z-index: 10;
+	background: none;
+
+	&:before{
+		content: "";
+		position: absolute;
+		top: 8px;
+		left: 50%;
+		width: 30px;
+		height: 16px;
+		margin-left: -15px;
+		background-color: @warning-color;
+		.border-radius(8px);
+		z-index: -1;
+	}
+}
+
+.datepicker .prev{
+	text-indent: -9999px;
+	position: relative;
+	display: inline-block;
+	z-index: 10;
+	cursor: pointer;
+
+	&:before{
+		content: "\f177";
+		position: absolute;
+		top: 4px;
+		left: 0;
+		font-size: 14px;
+		font-family: FontAwesome;
+		color: #737c85;
+		text-indent: 0;
+	}
+}
+
+.datepicker .next{
+	text-indent: -9999px;
+	position: relative;
+	display: inline-block;
+	z-index: 10;
+	cursor: pointer;
+
+	&:before{
+		content: "\f178";
+		position: absolute;
+		top: 4px;
+		right: 0;
+		font-size: 14px;
+		font-family: FontAwesome;
+		color: #737c85;
+		text-indent: 0;
+	}
+}
+
+	//active
+.datepicker table tr td.active:hover, 
+.datepicker table tr td.active:hover:hover, 
+.datepicker table tr td.active.disabled:hover, 
+.datepicker table tr td.active.disabled:hover:hover, 
+.datepicker table tr td.active:active, 
+.datepicker table tr td.active:hover:active, 
+.datepicker table tr td.active.disabled:active, 
+.datepicker table tr td.active.disabled:hover:active, 
+.datepicker table tr td.active.active, 
+.datepicker table tr td.active.active:hover, 
+.datepicker table tr td.active.disabled.active, 
+.datepicker table tr td.active.disabled.active:hover, 
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active.disabled:hover, 
+.datepicker table tr td.active.disabled.disabled, 
+.datepicker table tr td.active.disabled.disabled:hover, 
+.datepicker table tr td.active[disabled], 
+.datepicker table tr td.active[disabled]:hover, 
+.datepicker table tr td.active.disabled[disabled], 
+.datepicker table tr td.active.disabled[disabled]:hover{
+	background: none;
+	color: @primary-color;
+	font-weight: normal;
+	text-shadow: none;
+}
+
+.datepicker .active{
+	position: relative;
+	//display: inline-block;
+	z-index: 10;
+	background: none;
+
+	&:before{
+		content: "";
+		position: absolute;
+		top: 9px;
+		left: 50%;
+		width: 30px;
+		height: 16px;
+		margin-left: -15px;
+		background-color: @warning-color;
+		.border-radius(8px);
+		z-index: -1;
+	}
+}
+

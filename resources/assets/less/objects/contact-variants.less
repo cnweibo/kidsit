@@ -1,0 +1,88 @@
+
+
+//contact
+.contact--clean{
+	margin-bottom: 0;
+}
+
+.contact--icon{
+	.heading-helper{
+		margin-top: 8px;
+	}
+
+	.contact__field{
+		font-size: 11px;
+		font-weight: 600;
+		font-style: normal;
+		text-transform: uppercase;
+		color: #c2cbcc;
+		padding-top: 12px;
+		padding-bottom: 10px;
+		.transition(all 300ms ease);
+	}
+
+	.contact__field:focus{
+		color: @primary-color;
+	}
+
+	.contact__field-container:before{
+		.transition(all 300ms ease);
+	}
+
+	.contact__field-container.container-focus:before{
+	 	color: @primary-color;
+	}
+
+	.contact__area{
+		padding-top: 16px;
+	}
+
+	.contact__field-container{
+		position: relative;
+
+		&:before{
+			content: "";
+			position: absolute;
+			top: 10px;
+			right: 20px;
+			font-size: 12px;
+			font-family: FontAwesome;
+			color:#c2cbcc;
+		}
+	}
+
+	.contact__field--name{
+		&:before{
+			content: "\f007";
+		}
+
+	}
+
+	.contact__field--email{
+		&:before{
+			content: "\f0e0";
+			top: 11px;
+		}
+
+	}
+
+	.contact__field--area{
+		&:before{
+			content: "\f040";
+			top: 14px;
+		}
+	}
+}
+
+.contact--full{
+	text-align: center;
+
+	.heading-helper--left{
+		margin-bottom: 24px;
+	 }
+
+	.btn{
+		display: block;
+	}
+}
+

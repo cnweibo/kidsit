@@ -1,0 +1,195 @@
+// Bubble
+.top-block{
+	margin-top: 1500px;
+}
+
+.bubble-block{
+	position: relative;
+}
+
+.bubble{
+	position: absolute;
+	color: @null-color;
+	.border-radius(50%);
+	text-align: center;
+
+	.icon__item{
+		padding-top: 12px;
+	}
+}
+
+.bubble--little{
+	top: 85px;
+	left: 18%;
+	width: 27px;
+	height: 27px;
+
+	&.bubble--position{
+		top: 47px;
+		left: 57%;
+	}
+}
+
+.bubble--small{
+	top: 20px;
+	left: 33%;
+	width: 47px;
+	height: 47px;
+}
+
+.bubble--normal{
+	top: -27px;
+	left: 46%;
+	width: 70px;
+	height: 70px;
+
+	.icon__item{
+		padding-top: 11px;
+	}
+}
+
+.bubble--medium{
+	top: 55px;
+	left: 65%;
+	width: 73px;
+	height: 73px;
+
+	&.bubble--danger{
+		top: 195px;
+		left: 49%;
+
+		.icon__item{
+			padding-top: 17px;
+		}
+	}
+}
+
+.bubble--big{
+	top: 135px;
+	left: 68%;
+	width: 93px;
+	height: 93px;
+
+	.icon__item{
+		padding-top: 15px;
+	}
+}
+
+.bubble--large{
+	top: 145px;
+	left: 25%;
+	width: 104px;
+	height: 104px;
+
+	.icon__item{
+		padding-top: 21px;
+	}
+}
+
+.bubble--huge{
+	top: 50px;
+	left: 38%;
+	width: 124px;
+	height: 124px;
+
+	.icon__item{
+		padding-top: 24px;
+	}
+}
+
+.bubble--info{
+	background-color: @secondary-background;
+}
+
+.bubble--danger{
+	background-color: @danger-color;
+}
+
+.bubble--warning{
+	background-color: @warning-color;
+}
+
+.bubble--neutral{
+	background-color: #dae6e6;
+}
+
+//Bubble animation
+
+.run(){
+	-webkit-animation-duration: 900ms;
+ 	animation-duration: 900ms;
+
+	-webkit-animation-fill-mode: both; /* Chrome, Safari, Opera */
+    animation-fill-mode: both;
+}
+
+.run-1{
+	.run();
+
+ 	-webkit-animation-delay: 150ms;
+  	animation-delay: 150ms;
+}
+
+.run-2{
+	.run();
+
+	-webkit-animation-delay: 300ms;
+  	animation-delay: 300ms;
+}
+
+.run-3{
+	.run();
+
+	-webkit-animation-delay: 450ms;
+  	animation-delay: 450ms;
+}
+
+.run-4{
+	.run();
+
+	-webkit-animation-delay: 600ms;
+  	animation-delay: 600ms;
+}
+
+.run-5{
+	.run();
+
+	-webkit-animation-delay: 750ms;
+  	animation-delay: 750ms;
+}
+
+.run-6{
+	.run();
+
+	-webkit-animation-delay: 900ms;
+  	animation-delay: 900ms;
+}
+
+.run-7{
+	.run();
+
+	-webkit-animation-delay: 1050ms;
+  	animation-delay: 1050ms;
+}
+
+.run-8{
+	.run();
+
+	-webkit-animation-delay: 1200ms;
+  	animation-delay: 1200ms;
+}
+
+.run-9{
+	.run();
+
+	-webkit-animation-delay: 1350ms;
+  	animation-delay: 1350ms;
+}
+
+.image-holder--info{
+	padding-top: 18px;
+
+	img{
+		max-width: 100%;
+	}
+}

@@ -1,0 +1,35 @@
+
+//timeline
+.timeline{
+	position: relative;
+	
+	&:before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 1px;
+		height: 100%;
+		background-color: #dfe6e7;
+	}
+
+	.timeline__circle{
+		display: block;
+		width: 40px;
+		height: 40px;
+		background-color: @null-color;
+		background-image: url(../images/logo-small.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 22px 22px;
+		border: solid 1px #dfe6e7;
+		.border-radius(50%);
+	}
+
+	.timeline__connerctor{
+		display: block;
+		width: 27px;
+		height: 1px;
+		background-color: #dfe6e7;
+	}
+}

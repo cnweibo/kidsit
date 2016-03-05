@@ -9,7 +9,9 @@
         "laravel/framework": "5.1.*",
         "zizaco/confide": "~4.3@dev",
         "zizaco/entrust": "dev-laravel-5",
-        "laracasts/utilities": "~2.0"
+        "laracasts/utilities": "~2.0",
+        "bllim/datatables": "dev-master",
+        "guzzlehttp/guzzle": "^6.1@dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -1,0 +1,43 @@
+
+//Minimal slider
+.minimal-slider{
+	position: relative;
+	max-height: 375px;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+.minimal-slider-control{
+	position: absolute;
+	bottom: 1px;
+	left: 0;
+
+	.prev-arrow,
+	.next-arrow{
+		display: block;
+		width: 87px;
+		height: 80px;
+		float: left;
+		padding-top: 17px;
+		margin-right: 3px;
+		font-size: 30px;
+		color: @null-color;
+		background-color: rgba(0, 0, 0, 0.3);
+		.transition(all 300ms);
+	}
+
+	.next-arrow{
+		padding-left: 25px;	
+	}
+
+	.prev-arrow{
+		padding-left: 50px;
+	}
+
+	.prev-arrow:hover,
+	.next-arrow:hover{
+		background-color: rgba(0, 0, 0, 1);
+	}
+}

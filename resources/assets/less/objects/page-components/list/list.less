@@ -1,0 +1,41 @@
+
+//Lists
+.list-ordered{
+	padding-left: 15px;
+	margin-bottom: 30px;
+	font-weight: bold;
+
+	span{
+		font-weight: normal;
+	}
+
+	li{
+		padding-bottom: 20px;
+		padding-left: 10px;
+	}
+}
+
+.list{
+	padding-left: 15px;
+	margin-top: -5px;
+	margin-bottom: 30px;
+
+	li{
+		position: relative;
+		padding-bottom: 20px;
+		padding-left: 10px;
+		list-style: none;
+
+
+		&:before{
+			content: "\f10c";
+			position: absolute;
+			left: -15px;
+			top: 5px;
+			font-size: 9px;
+			font-family: FontAwesome;
+			font-style: normal;
+		}
+	}
+}
+

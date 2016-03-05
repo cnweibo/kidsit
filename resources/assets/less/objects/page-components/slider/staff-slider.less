@@ -1,0 +1,42 @@
+
+//staff slider
+.staff-slider{
+	border-bottom: none;
+	margin-top: 45px;
+	margin-bottom: -10px;
+}
+
+.staff-slider-control{
+	//position: relative;
+
+	.prev-arrow,
+	.next-arrow{
+		position: absolute;
+		top: 50%;
+		z-index: 30;
+		display: block;
+		width: 60px;
+		height: 60px;
+		padding-top: 8px;
+		margin-top: -30px;
+		font-size: 30px;
+		color: @null-color;
+		background-color: @secondary-background;
+		.transition(all 300ms);
+	}
+
+	.next-arrow{
+		right: 0;
+		padding-left: 25px;	
+	}
+
+	.prev-arrow{
+		left: 0;
+		padding-left: 23px;
+	}
+
+	.prev-arrow:hover,
+	.next-arrow:hover{
+		background-color: @primary-background;
+	}
+}

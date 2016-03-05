@@ -1,0 +1,18 @@
+
+// header position fixed
+.header--fixed{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 30;
+	background: none;
+}
+
+@media (max-width: @screen-sm-min){
+	.header--fixed{
+		margin-bottom: -155px;
+		position: relative;
+	}
+}
+

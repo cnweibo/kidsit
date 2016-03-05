@@ -1,0 +1,84 @@
+
+
+//Accordions
+.accordion{
+	.panel{
+		border: none;
+		.border-radius(0);
+		box-shadow: none;
+	}
+
+	.panel-heading{
+		position: relative;
+		padding: 0;
+		color: @primary-color;
+		background-color: transparent;
+		//border:none;
+
+		.marker{
+			position: absolute;
+		    top: 0;
+		    left: 0;
+		    display: block;
+		    height: 100%;
+	    }
+
+	    .marker__close {
+		  	position: absolute;
+		  	top: 50%;
+		  	left: 0;
+		  	display: none;
+		}
+
+		.marker__open {
+		  	position: absolute;
+		  	top: 50%;
+		  	left: 0;
+		  	display: inline-block;
+		}
+
+		.collapsed .marker__close {
+		  	display: inline-block;
+		}
+
+		.collapsed .marker__open {
+		  	display: none;
+		}
+	}
+
+	a:hover,
+	a:focus{
+		text-decoration: none;
+	}
+
+	.accordion-link{
+		display: block;
+		padding: 10px 15px;	
+	}
+
+
+	.panel-body{
+		line-height: 26px;
+		color: #737c85;
+	}
+
+	.panel-heading + .panel-collapse .panel-body{
+		border-top: none;
+	}
+}
+
+ .accordion-link .step__number{
+ 	position: absolute;
+	top: 12px;
+	right: 35px;
+	font-size: 54px;
+	color: @null-color;
+ }
+
+.accordion-link.collapsed .step__number{
+	color: #dfe6e7;
+}
+
+ .accordion-link.collapsed:hover .step__number{
+ 	color: @null-color;
+ }

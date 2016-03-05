@@ -1,0 +1,48 @@
+
+// Tip
+.tips{
+	.tips__heading{
+		position: relative;
+		z-index: 20;
+		padding-left: 16px;
+		margin-top: 6px;
+		margin-bottom: 21px;
+		font-family: @regular-font;
+		font-size: 18px;
+		font-weight: bold;
+
+		&:before{
+			content: "";
+			position: absolute;
+			top: -4px;
+			left: 0;
+			z-index: -1;
+			width: 30px;
+			height: 30px;
+			background: @secondary-background;
+			.border-radius(50%);
+		}
+
+		.start-sumbol{
+			color: @null-color;
+		}
+	}
+
+	.tips__text{
+		color: @primary-color;
+	}
+
+	.tips__list{
+		padding-top: 6px;
+		padding-left: 18px;
+		font-style: normal;
+
+		li{
+			padding-left: 8px;
+		}
+
+		li + li{
+			padding-top: 20px;
+		}
+	}
+}

@@ -1,0 +1,77 @@
+
+//Share buttons
+.share{
+	display: block;
+	margin-bottom: 20px;
+
+	.share__item{
+		color: @null-color;
+		margin-bottom: 10px;
+		.transition(all 300ms);
+
+		&:hover{
+			opacity: 0.6;
+		}
+	}
+
+	.fa{
+		margin-right: 11px;
+		font-size: 16px;
+	}
+
+	.share__item--twitter{
+		background-color: #55acee;
+	}
+
+	.share__item--facebook{
+		background-color: #3b5998;
+	}
+
+	.share__item--gplus{
+		background-color: #dd4b39;
+	}
+
+	.share__item--pinterest{
+		background-color: #cc2127;
+	}
+
+	.share__item--linkedin{
+		background-color: #0976b4;
+	}
+}
+
+.share--large{
+	.share__item{
+		display: inline-block;
+		padding: 10px 36px 10px 33px;
+		margin-right: 6px;
+		font-size: 14px;
+	}	
+
+	.fa{
+		margin-right: 8px;
+	}
+}
+
+.share--small{
+	.share__item{
+		display: inline-block;
+		padding: 7px 9px 8px;
+		margin-right: 4px;
+		font-size: 12px;
+		.border-radius(3px);
+	}
+
+	.share__item--empty{
+		padding: 7px 3px 8px 12px;
+	}
+
+	.fa{
+		margin-right: 8px;
+		font-size: 14px;
+	}
+}
+
+.share-present{
+	margin-top: 20px;
+}

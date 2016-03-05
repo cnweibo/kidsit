@@ -1,0 +1,139 @@
+
+//Progress bars
+.progress--primary{
+	position: relative;
+
+	&:before{
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 28px;
+			height: 28px;
+			background-color: @primary-background;
+			.border-radius(14px);
+	}
+
+	.progress{
+		height: 28px;
+		background-color: transparent;
+		border: 2px solid @primary-background;
+		.border-radius(14px);
+		overflow: visible;
+		box-shadow: none;
+	}
+
+	.progress-bar{
+		margin-top: -1px;
+		height: 104%;
+		position: relative;
+		background-color: @primary-background;
+		.border-radius(13px);
+		box-shadow: none;
+
+		.progress-number{
+			position: absolute;
+			top: -33px;
+			right: -13px;
+			display: block;
+			width: 50px;
+			padding: 4px 0 2px;
+			text-align: center;
+			background-color: @secondary-background;
+
+			&:before{
+				content: "";
+				position: absolute;
+				bottom: -4px;
+				left: 50%;
+				width: 0;
+				height: 0;
+				margin-left: -5px;
+				border-style: solid;
+				border-width: 4px 5px 0 5px;
+				border-color: @secondary-background transparent transparent transparent;
+			}
+		}
+	}
+
+	.progress-quantity{
+		margin-bottom: 10px;
+		font-weight: bold;
+		color: @primary-color;
+	}
+}
+
+.progress--secondary{
+	.progress{
+		height: 28px;
+		padding: 4px;
+		background-color: transparent;
+		border: 2px solid @secondary-background;
+		.border-radius(14px);
+		box-shadow: none;
+	}
+
+	.progress-bar{
+		background-color: @secondary-background;
+		box-shadow: none;
+
+		.border-radius(13px 0 0 13px);
+	}
+
+	.progress-quantity{
+		margin-bottom: 10px;
+		color: #737c85;
+	}
+}
+
+//Inside descriptive progress bar
+.progress--light{
+	height: 45px;
+	background-color: fade(@secondary-background, 20%);
+	border:none;
+	.border-radius(0);
+	box-shadow: none;
+
+	.progress-bar{
+		padding-top: 12px;
+		padding-left: 20px;
+		font-size: 14px;
+		font-weight: bold;
+		text-align: left;
+		color: @null-color;
+		background-color: @secondary-background;
+		background-image: url(../images/components/progress-stripe.png);
+		box-shadow: none;
+	}
+
+}
+
+.progress--neutral{
+	height: 45px;
+	background-color: transparent;
+	border: 1px solid #dfe6e7;
+	.border-radius(0);
+	box-shadow: none;
+
+	.progress-bar{
+		padding-top: 12px;
+		padding-left: 20px;
+		font-size: 14px;
+		font-weight: bold;
+		text-align: left;
+		color: @primary-color;
+		background-color: #dfe6e7;
+		background-image: url(../images/components/progress-stripe-angle.png);
+		box-shadow: none;
+	}
+
+}
+
+.progress-present{
+	margin-top: 13px;
+}
+
+.progress-cut{
+	padding-right: 100px;
+}
+

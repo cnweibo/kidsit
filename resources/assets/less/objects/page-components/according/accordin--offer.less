@@ -1,0 +1,95 @@
+
+
+
+.accordion--offer{
+	.panel + .panel{
+		margin-top: 3px;
+	}
+
+	.panel-heading .accordion-link{
+		background: @secondary-background;
+		font-size: 14px;
+		font-family: @regular-font;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: @null-color;
+		padding: 27px 15px 25px 48px;
+	}
+
+	.panel-heading .collapsed.accordion-link{
+		background: #dfe6e7;
+		color: @primary-color;
+	}
+
+	.panel-heading .marker{
+		font-size: 10px;
+	}
+
+	.panel-heading .marker__close,
+	.panel-heading .marker__open{
+		margin-top: -5px;
+		left: 25px;
+	}
+
+	.panel-body{
+		padding-left: 40px;
+		padding-right: 35px;
+		border: 1px solid #dfe6e7;
+		border-top: none;
+
+		.panel-body__title{
+			padding-top: 7px;
+			margin-bottom: -6px; 
+			font-family: Georgia, serif;
+			font-size: 16px;
+			font-weight: bold;
+			font-style: italic;
+			color: @secondary-color;
+		}
+
+		.btn-accordione{
+			margin-top: 22px;
+			margin-bottom: 20px;
+			padding: 18px 35px 15px;
+		}
+
+		.time-couter{
+			padding-bottom: 14px;
+		}
+
+		.digits{
+			color: @primary-color;
+			font: 26px @regular-font;
+			font-weight: bold;
+			padding: 0 13px;
+
+			&:first-child{
+				padding-left: 0;
+			}
+		}
+
+		.timer-wrap{
+			position: relative;
+			display: inline-block;
+
+			&:before{
+				content: ":";
+				position: absolute;
+				top: 0;
+				left: -12px;
+				color: @primary-color;
+				font: 26px @regular-font;
+				font-weight: bold;
+			}
+
+			&:first-child:before{
+				display: none;
+			}
+		}
+
+		.digits-label,
+		.timer-input{
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,99 @@
+
+/* file start: /home/vagrant/Code/kidsit/resources/assets/less/objects/gallery.less*/
+//Gallery
+.gallery-item{
+	position: relative;
+	margin-bottom: 30px;
+
+	.gallery-item__heading{
+		padding-top: 25%;
+		margin: 0;
+		font-size: 16px;
+		font-weight: bold;
+		color: @null-color;
+	}
+
+	.gallery-item__author{
+		margin-bottom: 21px;
+		font-size: 12px;
+		color: #bac3cd;
+	}
+
+	.btn{
+		padding-left: 34px;
+		padding-right: 34px;
+
+		&:focus{
+			background-color: @warning-color;
+		}
+	}
+
+	.gallery-item__info{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		background-color: @primary-background;
+		.transition(all 300ms);
+		opacity: 0;
+	}
+
+	&:hover{
+		.gallery-item__info{
+			-webkit-transform: translate(18px, 18px);
+			-moz-transform: translate(18px, 18px);
+			-ms-transform: translate(18px, 18px);
+			transform: translate(18px, 18px);
+			opacity: 1;
+		}
+	}
+}
+
+.mfp-zoom-out-cur, 
+.mfp-zoom-out-cur .mfp-image-holder .mfp-close{
+	cursor: pointer;
+}
+
+.desktop-middle{
+	.gallery-item__heading{
+		padding-top: 20%;
+	}
+} 
+
+.desktop-small{
+	.gallery-item__heading{
+		padding-top: 13%;
+	}
+
+	.btn{
+		padding: 7px 17px 8px;
+	}
+}
+
+.similar-object{
+	padding-top: 33px;
+	padding-bottom: 60px;
+	margin-top: 46px;
+	background-color: @secondary-background;
+} 
+//image container
+.image--border-hover{
+	position: relative;
+	overflow: hidden;
+
+	&:before{
+		content: "";
+		position: absolute;
+		top: -5%;
+		left: -5%;
+		width: 110%;
+		height: 110%;
+		border: 5px solid @secondary-background;
+		.transition(all 300ms);
+		opacity: 0;
+	}
+}
+/* file end: /home/vagrant/Code/kidsit/resources/assets/less/objects/gallery.less*/
+

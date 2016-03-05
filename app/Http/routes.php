@@ -10,7 +10,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+Route::get('userss/{username}',function($username){
+    $client = new \GuzzleHttp\Client();
+    $response = $client->get("dwz6.cn");
+    $echoed =  ($response->getBody()->getContents());
+    return $echoed;
+});
 Route::get('/', function () {
 //    xdebug_start_trace();
     return view('welcome');
@@ -172,7 +177,7 @@ Route::group(array('prefix' => 'admin' , 'middleware' => 'isAdmin'), function()
     // Route::resource('math/exercise', 'AdminMathexerciseController');
     // Route::resource('math/opdata', 'AdminMathexerciseopdatasController');
     // Route::resource('math/opsession', 'AdminMathexerciseopsessionsController');
-    Route::resource('math/difficulty', 'AdminMathexercisedifficultyController');
+    // Route::resource('math/difficulty', 'AdminMathexercisedifficultyController');
     // admin dashboard  Note:This must be the last route!!!
     Route::controller('/', 'Admin\AdminDashboardController');
 

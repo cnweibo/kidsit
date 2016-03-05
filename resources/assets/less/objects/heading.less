@@ -1,0 +1,304 @@
+
+.heading{
+	margin: 25px 0 24px;
+	font: 20px @brand-font;
+	color: @primary-color;
+}
+
+.heading--section{
+	margin: 35px 0 34px;
+}
+
+.heading--section-separate{
+	margin: 55px 0 34px;
+}
+
+.heading--section-short{
+	margin: 24px 0 34px;
+}
+
+.heading--section-list{
+	margin: 32px 0 34px;
+}
+
+.heading--first{
+	margin-top: 0;
+}
+.heading--start{
+	margin: 74px 0 34px;
+}
+
+.heading--separate{
+	margin: 57px 0 14px;
+}
+
+.heading--lagre{
+	margin: 77px 0 24px;
+}
+
+.heading--small{
+	margin-bottom: 24px;
+}
+
+.heading--smaller{
+	margin-bottom: 16px;
+}
+
+.heading--sm{
+	margin-top: 20px;
+}
+
+.heading-middle{
+	margin-top: 30px;
+}
+
+.heading--center{
+	margin-top: 45px;
+}
+
+.heading--md{
+	margin-top: 50px;
+}
+
+.heading--lg{
+	margin-top: 55px;
+}
+
+.heading--empty{
+	margin-bottom: 5px;
+}
+
+.heading-info{
+	margin: 10px 0 18px;
+	font-size: 16px;
+	font-family: @regular-font;
+	font-weight: bold;
+	color: #758594;
+}
+
+.block-title{
+	position: relative;
+	padding: 34px 0 31px;
+	margin-top: 0;
+	margin-bottom: 40px;
+	font: 28px @brand-font;
+	text-align: center;
+	color: @primary-color;
+	border-bottom: 1px solid #dfe6e7;
+
+	&:before{
+		content: "";
+		position: absolute;
+		bottom: -1px;
+		left: 50%;
+		width: 80px;
+		height: 3px;
+		margin-left: -40px;
+		background-color: @secondary-background;
+	}
+}
+
+.block-title--special{
+	&:before{
+	    background-color: @special-color;
+	  }
+}
+
+.block-title--left{
+	text-align: left;
+
+	&:before{
+		left: 0;
+		margin-left: 0;
+	}
+}
+
+.block-title--simple{
+	padding-top: 54px;
+	padding-bottom: 21px;
+	margin-bottom: 0;
+	border: none;
+
+	&:before{
+		display: none;
+	}
+}
+
+.block-title--inverse{
+	color: @null-color;
+}
+
+.block-title--bottom{
+	margin-bottom: 60px;
+}
+
+.block-title--bottom-l{
+	margin-bottom: 80px;
+}
+
+.block-title--top-larger{
+	margin-top: 80px;
+}
+
+.block-title--top-large-m{
+	margin-top: 70px;
+}
+
+.block-title--top-large{
+	margin-top: 60px;
+}
+
+.block-title--top-large-s{
+	margin-top: 50px;
+}
+
+.block-title--top-middle{
+	margin-top: 40px;
+}
+
+.block-title--top-s{
+	margin-top: 10px;
+}
+
+.block-title--bottom-s{
+	margin-bottom: 10px;
+}
+
+.sub-header{
+		margin-bottom: 12px;
+		font-size: 16px;
+		font-family: @regular-font;
+		font-style: italic;
+		font-weight: bold;
+		color: @primary-color;
+}
+
+.sub-header--simple{
+	font-style: normal;
+	margin-top: 10px;
+	margin-bottom: 2px;
+}
+
+.heading-helper{
+	margin: 24px 0;
+	font: 18px @regular-font;
+	font-weight: bold;
+}
+
+.heading-helper--thin{
+	margin-top: 0;
+}
+
+.heading-helper--bottom{
+	margin-bottom: 10px;
+}
+
+.heading-helper--large{
+	font-size: 22px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.heading-helper--sm{
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.heading-helper--markered{
+	position: relative;
+	overflow: hidden;
+	padding: 26px 0 26px 30px;
+
+	&:before{
+		content: "\f10c";
+		position: absolute;
+		top: 27px;
+		left: 0;
+		width: 16px;
+		height: 16px;
+		padding-top: 3px;
+		padding-left: 4px;
+		font: 9px FontAwesome;
+		color: @null-color;
+		background-color: @secondary-background;
+		.border-radius(50%);
+	}
+}
+
+.heading-helper--markered-first{
+	margin-top: 9px;
+}
+
+.header-oneline{
+	float: left;
+	margin-top: -2px;
+	margin-right: 15px;
+}
+
+.heading-cascade{
+	margin-top: 0;
+	margin-bottom: 36px;
+	font-size: 48px;
+	line-height: 44px;
+	color: #000;
+
+	.heading-cascade__step{
+		display: block;
+		font-size: 24px;
+		color: @secondary-color;
+	}
+}
+
+.heading-cascade--danger{
+	.heading-cascade__step{
+		color: @danger-color;
+	}
+}
+
+.heading-cascade--large{
+	padding-top: 14px;
+	text-transform: uppercase;
+	font-size: 30px;
+	line-height: 38px;
+	margin-bottom: 28px;
+
+	.heading-cascade__step{
+		text-transform: none;
+		font-size: 22px;
+	}
+}
+
+.heading-simple{
+	padding: 23px 0;
+	margin: 0;
+	font-size: 28px;
+	text-align: center;
+}
+
+.heading-marker{
+	position: relative;
+	margin: 0;
+	margin-top: 46px;
+	margin-bottom: 20px;
+	padding-bottom: 30px;
+	font: 14px @regular-font;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+	color: @secondary-color;
+
+	&:before{
+		content: "";
+		position: absolute;
+		bottom: 0px;
+		left: 50%;
+		margin-left: -11px;
+
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 13px 11px 0 11px;
+		border-color: @secondary-background transparent transparent transparent;
+	}
+}
+

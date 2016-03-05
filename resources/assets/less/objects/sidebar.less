@@ -1,0 +1,214 @@
+
+
+
+//Sidebar
+.sidebar{
+	margin-top: -5px;
+}
+
+.text-widget{
+	margin: -8px 0;
+}
+
+.flickr{
+	padding-left: 0;
+	list-style: none;
+
+	li{
+		float: left;
+		width: 20%;
+
+		a{	
+			position: relative;
+			display: block;
+
+			&:before{
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 110%;
+				height: 110%;
+				background-color: @null-color;
+				.transition(all 300ms ease-in);
+				opacity: 0;
+			}
+			
+
+			&:hover{
+				&:before{
+					opacity: 0.5;
+				}
+			}
+		}
+	}
+}
+
+.facebook-group{
+	padding: 20px 10px;
+	border: 1px solid #dfe6e7;
+}
+
+#twitter-feed-list{
+	overflow: hidden;
+	margin-bottom: -28px;
+
+	p{
+		line-height: 26px;
+	}
+
+	.twitter-article{
+		margin-top: -5px;
+		margin-bottom: 23px;
+	}
+
+	.twitter-article a:hover{
+		color: #737c85;
+	}
+
+	.twitter-pic{
+		margin-bottom: 0px;
+	}
+
+	.twitter-author{
+		float: none;
+		padding-top: 7px;
+		margin-top: 0;
+		margin-bottom: -11px;
+		color: @primary-color;
+	}
+
+	.tweetprofilelink{
+		margin-top: 0;
+	}
+
+	.tweetprofilelink a{
+		color: #737c85;
+	}
+
+	.twitter-text{
+		margin-top: -3px;
+	}
+
+	.twitter-text p{
+		line-height: 16px;
+		color: #737c85;
+	}
+
+	.twitter__follow{
+		top: 12px;
+	}
+
+	#twitter-actions{
+		margin-right: -15px;
+	}
+
+	.intent{
+		text-indent: -9999px;
+		padding-left: 35px;
+		padding-right: 0;
+	}
+
+	#intent-reply a:hover{
+		background-image: url(../images/icons/reply-hover.svg);
+	}
+
+	#intent-retweet a:hover{
+		background-image: url(../images/icons/retweet-hover.svg);
+	}
+
+	#intent-fave a:hover{
+		padding-right: 0;
+		background-image: url(../images/icons/fave-hover.svg);
+	}
+
+	#tw3{
+		display: none;
+	}
+
+}
+
+.sidebar #twitter-feed-list .twitter-text p{
+	font-size: 12px;
+}
+
+.twitter-pattern{
+	.loader{
+		margin-bottom: 60px;
+	}
+
+	#twitter-feed-list{
+		overflow: visible;
+		padding-top: 10px;
+	}
+
+	#twitter-feed-list .twitter__follow{
+		top: 1px;
+	}
+
+	#twitter-feed-list #tw3{
+		display: block;
+	}
+
+	#twitter-feed-list .intent{
+		text-indent: 0;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.intent a:hover{
+		color: @primary-color;
+	}
+
+	#twitter-feed-list .swiper-slide{
+		width: 100%;
+	}
+
+	#twitter-feed-list .twitter-pic{
+		margin-top: 35px;
+		margin-right: 25px;
+	}
+
+	#twitter-feed-list p{
+		font-family: Arial, Helvetica, sans-serif;
+	}
+
+	#twitter-feed-list .twitter-author{
+		display: inline-block;
+		font-size: 16px;
+		font-weight: bold;
+	}
+
+	#twitter-feed-list .twitter-author + p{
+		display: inline-block;
+	}
+
+	#twitter-feed-list .tweetprofilelink a{
+		font-size: 14px;
+		color: @secondary-color;
+	}
+
+	#twitter-feed-list #twitter-actions{
+		margin-right: 0px;
+	}
+
+	#twitter-feed-list .intent:hover a{
+		color: @primary-color;
+	}
+
+	#twitter-feed-list #intent-retweet a:hover{
+		background-position: 0 -1px;
+	}
+
+	#twitter-feed-list #intent-fave a:hover{
+		background-position: 0 -3px;
+	}
+
+	.twitter__follow .fa-twitter{
+		font-size: 14px;
+	}
+}
+
+.sidebar .swiper-slide {
+    float: none;
+}

@@ -1,0 +1,114 @@
+
+
+//***light version
+.header--light{
+	background: #f3f7f7;
+
+	.header-fixed{
+		background-color: #f3f7f7;
+	}
+
+	.fixed-top{
+		background: #f3f7f7;
+	}
+
+	.z-nav__list{
+		background: #f3f7f7;
+	}
+
+	.search .search__field{
+		background: #f3f7f7;
+		border-color: #f3f7f7;
+
+		&:hover,
+		&:focus{
+			color: #34495e;
+
+			+ .search__btn{
+				color: #34495e;
+			}
+		}
+	}
+	
+	.logo .logo__text{
+		color: @secondary-color;
+	}
+
+	.logo .logo__svg .logo__svg-path{
+		fill: @secondary-color;
+	}
+
+	.logo:hover .logo__svg .logo__svg-path{
+		fill: @primary-color;
+	}
+
+	.logo:hover .logo__text,
+	.logo:hover .highlight{
+		color: @primary-color;
+	}
+
+	.z-nav .z-nav__link{
+		color: #34495e;
+	}
+
+	.z-nav__toggle-sub .fa-plus, .z-nav__toggle-sub .fa-minus{
+		color: #34495e;
+	}
+	//34495e
+
+	.cart .cart__link{
+		color: #34495e;
+	}
+
+	.cart:hover .cart__link{
+		color: #fff;
+	}
+
+	.social .social__link{
+		background: #d7dde0;
+	}
+
+	.z-nav .z-nav__link--active{
+		color: #758594;
+	}
+
+	.search .search__field:focus{
+		border-color: @primary-color;
+	}
+}
+
+
+@media (min-width: 768px) {
+	.header--light{
+		.z-nav__list-secondary .z-nav__link:hover{
+			color: @null-color;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.header--light{
+		.z-nav .z-nav__link:hover{
+			color: @secondary-color;
+		}
+		.z-nav__toggle-sub.plus + .z-nav__link{
+			background: #f3f7f7;
+		}
+
+		.z-nav__toggle-sub.plus,
+		.z-nav__toggle-sub.minus{
+			background: #f3f7f7;
+		}
+
+		.z-nav__list-secondary,
+		.z-nav__toggle-sub + .z-nav__link,
+		.z-nav__toggle-sub,
+		.z-nav__list-secondary .z-nav__item .z-nav__toggle-sub.plus + .z-nav__link{
+			background: #e9eeef;
+		}
+
+		.z-nav__list-secondary.z-show .z-nav__toggle-sub.plus{
+			background-color: #e9eeef;
+		}
+	}
+}

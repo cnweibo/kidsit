@@ -1,0 +1,78 @@
+
+
+.alert--simple{
+	padding: 25px 30px; 
+	.border-radius(3px);
+
+	.alert__link{
+		margin-top: 6px;
+	}
+
+	.close{
+		top: 4px;
+		right: 4px;
+		margin-top: 0;
+	}
+}
+
+.alert--border{
+	padding: 25px 20px 25px 60px; 
+	background-color: transparent;
+	.border-radius(3px);
+
+	.alert__link{
+		margin-top: 6px;
+	}
+
+	.close{
+		top: 4px;
+		right: 4px;
+		margin-top: 0;
+	}
+
+	.alert-market{
+		background-color: transparent;
+
+		.fa{
+			top: 33px;
+			margin-top: 0;
+		}
+	}
+
+	&.alert-success{
+		border: 1px solid rgba(141, 198, 63, 1);
+
+		.alert-market .fa,
+		.close .fa{
+			color: rgba(141, 198, 63, 1);
+		}
+	}
+
+	&.alert-info{
+		border: 1px solid rgba(133, 214, 222, 1);
+
+		.alert-market .fa,
+		.close .fa{
+			color: rgba(133, 214, 222, 1);
+		}
+	}
+
+	&.alert-danger{
+		border: 1px solid rgba(237, 82, 88, 1);
+
+		.alert-market .fa,
+		.close .fa{
+			color: rgba(237, 82, 88, 1);
+		}
+	}
+
+	&.alert-warning{
+		border: 1px solid rgba(254, 211, 127, 1);
+
+		.alert-market .fa,
+		.close .fa{
+			color: rgba(254, 211, 127, 1);
+		}
+	}
+}
+

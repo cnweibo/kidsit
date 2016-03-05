@@ -1,0 +1,140 @@
+
+//Slider with sidebar
+.block--full{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.slider-siderbar{
+	position: relative;
+	max-height: 418px;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+.slider-siderbar-control{
+	position: relative;
+	top: 0;
+	left: 0;
+	min-height: 418px;
+	height: 100%;
+	padding-top: 10px;
+	background-color: @warning-color;
+
+	.prev-arrow,
+	.next-arrow{
+		position: absolute;
+		bottom: 1px;
+		display: block;
+		width: 87px;
+		height: 80px;
+		float: left;
+		padding-top: 17px;
+		font-size: 30px;
+		color: @null-color;
+		background-color: rgba(0, 0, 0, 0.05);
+		.transition (all 300ms ease-in);
+
+		&:hover{
+			background-color: rgba(0, 0, 0, 1);
+		}
+	}
+
+	.next-arrow{
+		padding-left: 25px;	
+		right: 0;
+	}
+
+	.prev-arrow{
+		padding-left: 50px;
+		left: 0;
+	}
+
+	.slider-siderbar-counter{
+		position: absolute;
+		bottom: 1px;
+		left: 50%;
+		width: 70px;
+		height: 80px;
+		margin-left: -35px;
+		font-size: 40px;
+		font-weight: bold;
+		color: @null-color;
+
+		.current-slide{
+			position: absolute;
+			top: 3px;
+			left: 15px;
+
+			&:after{
+				content: "/";
+				margin-left: 0px;
+				font-size: 18px;
+			}
+		}
+
+		.all-slide{
+			position: absolute;
+			top: 33px;
+			left: 45px;
+			font-size: 26px;
+			
+		}
+	}
+}
+
+.slide-info{
+	.slide-info__icon{
+		font-size: 100px;
+		text-align: center;
+		color: @null-color;
+	}
+
+	.slide-info__heading{
+		padding: 0 10px 0 40px;
+		margin-top: -5px;
+		margin-bottom: 21px;
+		font-size: 18px;
+		font-family: @regular-font;
+		font-weight: bold;
+		color: @null-color;
+	}
+
+	.slide-info__text{
+		padding: 0 10px 0 40px;
+		font-size: 14px;
+		line-height: 26px;
+		color: @primary-color;
+	}
+}
+
+.counter-slider-present{
+	margin-top: 60px;
+}
+
+.carousel-all{
+	
+	.swiper-slide{
+		padding: 0 5px;
+		.transition(none);
+	}
+
+	.image-container--fading,
+	.image-container__info{
+		.transition(all 300ms ease-in);
+	}
+
+	.swiper-slide:hover{
+		.image-container--fading{
+			&:before{
+				background-color: rgba(255, 255, 255, 0);
+			}
+		}
+
+		.image-container__info{
+			opacity: 0;
+		}
+	}
+}

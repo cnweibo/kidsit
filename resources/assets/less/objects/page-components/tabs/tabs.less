@@ -1,0 +1,57 @@
+
+//Tabs
+.tabs{
+	.nav-tabs {
+		border-color: #dfe6e7;
+	}
+
+	.tab-content{
+		padding: 30px 30px 7px;
+		color: #737c85;
+		border: 1px solid #dfe6e7;
+		border-top: none;
+
+		p{
+			margin-bottom: 24px;
+			line-height: 26px;
+		}
+	}
+
+	.nav-tabs a{
+		padding: 13px 25px 16px;
+
+		font-size: 13px;
+		font-weight: bold;
+		font-style: normal;
+		text-transform: uppercase;
+		color: #737c85;
+		border-color: transparent;
+		.border-radius(0);
+	}
+
+	.nav-tabs a:hover,
+	.nav-tabs a:focus{
+		color: @primary-color;
+		background-color: transparent;
+		border-color: transparent;
+	}
+
+	.nav-tabs .active a,
+	.nav-tabs .active a:hover,
+	.nav-tabs .active a:focus{
+		color: @primary-color;
+		background-color: @secondary-background;
+		border-color: transparent;
+	}
+	
+	.tab-content > .tab-pane{
+	  -webkit-animation: fade-out 0.3s ease-out 0s forwards;
+	          animation: fade-out 0.3s ease-out 0s forwards;
+	}
+
+	.tab-content > .active{
+	  -webkit-animation: fade-in 0.3s ease-in 0s forwards;
+	          animation: fade-in 0.3s ease-in 0s forwards;
+	}
+
+}
